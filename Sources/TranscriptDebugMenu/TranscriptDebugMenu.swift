@@ -5,7 +5,7 @@
 import SwiftUI
 import FoundationModels
 
-public struct LanguageModelSessionTranscriptMenu: View {
+public struct TranscriptDebugMenu: View {
 
     let session: LanguageModelSession
 
@@ -37,5 +37,5 @@ public struct LanguageModelSessionTranscriptMenu: View {
     Button("Show Transcript Menu") {
         isPresented.toggle()
     }
-    .transcriptMenu(session: session, isPresented: $isPresented)
+    .transcriptDebugMenu(session, isPresented: $isPresented)
 }

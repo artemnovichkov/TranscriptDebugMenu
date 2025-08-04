@@ -7,9 +7,9 @@ import FoundationModels
 
 public extension View {
 
-    func transcriptMenu(session: LanguageModelSession, isPresented: Binding<Bool>) -> some View {
+    func transcriptDebugMenu(_ session: LanguageModelSession, isPresented: Binding<Bool>) -> some View {
         sheet(isPresented: isPresented) {
-            LanguageModelSessionTranscriptMenu(session: session)
+            TranscriptDebugMenu(session: session)
         }
     }
 }
