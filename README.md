@@ -57,7 +57,7 @@ struct ContentView: View {
                 showTranscript = true
             }
         }
-        .transcriptMenu(session, isPresented: $showTranscript)
+        .transcriptDebugMenu(session, isPresented: $showTranscript)
     }
 }
 ```
