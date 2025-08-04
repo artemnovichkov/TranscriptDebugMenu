@@ -19,9 +19,5 @@ let package = Package(
         .target(
             name: "TranscriptDebugMenu"
         ),
-        .testTarget(
-            name: "TranscriptDebugMenuTests",
-            dependencies: ["TranscriptDebugMenu"]
-        ),
     ]
 )
