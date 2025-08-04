@@ -1,0 +1,513 @@
+{
+  "abstract" : [
+    {
+      "text" : "Presents a transcript debug menu as a sheet overlay.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/transcriptDebugMenu(_:isPresented:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "SwiftUICore",
+    "externalID" : "s:7SwiftUI4ViewP19TranscriptDebugMenuE010transcripteF0_11isPresentedQr16FoundationModels20LanguageModelSessionC_AA7BindingVySbGtF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "transcriptDebugMenu"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:16FoundationModels20LanguageModelSessionC",
+        "text" : "LanguageModelSession"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "isPresented"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7SwiftUI7BindingV",
+        "text" : "Binding"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sb",
+        "text" : "Bool"
+      },
+      {
+        "kind" : "text",
+        "text" : ">) -> "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "some"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7SwiftUI4ViewP",
+        "text" : "View"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "TranscriptDebugMenu",
+        "relatedModules" : [
+          "SwiftUICore"
+        ]
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "transcriptDebugMenu(_:isPresented:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@"
+            },
+            {
+              "kind" : "attribute",
+              "preciseIdentifier" : "s:ScM",
+              "text" : "MainActor"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "transcriptDebugMenu"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "session"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:16FoundationModels20LanguageModelSessionC",
+              "text" : "LanguageModelSession"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "isPresented"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7SwiftUI7BindingV",
+              "text" : "Binding"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sb",
+              "text" : "Bool"
+            },
+            {
+              "kind" : "text",
+              "text" : ">) -> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "some"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7SwiftUI4ViewP",
+              "text" : "View"
+            },
+            {
+              "kind" : "text",
+              "text" : "\n"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "LanguageModelSession",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " whose transcript will be displayed in the debug menu.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "session"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A binding to a Boolean value that determines whether the debug menu is presented.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "isPresented"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A view that presents the transcript debug menu as a sheet when ",
+              "type" : "text"
+            },
+            {
+              "code" : "isPresented",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is ",
+              "type" : "text"
+            },
+            {
+              "code" : "true",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This view modifier provides a convenient way to present a ",
+              "type" : "text"
+            },
+            {
+              "code" : "TranscriptDebugMenu",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "as a modal sheet that can be toggled on and off. The debug menu displays the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "transcript entries from the provided language model session in a navigable list.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Usage",
+          "level" : 2,
+          "text" : "Usage",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            "struct ContentView: View {",
+            "    @State private var showDebugMenu = false",
+            "    @State private var session = LanguageModelSession()",
+            "    ",
+            "    var body: some View {",
+            "        Button(\"Show Debug Menu\") {",
+            "            showDebugMenu = true",
+            "        }",
+            "        .transcriptDebugMenu(session, isPresented: $showDebugMenu)",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/transcriptdebugmenu(_:ispresented:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
+  "abstract" : [
+    {
+      "text" : "A SwiftUI view that displays a debug menu for viewing and copying ",
+      "type" : "text"
+    },
+    {
+      "code" : "LanguageModelSession",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " transcripts.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TranscriptDebugMenu"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TranscriptDebugMenu"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/transcriptDebugMenu(_:isPresented:)": {
+  "abstract" : [
+    {
+      "text" : "Presents a transcript debug menu as a sheet overlay.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "transcriptDebugMenu"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:16FoundationModels20LanguageModelSessionC",
+      "text" : "LanguageModelSession"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isPresented"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7SwiftUI7BindingV",
+      "text" : "Binding"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "some"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7SwiftUI4ViewP",
+      "text" : "View"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/transcriptDebugMenu(_:isPresented:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "transcriptDebugMenu(_:isPresented:)",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/transcriptdebugmenu(_:ispresented:)"
+}
+}
+}

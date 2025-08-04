@@ -1,0 +1,113 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:m:s:e:s:7SwiftUI4ViewP19TranscriptDebugMenuE010transcripteF0_11isPresentedQr16FoundationModels20LanguageModelSessionC_AA7BindingVySbGtF",
+    "modules" : [
+      {
+        "name" : "TranscriptDebugMenu"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Extended Module",
+    "symbolKind" : "extension",
+    "title" : "SwiftUICore"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Extended-Protocols",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View"
+      ],
+      "title" : "Extended Protocols"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/transcriptdebugmenu\/swiftuicore"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SwiftUICore",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/swiftuicore"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore/View": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:7SwiftUI4ViewP",
+      "text" : "View"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "View"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "View",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/swiftuicore\/view"
+}
+}
+}

@@ -1,0 +1,405 @@
+{
+  "abstract" : [
+    {
+      "text" : "Inherited from ",
+      "type" : "text"
+    },
+    {
+      "code" : "View.navigationBarTitle(_:displayMode:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Use navigationTitle(_:) with navigationBarTitleDisplayMode(_:)",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/navigationBarTitle(_:displayMode:)-5fn7o"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "SwiftUICore",
+    "externalID" : "s:7SwiftUI4ViewPAAE18navigationBarTitle_11displayModeQrAA18LocalizedStringKeyV_AA010NavigationE4ItemV0f7DisplayH0OtF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "navigationBarTitle"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7SwiftUI18LocalizedStringKeyV",
+        "text" : "LocalizedStringKey"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "displayMode"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7SwiftUI17NavigationBarItemV",
+        "text" : "NavigationBarItem"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7SwiftUI17NavigationBarItemV16TitleDisplayModeO",
+        "text" : "TitleDisplayMode"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "some"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7SwiftUI4ViewP",
+        "text" : "View"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "TranscriptDebugMenu",
+        "relatedModules" : [
+          "SwiftUICore"
+        ]
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "deprecatedAt" : "100000.0",
+        "introducedAt" : "13.0",
+        "message" : "Use navigationTitle(_:) with navigationBarTitleDisplayMode(_:)",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "deprecatedAt" : "100000.0",
+        "introducedAt" : "1.0",
+        "message" : "Use navigationTitle(_:) with navigationBarTitleDisplayMode(_:)",
+        "name" : "visionOS",
+        "unavailable" : false
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "navigationBarTitle(_:displayMode:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "nonisolated"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "navigationBarTitle"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "titleKey"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7SwiftUI18LocalizedStringKeyV",
+              "text" : "LocalizedStringKey"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "displayMode"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7SwiftUI17NavigationBarItemV",
+              "text" : "NavigationBarItem"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7SwiftUI17NavigationBarItemV16TitleDisplayModeO",
+              "text" : "TitleDisplayMode"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "some"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7SwiftUI4ViewP",
+              "text" : "View"
+            },
+            {
+              "kind" : "text",
+              "text" : "\n"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/navigationbartitle(_:displaymode:)-5fn7o"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
+  "abstract" : [
+    {
+      "text" : "A SwiftUI view that displays a debug menu for viewing and copying ",
+      "type" : "text"
+    },
+    {
+      "code" : "LanguageModelSession",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " transcripts.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TranscriptDebugMenu"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TranscriptDebugMenu"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/navigationBarTitle(_:displayMode:)-5fn7o": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "navigationBarTitle"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7SwiftUI18LocalizedStringKeyV",
+      "text" : "LocalizedStringKey"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "displayMode"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7SwiftUI17NavigationBarItemV",
+      "text" : "NavigationBarItem"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7SwiftUI17NavigationBarItemV16TitleDisplayModeO",
+      "text" : "TitleDisplayMode"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "some"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7SwiftUI4ViewP",
+      "text" : "View"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/navigationBarTitle(_:displayMode:)-5fn7o",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "navigationBarTitle(_:displayMode:)",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/navigationbartitle(_:displaymode:)-5fn7o"
+}
+}
+}

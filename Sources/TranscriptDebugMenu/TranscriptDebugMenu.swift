@@ -2,6 +2,11 @@
 //  Created by Artem Novichkov on 04.08.2025.
 //
 
+#if canImport(UIKit)
+import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 import SwiftUI
 import FoundationModels
 
@@ -52,7 +57,12 @@ public struct TranscriptDebugMenu: View {
                     Text(entry.description)
                         .contextMenu {
                             Button("Copy") {
+                                #if canImport(UIKit)
                                 UIPasteboard.general.string = entry.description
+                                #elseif canImport(AppKit)
+                                NSPasteboard.general.clearContents()
+                                NSPasteboard.general.setString(entry.description, forType: .string)
+                                #endif
                             }
                         }
                 }

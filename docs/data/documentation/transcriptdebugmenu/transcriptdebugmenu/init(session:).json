@@ -1,0 +1,267 @@
+{
+  "abstract" : [
+    {
+      "text" : "Creates a new transcript debug menu for the specified session.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/init(session:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:19TranscriptDebugMenuAAV7sessionAB16FoundationModels20LanguageModelSessionC_tcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "session"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:16FoundationModels20LanguageModelSessionC",
+        "text" : "LanguageModelSession"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "TranscriptDebugMenu"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(session:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@"
+            },
+            {
+              "kind" : "attribute",
+              "preciseIdentifier" : "s:ScM",
+              "text" : "MainActor"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "session"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:16FoundationModels20LanguageModelSessionC",
+              "text" : "LanguageModelSession"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "LanguageModelSession",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " whose transcript will be displayed.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "The session’s transcript property is used to populate the list of entries.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "session"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/init(session:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
+  "abstract" : [
+    {
+      "text" : "A SwiftUI view that displays a debug menu for viewing and copying ",
+      "type" : "text"
+    },
+    {
+      "code" : "LanguageModelSession",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " transcripts.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TranscriptDebugMenu"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TranscriptDebugMenu"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/init(session:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a new transcript debug menu for the specified session.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "session"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:16FoundationModels20LanguageModelSessionC",
+      "text" : "LanguageModelSession"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/init(session:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(session:)",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/init(session:)"
+}
+}
+}
