@@ -7,7 +7,8 @@
 A SwiftUI library that provides a debug menu for viewing and copying `LanguageModelSession` transcripts.
 
 <p align="center">
-  <img src=".github/screenshot.png" width="40%" />
+  <img src=".github/screenshot1.png" width="40%" />
+  <img src=".github/screenshot2.png" width="40%" />
 </p>
 
 ## Description
