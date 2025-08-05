@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "A SwiftUI view that displays a debug menu for viewing and copying ",
+      "text" : "A SwiftUI view for inspecting, copying, and capturing feedback for ",
       "type" : "text"
     },
     {
@@ -113,7 +113,7 @@
               "type" : "codeVoice"
             },
             {
-              "text" : " provides a list interface for inspecting",
+              "text" : " shows transcript entries in a list with a context menu to copy any entry.",
               "type" : "text"
             },
             {
@@ -121,7 +121,7 @@
               "type" : "text"
             },
             {
-              "text" : "language model session transcripts. Each transcript entry can be viewed and copied to the",
+              "text" : "It also lets you mark the conversation sentiment and automatically",
               "type" : "text"
             },
             {
@@ -129,7 +129,24 @@
               "type" : "text"
             },
             {
-              "text" : "clipboard using a context menu.",
+              "text" : "generates a ",
+              "type" : "text"
+            },
+            {
+              "code" : "LanguageModelFeedbackAttachment",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " JSON file that can be submitted to Apple using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/feedbackassistant.apple.com\/",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
               "type" : "text"
             }
           ],
@@ -248,7 +265,7 @@
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "A SwiftUI view that displays a debug menu for viewing and copying ",
+      "text" : "A SwiftUI view for inspecting, copying, and capturing feedback for ",
       "type" : "text"
     },
     {
@@ -390,6 +407,18 @@
   "identifier" : "doc:\/\/TranscriptDebugMenu\/s8SendableP",
   "title" : "Swift.Sendable",
   "type" : "unresolvable"
+},
+"https://feedbackassistant.apple.com/": {
+  "identifier" : "https:\/\/feedbackassistant.apple.com\/",
+  "title" : "Feedback Assistant",
+  "titleInlineContent" : [
+    {
+      "text" : "Feedback Assistant",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/feedbackassistant.apple.com\/"
 }
 }
 }

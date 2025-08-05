@@ -289,7 +289,7 @@
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "A SwiftUI view that displays a debug menu for viewing and copying ",
+      "text" : "A SwiftUI view for inspecting, copying, and capturing feedback for ",
       "type" : "text"
     },
     {

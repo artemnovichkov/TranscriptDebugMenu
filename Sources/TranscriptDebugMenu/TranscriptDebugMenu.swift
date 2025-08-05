@@ -9,12 +9,13 @@ import AppKit
 #endif
 import SwiftUI
 import FoundationModels
+import OSLog
 
-/// A SwiftUI view that displays a debug menu for viewing and copying `LanguageModelSession` transcripts.
+/// A SwiftUI view for inspecting, copying, and capturing feedback for `LanguageModelSession` transcripts.
 ///
-/// `TranscriptDebugMenu` provides a list interface for inspecting
-/// language model session transcripts. Each transcript entry can be viewed and copied to the
-/// clipboard using a context menu.
+/// `TranscriptDebugMenu` shows transcript entries in a list with a context menu to copy any entry.
+/// It also lets you mark the conversation sentiment and automatically
+/// generates a `LanguageModelFeedbackAttachment` JSON file that can be submitted to Apple using [Feedback Assistant](https://feedbackassistant.apple.com/).
 ///
 /// ## Usage
 ///
@@ -38,9 +39,17 @@ import FoundationModels
 ///}
 /// ```
 public struct TranscriptDebugMenu: View {
-
     /// The language model session containing the transcript to display.
     let session: LanguageModelSession
+
+    private let feedbackFileURL: URL = FileManager.default
+        .temporaryDirectory
+        .appendingPathComponent(UUID().uuidString)
+        .appendingPathExtension("json")
+
+    @State private var sentiment: LanguageModelFeedbackAttachment.Sentiment?
+    @State private var feedbackDataFileSaved: Bool = false
+    private let logger = Logger(subsystem: "com.artemnovichkov.TranscriptDebugMenu", category: "TranscriptDebugMenu")
 
     /// Creates a new transcript debug menu for the specified session.
     ///
@@ -69,11 +78,62 @@ public struct TranscriptDebugMenu: View {
             }
             .overlay {
                 if session.transcript.isEmpty {
-                    ContentUnavailableView("No entries", systemImage: "apple.intelligence", description: Text("The transcript is empty"))
+                    ContentUnavailableView("No entries",
+                                           systemImage: "apple.intelligence",
+                                           description: Text("The transcript is empty"))
 
                 }
             }
             .navigationTitle("Transcript")
+            .toolbar {
+                toolbar
+            }
+            .onAppear {
+                saveFeedbackAttachment(sentiment: sentiment)
+            }
+            .onChange(of: sentiment) { _, newValue in
+                saveFeedbackAttachment(sentiment: newValue)
+            }
+        }
+    }
+
+    // MARK: - Private
+
+    @ToolbarContentBuilder
+    private var toolbar: some ToolbarContent {
+        ToolbarItem {
+            Button {
+                sentiment = sentiment == .negative ? nil : .negative
+            } label: {
+                Label("Negative",
+                      systemImage: "hand.thumbsdown" + (sentiment == .negative ? ".fill" : ""))
+            }
+        }
+        ToolbarItem {
+            Button {
+                sentiment = sentiment == .positive ? nil : .positive
+            } label: {
+                Label("Positive",
+                      systemImage: "hand.thumbsup" + (sentiment == .positive ? ".fill" : "" ))
+            }
+        }
+        ToolbarSpacer()
+        ToolbarItem {
+            ShareLink(item: feedbackFileURL)
+                .disabled(!feedbackDataFileSaved)
+        }
+    }
+
+    /// Generates a `LanguageModelFeedbackAttachment` from the current `session` and `sentiment`,
+    /// writes it as JSON to `feedbackFileURL`, and updates `fileSaved` accordingly.
+    private func saveFeedbackAttachment(sentiment: LanguageModelFeedbackAttachment.Sentiment?) {
+        let feedbackData = session.logFeedbackAttachment(sentiment: sentiment)
+        do {
+            try feedbackData.write(to: feedbackFileURL)
+            feedbackDataFileSaved = true
+        } catch {
+            feedbackDataFileSaved = false
+            logger.error("Failed to save feedback attachment: \(error.localizedDescription)")
         }
     }
 }
