@@ -33,7 +33,7 @@ Alternatively, add it to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/artemnovichkov/TranscriptDebugMenu", from: "1.0.0")
+    .package(url: "https://github.com/artemnovichkov/TranscriptDebugMenu", from: "1.2.0")
 ]
 ```
 
@@ -67,7 +67,7 @@ struct ContentView: View {
 
 - iOS 26.0+ / macOS 26.0+ / visionOS 26.0+
 - Swift 6.2+
-- Xcode 26.0+
+- Xcode 26.0 beta 5
 
 ## Contributing
 

@@ -5,23 +5,12 @@
       "type" : "text"
     },
     {
-      "code" : "View.draggable(containerItemID:)",
+      "code" : "View.tabViewSearchActivation(_:)",
       "type" : "codeVoice"
     },
     {
       "text" : ".",
       "type" : "text"
-    }
-  ],
-  "deprecationSummary" : [
-    {
-      "inlineContent" : [
-        {
-          "text" : "On macOS, use draggable(containerItemID:containerNamespace:) instead.",
-          "type" : "text"
-        }
-      ],
-      "type" : "paragraph"
     }
   ],
   "hierarchy" : {
@@ -34,12 +23,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/draggable(containerItemID:)"
+    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/tabViewSearchActivation(_:)"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "SwiftUICore",
-    "externalID" : "s:7SwiftUI4ViewPAAE9draggable15containerItemIDQrqd___tSHRd__s8SendableRd__lF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
+    "externalID" : "s:7SwiftUI4ViewPAAE03tabC16SearchActivationyQrAA03TabeF0VF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -51,31 +40,16 @@
       },
       {
         "kind" : "identifier",
-        "text" : "draggable"
+        "text" : "tabViewSearchActivation"
       },
       {
         "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "genericParameter",
-        "text" : "ItemID"
-      },
-      {
-        "kind" : "text",
-        "text" : ">("
-      },
-      {
-        "kind" : "externalParam",
-        "text" : "containerItemID"
-      },
-      {
-        "kind" : "text",
-        "text" : ": "
+        "text" : "("
       },
       {
         "kind" : "typeIdentifier",
-        "text" : "ItemID"
+        "preciseIdentifier" : "s:7SwiftUI19TabSearchActivationV",
+        "text" : "TabSearchActivation"
       },
       {
         "kind" : "text",
@@ -106,8 +80,9 @@
     "platforms" : [
       {
         "beta" : false,
-        "deprecated" : true,
-        "message" : "On macOS, use draggable(containerItemID:containerNamespace:) instead.",
+        "deprecated" : false,
+        "introducedAt" : "26.0",
+        "name" : "iOS",
         "unavailable" : false
       },
       {
@@ -121,7 +96,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
-    "title" : "draggable(containerItemID:)"
+    "title" : "tabViewSearchActivation(_:)"
   },
   "primaryContentSections" : [
     {
@@ -152,23 +127,23 @@
             },
             {
               "kind" : "identifier",
-              "text" : "draggable"
+              "text" : "tabViewSearchActivation"
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "ItemID"
-            },
-            {
-              "kind" : "text",
-              "text" : ">("
+              "text" : "("
             },
             {
               "kind" : "externalParam",
-              "text" : "containerItemID"
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "activation"
             },
             {
               "kind" : "text",
@@ -176,7 +151,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "ItemID"
+              "preciseIdentifier" : "s:7SwiftUI19TabSearchActivationV",
+              "text" : "TabSearchActivation"
             },
             {
               "kind" : "text",
@@ -194,48 +170,6 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:7SwiftUI4ViewP",
               "text" : "View"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "where"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "ItemID"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:SH",
-              "text" : "Hashable"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "ItemID"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s8SendableP",
-              "text" : "Sendable"
             },
             {
               "kind" : "text",
@@ -258,7 +192,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(containeritemid:)"
+        "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/tabviewsearchactivation(_:)"
       ],
       "traits" : [
         {
@@ -322,11 +256,10 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/draggable(containerItemID:)": {
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/tabViewSearchActivation(_:)": {
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -338,31 +271,16 @@
     },
     {
       "kind" : "identifier",
-      "text" : "draggable"
+      "text" : "tabViewSearchActivation"
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "ItemID"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "containerItemID"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
+      "text" : "("
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "ItemID"
+      "preciseIdentifier" : "s:7SwiftUI19TabSearchActivationV",
+      "text" : "TabSearchActivation"
     },
     {
       "kind" : "text",
@@ -382,12 +300,12 @@
       "text" : "View"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/draggable(containerItemID:)",
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/tabViewSearchActivation(_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "draggable(containerItemID:)",
+  "title" : "tabViewSearchActivation(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(containeritemid:)"
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/tabviewsearchactivation(_:)"
 }
 }
 }

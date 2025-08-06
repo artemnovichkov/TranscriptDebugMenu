@@ -1494,21 +1494,6 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:id:in:_:)",
-                    "title" : "func dragContainer<ItemID, Item, Data>(for: Item.Type, id: (Item) -> ItemID, in: Namespace.ID?, (ItemID) -> Data) -> some View",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:id:in:selection:_:)-198gm",
-                    "title" : "func dragContainer<ItemID, Item, Data>(for: Item.Type, id: (consuming Item) -> ItemID, in: Namespace.ID?, selection: @autoclosure () -> Array<ItemID>, (Array<ItemID>) -> Data) -> some View",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:id:in:selection:_:)-847pb",
-                    "title" : "func dragContainer<Item, ItemID>(for: Item.Type, id: (Item) -> ItemID, in: Namespace.ID?, selection: @autoclosure () -> ItemID?, (ItemID) -> Item?) -> some View",
-                    "type" : "method"
-                  },
-                  {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:in:_:)-3cdbf",
                     "title" : "func dragContainer<Item, Data>(for: Item.Type, in: Namespace.ID?, (Item.ID) -> Data) -> some View",
                     "type" : "method"
@@ -1516,16 +1501,6 @@
                   {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:in:_:)-9mfup",
                     "title" : "func dragContainer<Item, Data>(for: Item.Type, in: Namespace.ID?, (Array<Item.ID>) -> Data) -> some View",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:in:selection:_:)-3krvg",
-                    "title" : "func dragContainer<Item>(for: Item.Type, in: Namespace.ID?, selection: @autoclosure () -> Item.ID?, (Item.ID) -> Item?) -> some View",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:in:selection:_:)-8g9fl",
-                    "title" : "func dragContainer<Item, Data>(for: Item.Type, in: Namespace.ID?, selection: @autoclosure () -> Array<Item.ID>, (Array<Item.ID>) -> Data) -> some View",
                     "type" : "method"
                   },
                   {
@@ -1539,6 +1514,11 @@
                     "type" : "method"
                   },
                   {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainerselection(_:containernamespace:)",
+                    "title" : "func dragContainerSelection<ItemID>(@autoclosure () -> Array<ItemID>, containerNamespace: Namespace.ID?) -> some View",
+                    "type" : "method"
+                  },
+                  {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragpreviewsformation(_:)",
                     "title" : "func dragPreviewsFormation(DragDropPreviewsFormation) -> some View",
                     "type" : "method"
@@ -1549,23 +1529,23 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:_:containernamespace:)",
-                    "title" : "func draggable<Item>(Item.Type, @autoclosure () -> Item?, containerNamespace: Namespace.ID?) -> some View",
-                    "type" : "method"
-                  },
-                  {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:containernamespace:_:)",
                     "title" : "func draggable<Item>(Item.Type, containerNamespace: Namespace.ID?, () -> Item?) -> some View",
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:id:_:containernamespace:)",
-                    "title" : "func draggable<Item, ItemID>(Item.Type, id: KeyPath<Item, ItemID>, @autoclosure () -> Item?, containerNamespace: Namespace.ID?) -> some View",
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:id:containernamespace:_:)",
+                    "title" : "func draggable<Item, ItemID>(Item.Type, id: KeyPath<Item, ItemID>, containerNamespace: Namespace.ID?, () -> Item?) -> some View",
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:id:containernamespace:_:)",
-                    "title" : "func draggable<Item, ItemID>(Item.Type, id: (Item) -> ItemID, containerNamespace: Namespace.ID?, () -> Item?) -> some View",
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:id:item:containernamespace:)",
+                    "title" : "func draggable<Item, ItemID>(Item.Type, id: KeyPath<Item, ItemID>, item: @autoclosure () -> Item?, containerNamespace: Namespace.ID?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:item:containernamespace:)",
+                    "title" : "func draggable<Item>(Item.Type, item: @autoclosure () -> Item?, containerNamespace: Namespace.ID?) -> some View",
                     "type" : "method"
                   },
                   {
@@ -1574,18 +1554,8 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(containeritemid:)",
-                    "title" : "func draggable<ItemID>(containerItemID: ItemID) -> some View",
-                    "type" : "method"
-                  },
-                  {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(containeritemid:containernamespace:)",
                     "title" : "func draggable<ItemID>(containerItemID: ItemID, containerNamespace: Namespace.ID?) -> some View",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(for:id:_:)",
-                    "title" : "func draggable<T, ID>(for: T.Type, id: ID, (ID) -> T?) -> some View",
                     "type" : "method"
                   },
                   {
@@ -1599,6 +1569,7 @@
                     "type" : "method"
                   },
                   {
+                    "deprecated" : true,
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dropdestination(for:action:istargeted:)",
                     "title" : "func dropDestination<T>(for: T.Type, action: ([T], CGPoint) -> Bool, isTargeted: (Bool) -> Void) -> some View",
                     "type" : "method"
@@ -2812,6 +2783,11 @@
                     "type" : "method"
                   },
                   {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/oninteractiveresizechange(_:)",
+                    "title" : "func onInteractiveResizeChange((Bool) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/onkeypress(_:action:)",
                     "title" : "func onKeyPress(KeyEquivalent, action: () -> KeyPress.Result) -> some View",
                     "type" : "method"
@@ -3809,6 +3785,11 @@
                   {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/tabviewcustomization(_:)",
                     "title" : "func tabViewCustomization(Binding<TabViewCustomization>?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/tabviewsearchactivation(_:)",
+                    "title" : "func tabViewSearchActivation(TabSearchActivation) -> some View",
                     "type" : "method"
                   },
                   {
@@ -5663,21 +5644,6 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:id:in:_:)",
-                    "title" : "func dragContainer<ItemID, Item, Data>(for: Item.Type, id: (Item) -> ItemID, in: Namespace.ID?, (ItemID) -> Data) -> some View",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:id:in:selection:_:)-198gm",
-                    "title" : "func dragContainer<ItemID, Item, Data>(for: Item.Type, id: (consuming Item) -> ItemID, in: Namespace.ID?, selection: @autoclosure () -> Array<ItemID>, (Array<ItemID>) -> Data) -> some View",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:id:in:selection:_:)-847pb",
-                    "title" : "func dragContainer<Item, ItemID>(for: Item.Type, id: (Item) -> ItemID, in: Namespace.ID?, selection: @autoclosure () -> ItemID?, (ItemID) -> Item?) -> some View",
-                    "type" : "method"
-                  },
-                  {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:in:_:)-3cdbf",
                     "title" : "func dragContainer<Item, Data>(for: Item.Type, in: Namespace.ID?, (Item.ID) -> Data) -> some View",
                     "type" : "method"
@@ -5685,16 +5651,6 @@
                   {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:in:_:)-9mfup",
                     "title" : "func dragContainer<Item, Data>(for: Item.Type, in: Namespace.ID?, (Array<Item.ID>) -> Data) -> some View",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:in:selection:_:)-3krvg",
-                    "title" : "func dragContainer<Item>(for: Item.Type, in: Namespace.ID?, selection: @autoclosure () -> Item.ID?, (Item.ID) -> Item?) -> some View",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:in:selection:_:)-8g9fl",
-                    "title" : "func dragContainer<Item, Data>(for: Item.Type, in: Namespace.ID?, selection: @autoclosure () -> Array<Item.ID>, (Array<Item.ID>) -> Data) -> some View",
                     "type" : "method"
                   },
                   {
@@ -5708,6 +5664,11 @@
                     "type" : "method"
                   },
                   {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainerselection(_:containernamespace:)",
+                    "title" : "func dragContainerSelection<ItemID>(@autoclosure () -> Array<ItemID>, containerNamespace: Namespace.ID?) -> some View",
+                    "type" : "method"
+                  },
+                  {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragpreviewsformation(_:)",
                     "title" : "func dragPreviewsFormation(DragDropPreviewsFormation) -> some View",
                     "type" : "method"
@@ -5718,23 +5679,23 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:_:containernamespace:)",
-                    "title" : "func draggable<Item>(Item.Type, @autoclosure () -> Item?, containerNamespace: Namespace.ID?) -> some View",
-                    "type" : "method"
-                  },
-                  {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:containernamespace:_:)",
                     "title" : "func draggable<Item>(Item.Type, containerNamespace: Namespace.ID?, () -> Item?) -> some View",
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:id:_:containernamespace:)",
-                    "title" : "func draggable<Item, ItemID>(Item.Type, id: KeyPath<Item, ItemID>, @autoclosure () -> Item?, containerNamespace: Namespace.ID?) -> some View",
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:id:containernamespace:_:)",
+                    "title" : "func draggable<Item, ItemID>(Item.Type, id: KeyPath<Item, ItemID>, containerNamespace: Namespace.ID?, () -> Item?) -> some View",
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:id:containernamespace:_:)",
-                    "title" : "func draggable<Item, ItemID>(Item.Type, id: (Item) -> ItemID, containerNamespace: Namespace.ID?, () -> Item?) -> some View",
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:id:item:containernamespace:)",
+                    "title" : "func draggable<Item, ItemID>(Item.Type, id: KeyPath<Item, ItemID>, item: @autoclosure () -> Item?, containerNamespace: Namespace.ID?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:item:containernamespace:)",
+                    "title" : "func draggable<Item>(Item.Type, item: @autoclosure () -> Item?, containerNamespace: Namespace.ID?) -> some View",
                     "type" : "method"
                   },
                   {
@@ -5743,18 +5704,8 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(containeritemid:)",
-                    "title" : "func draggable<ItemID>(containerItemID: ItemID) -> some View",
-                    "type" : "method"
-                  },
-                  {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(containeritemid:containernamespace:)",
                     "title" : "func draggable<ItemID>(containerItemID: ItemID, containerNamespace: Namespace.ID?) -> some View",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(for:id:_:)",
-                    "title" : "func draggable<T, ID>(for: T.Type, id: ID, (ID) -> T?) -> some View",
                     "type" : "method"
                   },
                   {
@@ -5768,6 +5719,7 @@
                     "type" : "method"
                   },
                   {
+                    "deprecated" : true,
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dropdestination(for:action:istargeted:)",
                     "title" : "func dropDestination<T>(for: T.Type, action: ([T], CGPoint) -> Bool, isTargeted: (Bool) -> Void) -> some View",
                     "type" : "method"
@@ -6981,6 +6933,11 @@
                     "type" : "method"
                   },
                   {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/oninteractiveresizechange(_:)",
+                    "title" : "func onInteractiveResizeChange((Bool) -> Void) -> some View",
+                    "type" : "method"
+                  },
+                  {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/onkeypress(_:action:)",
                     "title" : "func onKeyPress(KeyEquivalent, action: () -> KeyPress.Result) -> some View",
                     "type" : "method"
@@ -7978,6 +7935,11 @@
                   {
                     "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/tabviewcustomization(_:)",
                     "title" : "func tabViewCustomization(Binding<TabViewCustomization>?) -> some View",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/tabviewsearchactivation(_:)",
+                    "title" : "func tabViewSearchActivation(TabSearchActivation) -> some View",
                     "type" : "method"
                   },
                   {

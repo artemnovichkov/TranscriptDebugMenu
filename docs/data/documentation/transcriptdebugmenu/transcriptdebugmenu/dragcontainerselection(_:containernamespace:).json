@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "View.draggable(_:_:containerNamespace:)",
+      "code" : "View.dragContainerSelection(_:containerNamespace:)",
       "type" : "codeVoice"
     },
     {
@@ -23,12 +23,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/draggable(_:_:containerNamespace:)"
+    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/dragContainerSelection(_:containerNamespace:)"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "SwiftUICore",
-    "externalID" : "s:7SwiftUI4ViewPAAE9draggable__18containerNamespaceQrqd__m_qd__SgyXAAA0F0V2IDVSgt16CoreTransferable0I0Rd__s12IdentifiableRd__s8SendableAIsANPRpd__lF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
+    "externalID" : "s:7SwiftUI4ViewPAAE22dragContainerSelection_18containerNamespaceQrSayqd__GyXA_AA0H0V2IDVSgtSHRd__s8SendableRd__lF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -40,7 +40,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "draggable"
+        "text" : "dragContainerSelection"
       },
       {
         "kind" : "text",
@@ -48,19 +48,11 @@
       },
       {
         "kind" : "genericParameter",
-        "text" : "Item"
+        "text" : "ItemID"
       },
       {
         "kind" : "text",
         "text" : ">("
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Item"
-      },
-      {
-        "kind" : "text",
-        "text" : ".Type, "
       },
       {
         "kind" : "attribute",
@@ -72,11 +64,20 @@
       },
       {
         "kind" : "typeIdentifier",
-        "text" : "Item"
+        "preciseIdentifier" : "s:Sa",
+        "text" : "Array"
       },
       {
         "kind" : "text",
-        "text" : "?, "
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "ItemID"
+      },
+      {
+        "kind" : "text",
+        "text" : ">, "
       },
       {
         "kind" : "externalParam",
@@ -138,7 +139,7 @@
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
-    "title" : "draggable(_:_:containerNamespace:)"
+    "title" : "dragContainerSelection(_:containerNamespace:)"
   },
   "primaryContentSections" : [
     {
@@ -169,7 +170,7 @@
             },
             {
               "kind" : "identifier",
-              "text" : "draggable"
+              "text" : "dragContainerSelection"
             },
             {
               "kind" : "text",
@@ -177,7 +178,7 @@
             },
             {
               "kind" : "genericParameter",
-              "text" : "Item"
+              "text" : "ItemID"
             },
             {
               "kind" : "text",
@@ -193,31 +194,7 @@
             },
             {
               "kind" : "internalParam",
-              "text" : "itemType"
-            },
-            {
-              "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Item"
-            },
-            {
-              "kind" : "text",
-              "text" : ".Type = Item.self, "
-            },
-            {
-              "kind" : "externalParam",
-              "text" : "_"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "internalParam",
-              "text" : "payload"
+              "text" : "selection"
             },
             {
               "kind" : "text",
@@ -237,11 +214,20 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Item"
+              "preciseIdentifier" : "s:Sa",
+              "text" : "Array"
             },
             {
               "kind" : "text",
-              "text" : "?, "
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "ItemID"
+            },
+            {
+              "kind" : "text",
+              "text" : ">, "
             },
             {
               "kind" : "externalParam",
@@ -296,7 +282,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Item"
+              "text" : "ItemID"
             },
             {
               "kind" : "text",
@@ -304,8 +290,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:16CoreTransferable0B0P",
-              "text" : "Transferable"
+              "preciseIdentifier" : "s:SH",
+              "text" : "Hashable"
             },
             {
               "kind" : "text",
@@ -313,33 +299,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "text" : "Item"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s12IdentifiableP",
-              "text" : "Identifiable"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Item"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s12IdentifiableP2IDQa",
-              "text" : "ID"
+              "text" : "ItemID"
             },
             {
               "kind" : "text",
@@ -371,7 +331,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:_:containernamespace:)"
+        "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainerselection(_:containernamespace:)"
       ],
       "traits" : [
         {
@@ -435,7 +395,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/draggable(_:_:containerNamespace:)": {
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/dragContainerSelection(_:containerNamespace:)": {
   "abstract" : [
 
   ],
@@ -450,7 +410,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "draggable"
+      "text" : "dragContainerSelection"
     },
     {
       "kind" : "text",
@@ -458,19 +418,11 @@
     },
     {
       "kind" : "genericParameter",
-      "text" : "Item"
+      "text" : "ItemID"
     },
     {
       "kind" : "text",
       "text" : ">("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Item"
-    },
-    {
-      "kind" : "text",
-      "text" : ".Type, "
     },
     {
       "kind" : "attribute",
@@ -482,11 +434,20 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Item"
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
     },
     {
       "kind" : "text",
-      "text" : "?, "
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "ItemID"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
     },
     {
       "kind" : "externalParam",
@@ -528,12 +489,12 @@
       "text" : "View"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/draggable(_:_:containerNamespace:)",
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/dragContainerSelection(_:containerNamespace:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "draggable(_:_:containerNamespace:)",
+  "title" : "dragContainerSelection(_:containerNamespace:)",
   "type" : "topic",
-  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:_:containernamespace:)"
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainerselection(_:containernamespace:)"
 }
 }
 }

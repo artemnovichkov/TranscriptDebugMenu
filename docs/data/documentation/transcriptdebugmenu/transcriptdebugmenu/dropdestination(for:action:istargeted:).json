@@ -13,6 +13,17 @@
       "type" : "text"
     }
   ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Use `dropDestination(for:isEnabled:action:)` with an `action` that takes a `DropSession` parameter instead.",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -156,14 +167,18 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "deprecatedAt" : "100000.0",
         "introducedAt" : "16.0",
+        "message" : "Use `dropDestination(for:isEnabled:action:)` with an `action` that takes a `DropSession` parameter instead.",
         "name" : "iOS",
         "unavailable" : false
       },
       {
         "beta" : false,
         "deprecated" : false,
+        "deprecatedAt" : "100000.0",
         "introducedAt" : "13.0",
+        "message" : "Use `dropDestination(for:isEnabled:action:)` with an `action` that takes a `DropSession` parameter instead.",
         "name" : "macOS",
         "unavailable" : false
       }
@@ -443,6 +458,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

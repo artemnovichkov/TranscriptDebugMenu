@@ -28,7 +28,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "SwiftUICore",
-    "externalID" : "s:7SwiftUI4ViewPAAE9draggable_2id18containerNamespace_Qrqd__m_qd_0_qd__cAA0G0V2IDVSgqd__Sgyct16CoreTransferable0J0Rd__SHRd_0_s8SendableRd_0_r0_lF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
+    "externalID" : "s:7SwiftUI4ViewPAAE9draggable_2id18containerNamespace_Qrqd__m_s7KeyPathCyqd__qd_0_GAA0G0V2IDVSgqd__Sgyct16CoreTransferable0L0Rd__SHRd_0_s8SendableRd_0_r0_lF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -76,7 +76,16 @@
       },
       {
         "kind" : "text",
-        "text" : ": ("
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s7KeyPathC",
+        "text" : "KeyPath"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
       },
       {
         "kind" : "typeIdentifier",
@@ -84,7 +93,7 @@
       },
       {
         "kind" : "text",
-        "text" : ") -> "
+        "text" : ", "
       },
       {
         "kind" : "typeIdentifier",
@@ -92,7 +101,7 @@
       },
       {
         "kind" : "text",
-        "text" : ", "
+        "text" : ">, "
       },
       {
         "kind" : "externalParam",
@@ -248,12 +257,13 @@
               "text" : ": "
             },
             {
-              "kind" : "attribute",
-              "text" : "@escaping "
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s7KeyPathC",
+              "text" : "KeyPath"
             },
             {
               "kind" : "text",
-              "text" : "("
+              "text" : "<"
             },
             {
               "kind" : "typeIdentifier",
@@ -261,7 +271,7 @@
             },
             {
               "kind" : "text",
-              "text" : ") -> "
+              "text" : ", "
             },
             {
               "kind" : "typeIdentifier",
@@ -269,7 +279,7 @@
             },
             {
               "kind" : "text",
-              "text" : ", "
+              "text" : ">, "
             },
             {
               "kind" : "externalParam",
@@ -537,7 +547,16 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s7KeyPathC",
+      "text" : "KeyPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
     },
     {
       "kind" : "typeIdentifier",
@@ -545,7 +564,7 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> "
+      "text" : ", "
     },
     {
       "kind" : "typeIdentifier",
@@ -553,7 +572,7 @@
     },
     {
       "kind" : "text",
-      "text" : ", "
+      "text" : ">, "
     },
     {
       "kind" : "externalParam",

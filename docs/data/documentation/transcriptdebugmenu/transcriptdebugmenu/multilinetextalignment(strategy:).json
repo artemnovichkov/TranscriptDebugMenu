@@ -28,7 +28,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "SwiftUICore",
-    "externalID" : "s:7SwiftUI4ViewPAAE22multilineTextAlignment8strategyQrAA0E0VAAE0F8StrategyV_tF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
+    "externalID" : "s:7SwiftUI4ViewPAAE22multilineTextAlignment8strategyQrAA0E0V0F8StrategyV_tF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -65,7 +65,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:7SwiftUI4TextVAAE17AlignmentStrategyV",
+        "preciseIdentifier" : "s:7SwiftUI4TextV17AlignmentStrategyV",
         "text" : "AlignmentStrategy"
       },
       {
@@ -190,7 +190,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:7SwiftUI4TextVAAE17AlignmentStrategyV",
+              "preciseIdentifier" : "s:7SwiftUI4TextV17AlignmentStrategyV",
               "text" : "AlignmentStrategy"
             },
             {
@@ -335,7 +335,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7SwiftUI4TextVAAE17AlignmentStrategyV",
+      "preciseIdentifier" : "s:7SwiftUI4TextV17AlignmentStrategyV",
       "text" : "AlignmentStrategy"
     },
     {

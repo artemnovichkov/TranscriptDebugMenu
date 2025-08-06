@@ -133,7 +133,7 @@
               "type" : "text"
             },
             {
-              "code" : "LanguageModelFeedbackAttachment",
+              "code" : "LanguageModelFeedback",
               "type" : "codeVoice"
             },
             {

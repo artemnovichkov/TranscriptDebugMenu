@@ -28,7 +28,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "SwiftUICore",
-    "externalID" : "s:7SwiftUI4ViewPAAE16writingDirection8strategyQrAA4TextVAAE07WritingE8StrategyV_tF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
+    "externalID" : "s:7SwiftUI4ViewPAAE16writingDirection8strategyQrAA4TextV07WritingE8StrategyV_tF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -65,7 +65,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:7SwiftUI4TextVAAE24WritingDirectionStrategyV",
+        "preciseIdentifier" : "s:7SwiftUI4TextV24WritingDirectionStrategyV",
         "text" : "WritingDirectionStrategy"
       },
       {
@@ -190,7 +190,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:7SwiftUI4TextVAAE24WritingDirectionStrategyV",
+              "preciseIdentifier" : "s:7SwiftUI4TextV24WritingDirectionStrategyV",
               "text" : "WritingDirectionStrategy"
             },
             {
@@ -335,7 +335,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7SwiftUI4TextVAAE24WritingDirectionStrategyV",
+      "preciseIdentifier" : "s:7SwiftUI4TextV24WritingDirectionStrategyV",
       "text" : "WritingDirectionStrategy"
     },
     {

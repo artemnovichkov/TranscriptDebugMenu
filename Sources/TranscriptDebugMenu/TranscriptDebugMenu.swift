@@ -15,7 +15,7 @@ import OSLog
 ///
 /// `TranscriptDebugMenu` shows transcript entries in a list with a context menu to copy any entry.
 /// It also lets you mark the conversation sentiment and automatically
-/// generates a `LanguageModelFeedbackAttachment` JSON file that can be submitted to Apple using [Feedback Assistant](https://feedbackassistant.apple.com/).
+/// generates a `LanguageModelFeedback` JSON file that can be submitted to Apple using [Feedback Assistant](https://feedbackassistant.apple.com/).
 ///
 /// ## Usage
 ///
@@ -47,7 +47,7 @@ public struct TranscriptDebugMenu: View {
         .appendingPathComponent(UUID().uuidString)
         .appendingPathExtension("json")
 
-    @State private var sentiment: LanguageModelFeedbackAttachment.Sentiment?
+    @State private var sentiment: LanguageModelFeedback.Sentiment?
     @State private var feedbackDataFileSaved: Bool = false
     private let logger = Logger(subsystem: "com.artemnovichkov.TranscriptDebugMenu", category: "TranscriptDebugMenu")
 
@@ -124,9 +124,9 @@ public struct TranscriptDebugMenu: View {
         }
     }
 
-    /// Generates a `LanguageModelFeedbackAttachment` from the current `session` and `sentiment`,
+    /// Generates a `LanguageModelFeedback` from the current `session` and `sentiment`,
     /// writes it as JSON to `feedbackFileURL`, and updates `fileSaved` accordingly.
-    private func saveFeedbackAttachment(sentiment: LanguageModelFeedbackAttachment.Sentiment?) {
+    private func saveFeedbackAttachment(sentiment: LanguageModelFeedback.Sentiment?) {
         let feedbackData = session.logFeedbackAttachment(sentiment: sentiment)
         do {
             try feedbackData.write(to: feedbackFileURL)

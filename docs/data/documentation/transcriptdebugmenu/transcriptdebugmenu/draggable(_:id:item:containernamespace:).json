@@ -5,23 +5,12 @@
       "type" : "text"
     },
     {
-      "code" : "View.dragContainer(for:id:in:selection:_:)",
+      "code" : "View.draggable(_:id:item:containerNamespace:)",
       "type" : "codeVoice"
     },
     {
       "text" : ".",
       "type" : "text"
-    }
-  ],
-  "deprecationSummary" : [
-    {
-      "inlineContent" : [
-        {
-          "text" : "On macOS, use dragContainer(for:itemID:in:_:) instead.",
-          "type" : "text"
-        }
-      ],
-      "type" : "paragraph"
     }
   ],
   "hierarchy" : {
@@ -34,12 +23,12 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/dragContainer(for:id:in:selection:_:)-198gm"
+    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/draggable(_:id:item:containerNamespace:)"
   },
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "SwiftUICore",
-    "externalID" : "s:7SwiftUI4ViewPAAE13dragContainer3for2id2in9selection_Qrqd_0_m_qd__qd_0_ncAA9NamespaceV2IDVSgSayqd__GyXAqd_1_ANctSHRd__s8SendableRd__16CoreTransferable0N0Rd_0_7ElementQyd_1_Rsd_0_SlRd_1_r1_lF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
+    "externalID" : "s:7SwiftUI4ViewPAAE9draggable_2id4item18containerNamespaceQrqd__m_s7KeyPathCyqd__qd_0_Gqd__SgyXAAA0H0V2IDVSgt16CoreTransferable0M0Rd__SHRd_0_s8SendableRd_0_r0_lF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -51,19 +40,11 @@
       },
       {
         "kind" : "identifier",
-        "text" : "dragContainer"
+        "text" : "draggable"
       },
       {
         "kind" : "text",
         "text" : "<"
-      },
-      {
-        "kind" : "genericParameter",
-        "text" : "ItemID"
-      },
-      {
-        "kind" : "text",
-        "text" : ", "
       },
       {
         "kind" : "genericParameter",
@@ -75,19 +56,11 @@
       },
       {
         "kind" : "genericParameter",
-        "text" : "Data"
+        "text" : "ItemID"
       },
       {
         "kind" : "text",
         "text" : ">("
-      },
-      {
-        "kind" : "externalParam",
-        "text" : "for"
-      },
-      {
-        "kind" : "text",
-        "text" : ": "
       },
       {
         "kind" : "typeIdentifier",
@@ -103,15 +76,16 @@
       },
       {
         "kind" : "text",
-        "text" : ": ("
+        "text" : ": "
       },
       {
-        "kind" : "keyword",
-        "text" : "consuming"
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s7KeyPathC",
+        "text" : "KeyPath"
       },
       {
         "kind" : "text",
-        "text" : " "
+        "text" : "<"
       },
       {
         "kind" : "typeIdentifier",
@@ -119,7 +93,7 @@
       },
       {
         "kind" : "text",
-        "text" : ") -> "
+        "text" : ", "
       },
       {
         "kind" : "typeIdentifier",
@@ -127,11 +101,35 @@
       },
       {
         "kind" : "text",
-        "text" : ", "
+        "text" : ">, "
       },
       {
         "kind" : "externalParam",
-        "text" : "in"
+        "text" : "item"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@autoclosure "
+      },
+      {
+        "kind" : "text",
+        "text" : "() -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Item"
+      },
+      {
+        "kind" : "text",
+        "text" : "?, "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "containerNamespace"
       },
       {
         "kind" : "text",
@@ -153,65 +151,7 @@
       },
       {
         "kind" : "text",
-        "text" : "?, "
-      },
-      {
-        "kind" : "externalParam",
-        "text" : "selection"
-      },
-      {
-        "kind" : "text",
-        "text" : ": "
-      },
-      {
-        "kind" : "attribute",
-        "text" : "@autoclosure "
-      },
-      {
-        "kind" : "text",
-        "text" : "() -> "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:Sa",
-        "text" : "Array"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "ItemID"
-      },
-      {
-        "kind" : "text",
-        "text" : ">, ("
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:Sa",
-        "text" : "Array"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "ItemID"
-      },
-      {
-        "kind" : "text",
-        "text" : ">) -> "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Data"
-      },
-      {
-        "kind" : "text",
-        "text" : ") -> "
+        "text" : "?) -> "
       },
       {
         "kind" : "keyword",
@@ -240,34 +180,14 @@
         "beta" : false,
         "deprecated" : false,
         "introducedAt" : "26.0",
-        "name" : "iOS",
-        "unavailable" : false
-      },
-      {
-        "beta" : false,
-        "deprecated" : false,
-        "introducedAt" : "26.0",
         "name" : "macOS",
-        "unavailable" : false
-      },
-      {
-        "beta" : false,
-        "deprecated" : false,
-        "introducedAt" : "26.0",
-        "name" : "visionOS",
-        "unavailable" : false
-      },
-      {
-        "beta" : false,
-        "deprecated" : true,
-        "message" : "On macOS, use dragContainer(for:itemID:in:_:) instead.",
         "unavailable" : false
       }
     ],
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
-    "title" : "dragContainer(for:id:in:selection:_:)"
+    "title" : "draggable(_:id:item:containerNamespace:)"
   },
   "primaryContentSections" : [
     {
@@ -298,19 +218,11 @@
             },
             {
               "kind" : "identifier",
-              "text" : "dragContainer"
+              "text" : "draggable"
             },
             {
               "kind" : "text",
               "text" : "<"
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "ItemID"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
             },
             {
               "kind" : "genericParameter",
@@ -322,7 +234,7 @@
             },
             {
               "kind" : "genericParameter",
-              "text" : "Data"
+              "text" : "ItemID"
             },
             {
               "kind" : "text",
@@ -330,7 +242,7 @@
             },
             {
               "kind" : "externalParam",
-              "text" : "for"
+              "text" : "_"
             },
             {
               "kind" : "text",
@@ -361,20 +273,13 @@
               "text" : ": "
             },
             {
-              "kind" : "attribute",
-              "text" : "@escaping "
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s7KeyPathC",
+              "text" : "KeyPath"
             },
             {
               "kind" : "text",
-              "text" : "("
-            },
-            {
-              "kind" : "keyword",
-              "text" : "consuming"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
+              "text" : "<"
             },
             {
               "kind" : "typeIdentifier",
@@ -382,7 +287,7 @@
             },
             {
               "kind" : "text",
-              "text" : ") -> "
+              "text" : ", "
             },
             {
               "kind" : "typeIdentifier",
@@ -390,19 +295,39 @@
             },
             {
               "kind" : "text",
-              "text" : ", "
+              "text" : ">, "
             },
             {
               "kind" : "externalParam",
-              "text" : "in"
+              "text" : "item"
             },
             {
               "kind" : "text",
-              "text" : " "
+              "text" : ": "
             },
             {
-              "kind" : "internalParam",
-              "text" : "namespace"
+              "kind" : "attribute",
+              "text" : "@autoclosure "
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@escaping "
+            },
+            {
+              "kind" : "text",
+              "text" : "() -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Item"
+            },
+            {
+              "kind" : "text",
+              "text" : "?, "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "containerNamespace"
             },
             {
               "kind" : "text",
@@ -424,93 +349,7 @@
             },
             {
               "kind" : "text",
-              "text" : "? = nil, "
-            },
-            {
-              "kind" : "externalParam",
-              "text" : "selection"
-            },
-            {
-              "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "kind" : "attribute",
-              "text" : "@autoclosure "
-            },
-            {
-              "kind" : "attribute",
-              "text" : "@escaping "
-            },
-            {
-              "kind" : "text",
-              "text" : "() -> "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:Sa",
-              "text" : "Array"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "ItemID"
-            },
-            {
-              "kind" : "text",
-              "text" : ">, "
-            },
-            {
-              "kind" : "externalParam",
-              "text" : "_"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "internalParam",
-              "text" : "payload"
-            },
-            {
-              "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "kind" : "attribute",
-              "text" : "@escaping "
-            },
-            {
-              "kind" : "text",
-              "text" : "("
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:Sa",
-              "text" : "Array"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "ItemID"
-            },
-            {
-              "kind" : "text",
-              "text" : ">) -> "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Data"
-            },
-            {
-              "kind" : "text",
-              "text" : ") -> "
+              "text" : "? = nil) -> "
             },
             {
               "kind" : "keyword",
@@ -536,6 +375,23 @@
             {
               "kind" : "text",
               "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Item"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:16CoreTransferable0B0P",
+              "text" : "Transferable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
             },
             {
               "kind" : "typeIdentifier",
@@ -569,65 +425,6 @@
             },
             {
               "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Item"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:16CoreTransferable0B0P",
-              "text" : "Transferable"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Item"
-            },
-            {
-              "kind" : "text",
-              "text" : " == "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Data"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:ST7ElementQa",
-              "text" : "Element"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Data"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:Sl",
-              "text" : "Collection"
-            },
-            {
-              "kind" : "text",
               "text" : "\n"
             }
           ]
@@ -647,7 +444,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:id:in:selection:_:)-198gm"
+        "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:id:item:containernamespace:)"
       ],
       "traits" : [
         {
@@ -711,11 +508,10 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/dragContainer(for:id:in:selection:_:)-198gm": {
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/draggable(_:id:item:containerNamespace:)": {
   "abstract" : [
 
   ],
-  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -727,19 +523,11 @@
     },
     {
       "kind" : "identifier",
-      "text" : "dragContainer"
+      "text" : "draggable"
     },
     {
       "kind" : "text",
       "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "ItemID"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
     },
     {
       "kind" : "genericParameter",
@@ -751,19 +539,11 @@
     },
     {
       "kind" : "genericParameter",
-      "text" : "Data"
+      "text" : "ItemID"
     },
     {
       "kind" : "text",
       "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "for"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
@@ -779,15 +559,16 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": "
     },
     {
-      "kind" : "keyword",
-      "text" : "consuming"
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s7KeyPathC",
+      "text" : "KeyPath"
     },
     {
       "kind" : "text",
-      "text" : " "
+      "text" : "<"
     },
     {
       "kind" : "typeIdentifier",
@@ -795,7 +576,7 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> "
+      "text" : ", "
     },
     {
       "kind" : "typeIdentifier",
@@ -803,11 +584,35 @@
     },
     {
       "kind" : "text",
-      "text" : ", "
+      "text" : ">, "
     },
     {
       "kind" : "externalParam",
-      "text" : "in"
+      "text" : "item"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@autoclosure "
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Item"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "containerNamespace"
     },
     {
       "kind" : "text",
@@ -829,65 +634,7 @@
     },
     {
       "kind" : "text",
-      "text" : "?, "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "selection"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "attribute",
-      "text" : "@autoclosure "
-    },
-    {
-      "kind" : "text",
-      "text" : "() -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sa",
-      "text" : "Array"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "ItemID"
-    },
-    {
-      "kind" : "text",
-      "text" : ">, ("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sa",
-      "text" : "Array"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "ItemID"
-    },
-    {
-      "kind" : "text",
-      "text" : ">) -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Data"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
+      "text" : "?) -> "
     },
     {
       "kind" : "keyword",
@@ -903,12 +650,12 @@
       "text" : "View"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/dragContainer(for:id:in:selection:_:)-198gm",
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/draggable(_:id:item:containerNamespace:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "dragContainer(for:id:in:selection:_:)",
+  "title" : "draggable(_:id:item:containerNamespace:)",
   "type" : "topic",
-  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dragcontainer(for:id:in:selection:_:)-198gm"
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/draggable(_:id:item:containernamespace:)"
 }
 }
 }
