@@ -17,8 +17,6 @@ TranscriptDebugMenu is a lightweight SwiftUI component designed to help develope
 
 ## Installation
 
-### Swift Package Manager
-
 Add TranscriptDebugMenu to your project using Swift Package Manager:
 
 1. In Xcode, go to **File → Add Package Dependencies...**
@@ -39,7 +37,7 @@ dependencies: [
 
 ## Usage
 
-### Basic Implementation
+> Check out [Using TranscriptDebugMenu](https://artemnovichkov.github.io/TranscriptDebugMenu/tutorials/transcriptdebugmenu/usingtranscriptdebugmenu) tutorial for a step-by-step guide.
 
 Import the library and use the transcript menu modifier on any SwiftUI view:
 
