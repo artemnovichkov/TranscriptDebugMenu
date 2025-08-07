@@ -460,7 +460,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/layoutvalue(key:value:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

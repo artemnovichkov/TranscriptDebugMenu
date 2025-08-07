@@ -800,7 +800,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/confirmationdialog(_:ispresented:titlevisibility:presenting:actions:message:)-1q8js"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

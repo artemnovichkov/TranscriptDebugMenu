@@ -467,7 +467,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/exportabletoservices(_:onedit:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

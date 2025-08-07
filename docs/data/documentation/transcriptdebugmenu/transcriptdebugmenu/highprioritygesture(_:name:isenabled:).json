@@ -486,7 +486,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/highprioritygesture(_:name:isenabled:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

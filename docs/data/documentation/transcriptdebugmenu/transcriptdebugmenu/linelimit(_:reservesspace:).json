@@ -382,7 +382,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/linelimit(_:reservesspace:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

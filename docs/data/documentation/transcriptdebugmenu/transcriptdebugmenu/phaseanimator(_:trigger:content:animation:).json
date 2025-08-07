@@ -733,7 +733,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/phaseanimator(_:trigger:content:animation:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

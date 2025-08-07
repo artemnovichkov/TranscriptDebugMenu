@@ -615,7 +615,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/filemover(ispresented:files:oncompletion:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

@@ -611,7 +611,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/dismissalconfirmationdialog(_:shouldpresent:actions:message:)-8dt0m"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

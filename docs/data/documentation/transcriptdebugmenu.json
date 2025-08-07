@@ -59,16 +59,6 @@
         {
           "inlineContent" : [
             {
-              "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
-              "isActive" : true,
-              "type" : "reference"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
               "identifier" : "screenshot",
               "type" : "image"
             }
@@ -194,6 +184,31 @@
           "level" : 2,
           "text" : "Usage",
           "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Check out ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " tutorial for a step-by-step guide.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
         },
         {
           "inlineContent" : [
@@ -590,7 +605,7 @@
   ]
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

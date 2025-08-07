@@ -522,7 +522,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/pagecommand(value:in:step:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

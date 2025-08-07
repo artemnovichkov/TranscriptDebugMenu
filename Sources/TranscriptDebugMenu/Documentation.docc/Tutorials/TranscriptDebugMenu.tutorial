@@ -4,6 +4,7 @@
     }
     
     @Chapter(name: "TranscriptDebugMenu") {
+        @Image(source: tutorial, alt: "Tutorial")
         @TutorialReference(tutorial: "doc:UsingTranscriptDebugMenu")  
     }
 }

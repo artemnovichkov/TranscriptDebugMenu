@@ -625,7 +625,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/rotation3deffect(_:axis:anchor:anchorz:perspective:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

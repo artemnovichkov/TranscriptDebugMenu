@@ -515,7 +515,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/onkeypress(_:phases:action:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

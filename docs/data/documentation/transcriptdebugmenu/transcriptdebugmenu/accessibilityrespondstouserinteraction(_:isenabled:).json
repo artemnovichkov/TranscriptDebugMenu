@@ -424,7 +424,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/accessibilityrespondstouserinteraction(_:isenabled:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

@@ -621,7 +621,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/alert(_:ispresented:actions:message:)-7lfnd"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [

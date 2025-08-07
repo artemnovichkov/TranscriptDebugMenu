@@ -543,7 +543,7 @@
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/onlongpressgesture(minimumduration:maximumdistance:pressing:perform:)"
 },
 "screenshot.png": {
-  "alt" : "A technology icon representing the SlothCreator framework.",
+  "alt" : "TranscriptDebugMenu",
   "identifier" : "screenshot.png",
   "type" : "image",
   "variants" : [
