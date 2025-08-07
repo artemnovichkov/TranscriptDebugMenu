@@ -7,6 +7,22 @@
       {
         "children" : [
           {
+            "title" : "TranscriptDebugMenu",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu",
+            "title" : "Using TranscriptDebugMenu",
+            "type" : "project"
+          }
+        ],
+        "path" : "\/tutorials\/transcriptdebugmenu",
+        "title" : "Meet TranscriptDebugMenu",
+        "type" : "overview"
+      },
+      {
+        "children" : [
+          {
             "title" : "Structures",
             "type" : "groupMarker"
           },
@@ -8371,11 +8387,35 @@
             "type" : "extension"
           }
         ],
+        "icon" : "screenshot.png",
         "path" : "\/documentation\/transcriptdebugmenu",
         "title" : "TranscriptDebugMenu",
         "type" : "module"
       }
     ]
+  },
+  "references" : {
+    "screenshot.png" : {
+      "alt" : "A technology icon representing the SlothCreator framework.",
+      "identifier" : "screenshot.png",
+      "type" : "image",
+      "variants" : [
+        {
+          "traits" : [
+            "2x",
+            "light"
+          ],
+          "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+        },
+        {
+          "traits" : [
+            "2x",
+            "dark"
+          ],
+          "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+        }
+      ]
+    }
   },
   "schemaVersion" : {
     "major" : 0,

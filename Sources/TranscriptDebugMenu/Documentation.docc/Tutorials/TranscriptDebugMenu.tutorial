@@ -1,0 +1,9 @@
+@Tutorials(name: "TranscriptDebugMenu") {
+    @Intro(title: "Meet TranscriptDebugMenu") {
+        Learn how to use TranscriptDebugMenu
+    }
+    
+    @Chapter(name: "TranscriptDebugMenu") {
+        @TutorialReference(tutorial: "doc:UsingTranscriptDebugMenu")  
+    }
+}

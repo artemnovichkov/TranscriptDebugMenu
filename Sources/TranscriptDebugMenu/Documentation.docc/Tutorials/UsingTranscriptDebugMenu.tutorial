@@ -1,0 +1,92 @@
+@Tutorial(time: 5) {
+    @Intro(title: "Using TranscriptDebugMenu") {
+        Learn how to use TranscriptDebugMenu.
+    }
+    
+    @XcodeRequirement(title: "Xcode 26 beta 5 or later", destination: "https://developer.apple.com/download/")
+    
+    @Section(title: "Configure a session") {
+        @ContentAndMedia {
+            Let's start by creating a new SwiftUI project in Xcode and adding `LanguageModelSession`.
+        }
+        @Steps {
+            @Step {
+                Create a new SwiftUI project in Xcode. Open `ContentView.swift` and update the content.
+                
+                @Code(name: "ContentView.swift", file: ContentView01.swift) {
+                    @Image(source: start, alt: "Loading")
+                }
+            }
+            @Step {
+                Create `LanguageModelSession` and write a simple prompt to generate a haiku about Swift.
+                
+                @Code(name: "ContentView.swift", file: ContentView02.swift) {
+                    @Image(source: session, alt: "Showing haiku")
+                }
+            }
+        }
+    }
+        
+    @Section(title: "Add TranscriptDebugMenu") {
+        @ContentAndMedia {
+            Add TranscriptDebugMenu to your project using Swift Package Manager:
+            1. In Xcode, go to File → Add Package Dependencies...
+            2. Enter the repository URL:
+            ```
+            https://github.com/artemnovichkov/TranscriptDebugMenu
+            ```
+            3. Choose the version you want to use.
+            4. Add the package to your target.
+        }
+        
+        @Steps {
+            @Step {
+                Open `ContentView.swift` again.
+                
+                @Code(name: "ContentView.swift", file: ContentView02.swift) {
+                    @Image(source: session, alt: "Showing haiku")
+                }
+            }
+            @Step {
+                Create a button with action to present `TranscriptDebugMenu`.
+                
+                @Code(name: "ContentView.swift", file: ContentView03.swift) {
+                    @Image(source: toolbar, alt: "Toolbar button")
+                }
+            }
+            @Step {
+                Add `transcriptDebugMenu` to your view. Tap on the button to present `TranscriptDebugMenu` and see the transcript of the session.
+                
+                > Note: If you want to use `TranscriptDebugMenu` only for debug builds, wrap this modifier to `#if DEBUG` check.
+                
+                @Code(name: "ContentView.swift", file: ContentView04.swift) {
+                    @Image(source: menu, alt: "Menu")
+                }
+            }
+        }
+    }
+        
+    @Section(title: "Interact with the transcript") {
+        @ContentAndMedia {
+            Now that you have the transcript displayed, you can interact with it.
+        }
+        
+        @Steps {
+            @Step {
+                If you long-press the entry, you can see a context menu with an option to copy the entry.
+                
+                @Image(source: copy, alt: "")
+            }
+            @Step {
+                You can also tap on like/dislike buttons to give feedback on the entry.
+                
+                @Image(source: like, alt: "")
+            }
+            @Step {
+                If you tap on share button, `TranscriptDebugMenu` generates a `LanguageModelFeedback` JSON file that can be submitted to Apple using [Feedback Assistant](https://feedbackassistant.apple.com/).
+                
+                @Image(source: share, alt: "")
+            }
+        }
+    }
+}

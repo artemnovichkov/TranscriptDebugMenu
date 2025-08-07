@@ -124,8 +124,6 @@ public struct TranscriptDebugMenu: View {
         }
     }
 
-    /// Generates a `LanguageModelFeedback` from the current `session` and `sentiment`,
-    /// writes it as JSON to `feedbackFileURL`, and updates `fileSaved` accordingly.
     private func saveFeedbackAttachment(sentiment: LanguageModelFeedback.Sentiment?) {
         let feedbackData = session.logFeedbackAttachment(sentiment: sentiment)
         do {

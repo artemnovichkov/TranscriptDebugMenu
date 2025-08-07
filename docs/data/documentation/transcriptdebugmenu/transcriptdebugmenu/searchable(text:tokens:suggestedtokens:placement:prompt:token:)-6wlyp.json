@@ -612,9 +612,18 @@
 "references": {
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
-
+    {
+      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts.",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "images" : [
+    {
+      "identifier" : "screenshot.png",
+      "type" : "icon"
+    }
+  ],
   "kind" : "symbol",
   "role" : "collection",
   "title" : "TranscriptDebugMenu",
@@ -863,6 +872,27 @@
   "title" : "searchable(text:tokens:suggestedTokens:placement:prompt:token:)",
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/searchable(text:tokens:suggestedtokens:placement:prompt:token:)-6wlyp"
+},
+"screenshot.png": {
+  "alt" : "A technology icon representing the SlothCreator framework.",
+  "identifier" : "screenshot.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "2x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+    },
+    {
+      "traits" : [
+        "2x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+    }
+  ]
 }
 }
 }

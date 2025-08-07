@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -12,7 +18,16 @@
   },
   "kind" : "symbol",
   "metadata" : {
+    "color" : {
+      "standardColorIdentifier" : "green"
+    },
     "externalID" : "TranscriptDebugMenu",
+    "images" : [
+      {
+        "identifier" : "screenshot.png",
+        "type" : "icon"
+      }
+    ],
     "modules" : [
       {
         "name" : "TranscriptDebugMenu"
@@ -23,6 +38,397 @@
     "symbolKind" : "module",
     "title" : "TranscriptDebugMenu"
   },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "TranscriptDebugMenu is a lightweight SwiftUI component designed to help developers debug and inspect language model session transcripts. It provides an easy-to-use interface for viewing conversation entries and copying them to the clipboard for further analysis.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+              "isActive" : true,
+              "type" : "reference"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "screenshot",
+              "type" : "image"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Installation",
+          "level" : 2,
+          "text" : "Installation",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Add TranscriptDebugMenu to your project using Swift Package Manager:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In Xcode, go to ",
+                      "type" : "text"
+                    },
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "File → Add Package Dependencies…",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "strong"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Enter the repository URL:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "code" : [
+                    "https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Choose the version you want to use",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add the package to your target",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Alternatively, add it to your ",
+              "type" : "text"
+            },
+            {
+              "code" : "Package.swift",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " file:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "dependencies: [",
+            "    .package(url: \"https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\", from: \"1.2.0\")",
+            "]"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Usage",
+          "level" : 2,
+          "text" : "Usage",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Import the library and use the transcript menu modifier on any SwiftUI view:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "import SwiftUI",
+            "import FoundationModels",
+            "import TranscriptDebugMenu",
+            "",
+            "struct ContentView: View {",
+            "    @State private var showTranscript = false",
+            "    @State private var session = LanguageModelSession()",
+            "    ",
+            "    var body: some View {",
+            "        VStack {",
+            "            Button(\"Show Transcript Menu\") {",
+            "                showTranscript = true",
+            "            }",
+            "        }",
+            "        .transcriptDebugMenu(session, isPresented: $showTranscript)",
+            "    }",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Requirements",
+          "level" : 2,
+          "text" : "Requirements",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "iOS 26.0+ \/ macOS 26.0+ \/ visionOS 26.0+",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Swift 6.2+",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Xcode 26.0 beta 5",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Contributing",
+          "level" : 2,
+          "text" : "Contributing",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Fork the repository",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create your feature branch (",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "git checkout -b feature\/amazing-feature",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ")",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Commit your changes (",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "git commit -m 'Add some amazing feature'",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ")",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Push to the branch (",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "git push origin feature\/amazing-feature",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ")",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Open a Pull Request",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "anchor" : "Author",
+          "level" : 2,
+          "text" : "Author",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Artem Novichkov, https:\/\/www.artemnovichkov.com\/",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "License",
+          "level" : 2,
+          "text" : "License",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The project is available under the MIT license. See the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : ".\/LICENSE",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " file for more info.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -63,11 +469,32 @@
   ]
 , 
 "references": {
+"./LICENSE": {
+  "identifier" : ".\/LICENSE",
+  "title" : "LICENSE",
+  "titleInlineContent" : [
+    {
+      "text" : "LICENSE",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : ".\/LICENSE"
+},
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
-
+    {
+      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts.",
+      "type" : "text"
+    }
   ],
   "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "images" : [
+    {
+      "identifier" : "screenshot.png",
+      "type" : "icon"
+    }
+  ],
   "kind" : "symbol",
   "role" : "collection",
   "title" : "TranscriptDebugMenu",
@@ -126,6 +553,62 @@
   "title" : "TranscriptDebugMenu",
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
+  "abstract" : [
+    {
+      "text" : "Learn how to use TranscriptDebugMenu",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Meet TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/tutorials\/transcriptdebugmenu"
+},
+"screenshot": {
+  "alt" : "TranscriptDebugMenu",
+  "identifier" : "screenshot",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "2x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+    },
+    {
+      "traits" : [
+        "2x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+    }
+  ]
+},
+"screenshot.png": {
+  "alt" : "A technology icon representing the SlothCreator framework.",
+  "identifier" : "screenshot.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "2x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+    },
+    {
+      "traits" : [
+        "2x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+    }
+  ]
 }
 }
 }

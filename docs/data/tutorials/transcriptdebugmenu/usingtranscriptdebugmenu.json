@@ -1,0 +1,944 @@
+{
+  "hierarchy" : {
+    "modules" : [
+      {
+        "projects" : [
+          {
+            "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
+            "sections" : [
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Configure-a-session"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Add-TranscriptDebugMenu"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Interact-with-the-transcript"
+              }
+            ]
+          }
+        ],
+        "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/TranscriptDebugMenu"
+      }
+    ],
+    "paths" : [
+      [
+        "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+        "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/$volume",
+        "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/TranscriptDebugMenu"
+      ]
+    ],
+    "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu"
+  },
+  "kind" : "project",
+  "metadata" : {
+    "category" : "TranscriptDebugMenu",
+    "categoryPathComponent" : "TranscriptDebugMenu",
+    "role" : "project",
+    "title" : "Using TranscriptDebugMenu"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "chapter" : "TranscriptDebugMenu",
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Learn how to use TranscriptDebugMenu.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "estimatedTimeInMinutes" : 5,
+      "kind" : "hero",
+      "title" : "Using TranscriptDebugMenu",
+      "xcodeRequirement" : "Xcode 26 beta 5 or later"
+    },
+    {
+      "kind" : "tasks",
+      "tasks" : [
+        {
+          "anchor" : "Configure-a-session",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Let’s start by creating a new SwiftUI project in Xcode and adding ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "LanguageModelSession",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "ContentView01.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create a new SwiftUI project in Xcode. Open ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ContentView.swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and update the content.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "start.png",
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "ContentView02.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "LanguageModelSession",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and write a simple prompt to generate a haiku about Swift.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "session.png",
+              "type" : "step"
+            }
+          ],
+          "title" : "Configure a session"
+        },
+        {
+          "anchor" : "Add-TranscriptDebugMenu",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add TranscriptDebugMenu to your project using Swift Package Manager:",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "In Xcode, go to File → Add Package Dependencies…",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Enter the repository URL:",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "orderedList"
+                },
+                {
+                  "code" : [
+                    "https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu"
+                  ],
+                  "syntax" : null,
+                  "type" : "codeListing"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Choose the version you want to use.",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Add the package to your target.",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "start" : 3,
+                  "type" : "orderedList"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : "ContentView02.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Open ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "ContentView.swift",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " again.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "session.png",
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : "ContentView03.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Create a button with action to present ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TranscriptDebugMenu",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "toolbar.png",
+              "type" : "step"
+            },
+            {
+              "caption" : [
+                {
+                  "content" : [
+                    {
+                      "inlineContent" : [
+                        {
+                          "text" : "If you want to use ",
+                          "type" : "text"
+                        },
+                        {
+                          "code" : "TranscriptDebugMenu",
+                          "type" : "codeVoice"
+                        },
+                        {
+                          "text" : " only for debug builds, wrap this modifier to ",
+                          "type" : "text"
+                        },
+                        {
+                          "code" : "#if DEBUG",
+                          "type" : "codeVoice"
+                        },
+                        {
+                          "text" : " check.",
+                          "type" : "text"
+                        }
+                      ],
+                      "type" : "paragraph"
+                    }
+                  ],
+                  "name" : "Note",
+                  "style" : "note",
+                  "type" : "aside"
+                }
+              ],
+              "code" : "ContentView04.swift",
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Add ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "transcriptDebugMenu",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " to your view. Tap on the button to present ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TranscriptDebugMenu",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and see the transcript of the session.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : "menu.png",
+              "type" : "step"
+            }
+          ],
+          "title" : "Add TranscriptDebugMenu"
+        },
+        {
+          "anchor" : "Interact-with-the-transcript",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Now that you have the transcript displayed, you can interact with it.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If you long-press the entry, you can see a context menu with an option to copy the entry.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : "copy.png",
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "You can also tap on like\/dislike buttons to give feedback on the entry.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : "like.png",
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "If you tap on share button, ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TranscriptDebugMenu",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " generates a ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "LanguageModelFeedback",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " JSON file that can be submitted to Apple using ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "https:\/\/feedbackassistant.apple.com\/",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ".",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : "share.png",
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Interact with the transcript"
+        }
+      ]
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"ContentView01.swift": {
+  "content" : [
+    "import SwiftUI",
+    "",
+    "struct ContentView: View {",
+    "    @State private var text = \"Loading...\"",
+    "",
+    "    var body: some View {",
+    "        NavigationStack {",
+    "            VStack {",
+    "                Text(text)",
+    "            }",
+    "            .padding(.horizontal)",
+    "            .navigationTitle(\"Haiku\")",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ContentView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "ContentView01.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"ContentView02.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import FoundationModels",
+    "",
+    "struct ContentView: View {",
+    "    @State private var text = \"Loading...\"",
+    "    @State private var session = LanguageModelSession()",
+    "",
+    "    var body: some View {",
+    "        NavigationStack {",
+    "            VStack {",
+    "                Text(text)",
+    "            }",
+    "            .padding(.horizontal)",
+    "            .navigationTitle(\"Haiku\")",
+    "            .task {",
+    "                do {",
+    "                    let response = try await session.respond(to: \"Generate a haiku about Swift\")",
+    "                    text = response.content",
+    "                } catch {",
+    "                    print(\"Error: \\(error)\")",
+    "                }",
+    "            }",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ContentView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+
+  ],
+  "identifier" : "ContentView02.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"ContentView03.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import FoundationModels",
+    "",
+    "struct ContentView: View {",
+    "    @State private var text = \"Loading...\"",
+    "    @State private var session = LanguageModelSession()",
+    "    @State private var showTranscript = false",
+    "",
+    "    var body: some View {",
+    "        NavigationStack {",
+    "            VStack {",
+    "                Text(text)",
+    "            }",
+    "            .padding(.horizontal)",
+    "            .navigationTitle(\"Haiku\")",
+    "            .toolbar {",
+    "                ToolbarItem {",
+    "                    Button {",
+    "                        showTranscript.toggle()",
+    "                    } label: {",
+    "                        Label(\"Transcript\", systemImage: \"gear\")",
+    "                    }",
+    "                }",
+    "            }",
+    "            .task {",
+    "                do {",
+    "                    let response = try await session.respond(to: \"Generate a haiku about Swift\")",
+    "                    text = response.content",
+    "                } catch {",
+    "                    print(\"Error: \\(error)\")",
+    "                }",
+    "            }",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ContentView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 7
+    },
+    {
+      "line" : 16
+    },
+    {
+      "line" : 17
+    },
+    {
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
+    },
+    {
+      "line" : 23
+    },
+    {
+      "line" : 24
+    }
+  ],
+  "identifier" : "ContentView03.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"ContentView04.swift": {
+  "content" : [
+    "import SwiftUI",
+    "import FoundationModels",
+    "import TranscriptDebugMenu",
+    "",
+    "struct ContentView: View {",
+    "    @State private var text = \"Loading...\"",
+    "    @State private var session = LanguageModelSession()",
+    "    @State private var showTranscript = false",
+    "",
+    "    var body: some View {",
+    "        NavigationStack {",
+    "            VStack {",
+    "                Text(text)",
+    "            }",
+    "            .padding(.horizontal)",
+    "            .navigationTitle(\"Haiku\")",
+    "            .transcriptDebugMenu(session, isPresented: $showTranscript)",
+    "            .toolbar {",
+    "                ToolbarItem {",
+    "                    Button {",
+    "                        showTranscript.toggle()",
+    "                    } label: {",
+    "                        Label(\"Transcript\", systemImage: \"gear\")",
+    "                    }",
+    "                }",
+    "            }",
+    "            .task {",
+    "                do {",
+    "                    let response = try await session.respond(to: \"Generate a haiku about Swift\")",
+    "                    text = response.content",
+    "                } catch {",
+    "                    print(\"Error: \\(error)\")",
+    "                }",
+    "            }",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "fileName" : "ContentView.swift",
+  "fileType" : "swift",
+  "highlights" : [
+    {
+      "line" : 3
+    },
+    {
+      "line" : 17
+    }
+  ],
+  "identifier" : "ContentView04.swift",
+  "syntax" : "swift",
+  "type" : "file"
+},
+"Xcode 26 beta 5 or later": {
+  "identifier" : "Xcode 26 beta 5 or later",
+  "title" : "Xcode 26 beta 5 or later",
+  "type" : "xcodeRequirement",
+  "url" : "https:\/\/developer.apple.com\/download\/"
+},
+"copy.png": {
+  "alt" : "",
+  "identifier" : "copy.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/copy.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/copy~dark.png"
+    }
+  ]
+},
+"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
+  "abstract" : [
+    {
+      "text" : "Learn how to use TranscriptDebugMenu",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Meet TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/tutorials\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/TranscriptDebugMenu": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/TranscriptDebugMenu",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/tutorials\/transcriptdebugmenu\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu": {
+  "abstract" : [
+    {
+      "text" : "Learn how to use TranscriptDebugMenu.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Using TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Add-TranscriptDebugMenu": {
+  "abstract" : [
+    {
+      "text" : "Learn how to use TranscriptDebugMenu.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Add-TranscriptDebugMenu",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Add TranscriptDebugMenu",
+  "type" : "section",
+  "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu#Add-TranscriptDebugMenu"
+},
+"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Configure-a-session": {
+  "abstract" : [
+    {
+      "text" : "Learn how to use TranscriptDebugMenu.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Configure-a-session",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Configure a session",
+  "type" : "section",
+  "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu#Configure-a-session"
+},
+"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Interact-with-the-transcript": {
+  "abstract" : [
+    {
+      "text" : "Learn how to use TranscriptDebugMenu.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Interact-with-the-transcript",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Interact with the transcript",
+  "type" : "section",
+  "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu#Interact-with-the-transcript"
+},
+"https://feedbackassistant.apple.com/": {
+  "identifier" : "https:\/\/feedbackassistant.apple.com\/",
+  "title" : "Feedback Assistant",
+  "titleInlineContent" : [
+    {
+      "text" : "Feedback Assistant",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/feedbackassistant.apple.com\/"
+},
+"like.png": {
+  "alt" : "",
+  "identifier" : "like.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/like.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/like~dark.png"
+    }
+  ]
+},
+"menu.png": {
+  "alt" : "Menu",
+  "identifier" : "menu.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/menu.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/menu~dark.png"
+    }
+  ]
+},
+"session.png": {
+  "alt" : "Showing haiku",
+  "identifier" : "session.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/session.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/session~dark.png"
+    }
+  ]
+},
+"share.png": {
+  "alt" : "",
+  "identifier" : "share.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/share.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/share~dark.png"
+    }
+  ]
+},
+"start.png": {
+  "alt" : "Loading",
+  "identifier" : "start.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/start.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/start~dark.png"
+    }
+  ]
+},
+"toolbar.png": {
+  "alt" : "Toolbar button",
+  "identifier" : "toolbar.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/toolbar.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/toolbar~dark.png"
+    }
+  ]
+}
+}
+}

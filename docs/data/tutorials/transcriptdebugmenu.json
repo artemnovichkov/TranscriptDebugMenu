@@ -1,0 +1,117 @@
+{
+  "hierarchy" : {
+    "paths" : [
+
+    ],
+    "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu"
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu"
+  },
+  "kind" : "overview",
+  "metadata" : {
+    "category" : "TranscriptDebugMenu",
+    "categoryPathComponent" : "TranscriptDebugMenu",
+    "estimatedTime" : "5min",
+    "role" : "overview",
+    "title" : "Meet TranscriptDebugMenu"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+    {
+      "action" : {
+        "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
+        "isActive" : true,
+        "overridingTitle" : "Get started",
+        "overridingTitleInlineContent" : [
+          {
+            "text" : "Get started",
+            "type" : "text"
+          }
+        ],
+        "type" : "reference"
+      },
+      "content" : [
+        {
+          "inlineContent" : [
+            {
+              "text" : "Learn how to use TranscriptDebugMenu",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "hero",
+      "title" : "Meet TranscriptDebugMenu"
+    },
+    {
+      "chapters" : [
+        {
+          "content" : [
+
+          ],
+          "name" : "TranscriptDebugMenu",
+          "tutorials" : [
+            "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu"
+          ]
+        }
+      ],
+      "content" : [
+
+      ],
+      "image" : null,
+      "kind" : "volume",
+      "name" : null
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/tutorials\/transcriptdebugmenu"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
+  "abstract" : [
+    {
+      "text" : "Learn how to use TranscriptDebugMenu",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+  "kind" : "overview",
+  "role" : "overview",
+  "title" : "Meet TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/tutorials\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu": {
+  "abstract" : [
+    {
+      "text" : "Learn how to use TranscriptDebugMenu.",
+      "type" : "text"
+    }
+  ],
+  "estimatedTime" : "5min",
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
+  "kind" : "project",
+  "role" : "project",
+  "title" : "Using TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu"
+}
+}
+}
