@@ -3,31 +3,42 @@
 //
 
 import SwiftUI
-import TranscriptDebugMenu
 import FoundationModels
+import TranscriptDebugMenu
 
 struct ContentView: View {
+    @State private var text = "Loading..."
     @State private var session = LanguageModelSession(tools: [MoodTool()]) {
-        "You are a haiku generator."
+        "You're a helpful assistant that generates haikus. Use the `generateMood` tool to get a random mood for the haiku."
     }
-    @State private var showDebugMenu = true
+    @State private var showTranscript = false
+
     var body: some View {
-        VStack {
-            Button("Show Transcript Debug Menu") {
-                showDebugMenu.toggle()
+        NavigationStack {
+            VStack {
+                Text(text)
             }
-        }
-        .padding()
-        .task {
-            do {
-                let stream = session.streamResponse(to: "Generate a haiku about Swift")
-                for try await _ in stream {
+            .padding(.horizontal)
+            .navigationTitle("Haiku")
+            .transcriptDebugMenu(session, isPresented: $showTranscript)
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        showTranscript.toggle()
+                    } label: {
+                        Label("Transcript", systemImage: "gear")
+                    }
                 }
-            } catch {
-                print("Error: \(error)")
+            }
+            .task {
+                do {
+                    let response = try await session.respond(to: "Generate a haiku about Swift")
+                    text = response.content
+                } catch {
+                    print("Error: \(error)")
+                }
             }
         }
-        .transcriptDebugMenu(session, isPresented: $showDebugMenu)
     }
 }
 
