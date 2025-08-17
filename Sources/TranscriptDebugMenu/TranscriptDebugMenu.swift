@@ -50,6 +50,8 @@ public struct TranscriptDebugMenu: View {
     @State private var sentiment: LanguageModelFeedback.Sentiment?
     @State private var feedbackDataFileSaved: Bool = false
     private let logger = Logger(subsystem: "com.artemnovichkov.TranscriptDebugMenu", category: "TranscriptDebugMenu")
+    @State private var searchText: String = ""
+    @State private var searchScope: SearchScope = .all
 
     /// Creates a new transcript debug menu for the specified session.
     ///
@@ -62,8 +64,9 @@ public struct TranscriptDebugMenu: View {
     public var body: some View {
         NavigationStack {
             List {
-                ForEach(session.transcript) { entry in
+                ForEach(entries) { entry in
                     Text(entry.description)
+                        .transition(.opacity)
                         .contextMenu {
                             Button("Copy") {
                                 #if canImport(UIKit)
@@ -75,7 +78,12 @@ public struct TranscriptDebugMenu: View {
                             }
                         }
                 }
+                if session.isResponding {
+                    ProgressView()
+                        .frame(maxWidth: .infinity)
+                }
             }
+            .animation(.easeInOut, value: session.transcript)
             .overlay {
                 if session.transcript.isEmpty {
                     ContentUnavailableView("No entries",
@@ -94,10 +102,49 @@ public struct TranscriptDebugMenu: View {
             .onChange(of: sentiment) { _, newValue in
                 saveFeedbackAttachment(sentiment: newValue)
             }
+            .searchable(text: $searchText)
+            .searchScopes($searchScope, activation: .onSearchPresentation) {
+                ForEach(SearchScope.allCases) { scope in
+                    Text(scope.title)
+                        .fixedSize()
+                        .tag(scope)
+                }
+            }
         }
     }
 
     // MARK: - Private
+    
+    private var entries: [Transcript.Entry] {
+        if searchText.isEmpty {
+            return Array(session.transcript)
+        }
+        return session.transcript
+            .filter { entry in
+                switch searchScope {
+                case .all:
+                    return true
+                case .instructions:
+                    if case .instructions = entry { return true }
+                    return false
+                case .prompt:
+                    if case .prompt = entry { return true }
+                    return false
+                case .toolCalls:
+                    if case .toolCalls = entry { return true }
+                    return false
+                case .toolOutput:
+                    if case .toolOutput = entry { return true }
+                    return false
+                case .response:
+                    if case .response = entry { return true }
+                    return false
+                }
+            }
+            .filter { entry in
+                entry.description.localizedCaseInsensitiveContains(searchText)
+            }
+    }
 
     @ToolbarContentBuilder
     private var toolbar: some ToolbarContent {
