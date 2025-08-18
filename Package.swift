@@ -17,7 +17,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "TranscriptDebugMenu"
-        ),
+            name: "TranscriptDebugMenu",
+            resources: [
+                .process("Resources/PrivacyInfo.xcprivacy")
+            ]
+        )
     ]
 )
