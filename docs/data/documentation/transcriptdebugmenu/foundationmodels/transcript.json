@@ -1,0 +1,180 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/FoundationModels"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/FoundationModels\/Transcript"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "FoundationModels",
+    "externalID" : "s:e:s:e:s:16FoundationModels10TranscriptV5EntryO0C9DebugMenuE4hash4intoys6HasherVz_tF",
+    "modules" : [
+      {
+        "name" : "TranscriptDebugMenu",
+        "relatedModules" : [
+          "FoundationModels"
+        ]
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Transcript"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Extended Type",
+    "symbolKind" : "extension",
+    "title" : "Transcript"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Extended-Enumerations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/FoundationModels\/Transcript\/Entry"
+      ],
+      "title" : "Extended Enumerations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/transcriptdebugmenu\/foundationmodels\/transcript"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
+  "abstract" : [
+    {
+      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "images" : [
+    {
+      "identifier" : "screenshot.png",
+      "type" : "icon"
+    }
+  ],
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "TranscriptDebugMenu",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/FoundationModels": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/FoundationModels",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FoundationModels",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/foundationmodels"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/FoundationModels/Transcript": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/FoundationModels\/Transcript",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Transcript"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Transcript",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/foundationmodels\/transcript"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/FoundationModels/Transcript/Entry": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:16FoundationModels10TranscriptV",
+      "text" : "Transcript"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:16FoundationModels10TranscriptV5EntryO",
+      "text" : "Entry"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/FoundationModels\/Transcript\/Entry",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Entry"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Transcript.Entry",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/foundationmodels\/transcript\/entry"
+},
+"screenshot.png": {
+  "alt" : "TranscriptDebugMenu",
+  "identifier" : "screenshot.png",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "2x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+    },
+    {
+      "traits" : [
+        "2x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+    }
+  ]
+}
+}
+}
