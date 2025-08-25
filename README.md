@@ -79,7 +79,7 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## Author
 
-Artem Novichkov, https://www.artemnovichkov.com/
+Artem Novichkov, https://artemnovichkov.com/
 
 ## License
 
