@@ -10,44 +10,42 @@ struct ContentView: View {
     @State private var isLoading = false
     @State private var text = ""
     @State private var session = LanguageModelSession(tools: [MoodTool()]) {
-        "You're a helpful assistant that generates haikus. Always use `generateMood` tool to get a random mood for the haiku."
+        "You're a helpful assistant that generates haiku. Always use `generateMood` tool to get a random mood for the haiku."
     }
     @State private var showTranscript = false
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                if isLoading {
-                    ProgressView("Loading...")
-                } else {
-                    Text(text)
-                }
+        VStack {
+            if isLoading {
+                ProgressView("Loading...")
+            } else {
+                Text(text)
             }
-            .navigationTitle("Haiku")
-            .transcriptDebugMenu(session, isPresented: $showTranscript)
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        showTranscript.toggle()
-                    } label: {
-                        Label("Transcript", systemImage: "gear")
-                    }
-                }
-            }
-            .onAppear {
-                Task {
-                    do {
-                        isLoading = true
-                        let response = try await session.respond(to: "Generate a haiku about Swift")
-                        text = response.content
-                        isLoading = false
-                    } catch {
-                        isLoading = false
-                        print("Error: \(error)")
-                    }
+        }
+        .navigationTitle("Haiku")
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    showTranscript.toggle()
+                } label: {
+                    Label("Transcript", systemImage: "gear")
                 }
             }
         }
+        .onAppear {
+            Task {
+                do {
+                    isLoading = true
+                    let response = try await session.respond(to: "Generate a haiku about Swift")
+                    text = response.content
+                    isLoading = false
+                } catch {
+                    isLoading = false
+                    print("Error: \(error)")
+                }
+            }
+        }
+        .transcriptDebugMenu(session, isPresented: $showTranscript)
     }
 }
 
@@ -74,5 +72,7 @@ struct Haiku {
 }
 
 #Preview {
-    ContentView()
+    NavigationStack {
+        ContentView()
+    }
 }
