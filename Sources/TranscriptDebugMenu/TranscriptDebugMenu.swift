@@ -52,6 +52,7 @@ public struct TranscriptDebugMenu: View {
     private let logger = Logger(subsystem: "com.artemnovichkov.TranscriptDebugMenu", category: "TranscriptDebugMenu")
     @State private var searchText: String = ""
     @State private var searchScope: SearchScope = .all
+    @State private var path = NavigationPath()
 
     /// Creates a new transcript debug menu for the specified session.
     ///
@@ -62,19 +63,17 @@ public struct TranscriptDebugMenu: View {
     }
 
     public var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             List {
                 ForEach(entries) { entry in
                     Text(entry.description)
                         .transition(.opacity)
+                        .onTapGesture {
+                            path.append(entry)
+                        }
                         .contextMenu {
                             Button("Copy") {
-                                #if canImport(UIKit)
-                                UIPasteboard.general.string = entry.description
-                                #elseif canImport(AppKit)
-                                NSPasteboard.general.clearContents()
-                                NSPasteboard.general.setString(entry.description, forType: .string)
-                                #endif
+                                copyToClipboard(entry: entry)
                             }
                         }
                 }
@@ -93,6 +92,9 @@ public struct TranscriptDebugMenu: View {
                 }
             }
             .navigationTitle("Transcript")
+            .navigationDestination(for: Transcript.Entry.self) { entry in
+                TranscriptEntryDetailView(entry: entry)
+            }
             .toolbar {
                 toolbar
             }
@@ -106,7 +108,6 @@ public struct TranscriptDebugMenu: View {
             .searchScopes($searchScope, activation: .onSearchPresentation) {
                 ForEach(SearchScope.allCases) { scope in
                     Text(scope.title)
-                        .fixedSize()
                         .tag(scope)
                 }
             }
@@ -180,6 +181,22 @@ public struct TranscriptDebugMenu: View {
             feedbackDataFileSaved = false
             logger.error("Failed to save feedback attachment: \(error.localizedDescription)")
         }
+    }
+
+    private func copyToClipboard(entry: Transcript.Entry) {
+        #if canImport(UIKit)
+        UIPasteboard.general.string = entry.description
+        #elseif canImport(AppKit)
+        NSPasteboard.general.clearContents()
+        NSPasteboard.general.setString(entry.description, forType: .string)
+        #endif
+    }
+}
+
+extension Transcript.Entry: @retroactive Hashable {
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 
