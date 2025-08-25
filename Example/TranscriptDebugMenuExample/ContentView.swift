@@ -7,18 +7,22 @@ import FoundationModels
 import TranscriptDebugMenu
 
 struct ContentView: View {
-    @State private var text = "Loading..."
+    @State private var isLoading = false
+    @State private var text = ""
     @State private var session = LanguageModelSession(tools: [MoodTool()]) {
-        "You're a helpful assistant that generates haikus. Use the `generateMood` tool to get a random mood for the haiku."
+        "You're a helpful assistant that generates haikus. Always use `generateMood` tool to get a random mood for the haiku."
     }
     @State private var showTranscript = false
 
     var body: some View {
         NavigationStack {
             VStack {
-                Text(text)
+                if isLoading {
+                    ProgressView("Loading...")
+                } else {
+                    Text(text)
+                }
             }
-            .padding(.horizontal)
             .navigationTitle("Haiku")
             .transcriptDebugMenu(session, isPresented: $showTranscript)
             .toolbar {
@@ -30,30 +34,43 @@ struct ContentView: View {
                     }
                 }
             }
-            .task {
-                do {
-                    let response = try await session.respond(to: "Generate a haiku about Swift")
-                    text = response.content
-                } catch {
-                    print("Error: \(error)")
+            .onAppear {
+                Task {
+                    do {
+                        isLoading = true
+                        let response = try await session.respond(to: "Generate a haiku about Swift")
+                        text = response.content
+                        isLoading = false
+                    } catch {
+                        isLoading = false
+                        print("Error: \(error)")
+                    }
                 }
             }
         }
     }
 }
 
-final class MoodTool: Tool {
+@Generable
+enum Mood: String, CaseIterable {
+    case happy, sad, thoughtful, excited, calm
+}
 
+final class MoodTool: Tool {
     let name = "generateMood"
     let description = "Generates a random mood for haiku"
 
     @Generable
     struct Arguments {}
 
-    func call(arguments: Arguments) async throws -> GeneratedContent {
-        let moods = ["happy", "sad", "thoughtful", "excited", "calm"]
-        return GeneratedContent(properties: ["mood": moods.randomElement()])
+    func call(arguments: Arguments) async throws -> Mood? {
+        .allCases.randomElement()
     }
+}
+
+@Generable
+struct Haiku {
+    let text: String
 }
 
 #Preview {
