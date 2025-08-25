@@ -32,7 +32,7 @@ Alternatively, add it to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/artemnovichkov/TranscriptDebugMenu", from: "1.3.0")
+    .package(url: "https://github.com/artemnovichkov/TranscriptDebugMenu", from: "1.4.0")
 ]
 ```
 
