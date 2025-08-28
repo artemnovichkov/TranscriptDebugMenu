@@ -39,8 +39,7 @@ import OSLog
 ///}
 /// ```
 public struct TranscriptDebugMenu: View {
-    /// The language model session containing the transcript to display.
-    let session: LanguageModelSession
+    private let session: LanguageModelSession
 
     private let feedbackFileURL: URL = FileManager.default
         .temporaryDirectory
@@ -82,7 +81,6 @@ public struct TranscriptDebugMenu: View {
                         .frame(maxWidth: .infinity)
                 }
             }
-            .animation(.easeInOut, value: session.transcript)
             .overlay {
                 if session.transcript.isEmpty {
                     ContentUnavailableView("No entries",
@@ -92,6 +90,7 @@ public struct TranscriptDebugMenu: View {
                 }
             }
             .navigationTitle("Transcript")
+            .navigationSubtitle("~\(session.transcript.tokensCount) token" + (session.transcript.tokensCount == 1 ? "" : "s"))
             .navigationDestination(for: Transcript.Entry.self) { entry in
                 TranscriptEntryDetailView(entry: entry)
             }
@@ -111,6 +110,7 @@ public struct TranscriptDebugMenu: View {
                         .tag(scope)
                 }
             }
+            .animation(.easeInOut, value: session.transcript)
         }
     }
 
