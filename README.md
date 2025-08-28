@@ -4,7 +4,7 @@
 [![Platform](https://img.shields.io/badge/Platform-iOS%2026%2B%20%7C%20macOS%2026%2B%20%7C%20visionOS%2026%2B-blue)](https://developer.apple.com)
 [![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
 
-A SwiftUI library that provides a debug menu for viewing and copying `LanguageModelSession` transcripts.
+A SwiftUI library that provides a debug menu for viewing, analyzing, and copying `LanguageModelSession` transcripts with approximate token counting.
 
 <p align="center">
   <img src=".github/screenshot1.png" width="40%" />
@@ -13,7 +13,15 @@ A SwiftUI library that provides a debug menu for viewing and copying `LanguageMo
 
 ## Description
 
-TranscriptDebugMenu is a lightweight SwiftUI component designed to help developers debug and inspect language model session transcripts. It provides an easy-to-use interface for viewing conversation entries and copying them to the clipboard for further analysis.
+TranscriptDebugMenu is a lightweight SwiftUI component designed to help developers debug and inspect language model session transcripts. It provides an easy-to-use interface for viewing conversation entries, displaying approximate token counts for both individual entries and entire transcripts, and copying content to the clipboard for further analysis.
+
+## Features
+
+- View and copy transcript entries to clipboard;
+- Search and filter transcript entries by type;
+- Navigate detailed views for each transcript entry;
+- Display approximate token counts for entries and full transcripts;
+- Generate `LanguageModelFeedback` JSON for Apple's Feedback Assistant.
 
 ## Installation
 

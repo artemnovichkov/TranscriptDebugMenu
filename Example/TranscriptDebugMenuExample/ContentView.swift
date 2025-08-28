@@ -10,7 +10,7 @@ struct ContentView: View {
     @State private var isLoading = false
     @State private var text = ""
     @State private var session = LanguageModelSession(tools: [MoodTool()]) {
-        "You're a helpful assistant that generates haiku. Always use `generateMood` tool to get a random mood for the haiku."
+        "You're a helpful assistant that generates haiku."
     }
     @State private var showTranscript = false
 
@@ -32,6 +32,7 @@ struct ContentView: View {
                 }
             }
         }
+        .transcriptDebugMenu(session, isPresented: $showTranscript)
         .onAppear {
             Task {
                 do {
@@ -45,7 +46,6 @@ struct ContentView: View {
                 }
             }
         }
-        .transcriptDebugMenu(session, isPresented: $showTranscript)
     }
 }
 
@@ -56,19 +56,14 @@ enum Mood: String, CaseIterable {
 
 final class MoodTool: Tool {
     let name = "generateMood"
-    let description = "Generates a random mood for haiku"
+    let description = "Generates a mood for haiku"
 
     @Generable
     struct Arguments {}
 
-    func call(arguments: Arguments) async throws -> Mood? {
-        .allCases.randomElement()
+    func call(arguments: Arguments) async throws -> GeneratedContent {
+        GeneratedContent(properties: ["mood": Mood.allCases.randomElement()])
     }
-}
-
-@Generable
-struct Haiku {
-    let text: String
 }
 
 #Preview {

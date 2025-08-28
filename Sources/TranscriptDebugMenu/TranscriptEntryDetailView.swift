@@ -14,6 +14,7 @@ struct TranscriptEntryDetailView: View {
             content
         }
         .navigationTitle(title)
+        .navigationSubtitle("~\(entry.tokensCount) token" + (entry.tokensCount == 1 ? "" : "s"))
         .toolbar {
             ToolbarItem {
                 Button("Copy") {
