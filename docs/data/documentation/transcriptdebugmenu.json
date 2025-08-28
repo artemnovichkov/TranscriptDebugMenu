@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts.",
+      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.",
       "type" : "text"
     }
   ],
@@ -50,11 +50,95 @@
         {
           "inlineContent" : [
             {
-              "text" : "TranscriptDebugMenu is a lightweight SwiftUI component designed to help developers debug and inspect language model session transcripts. It provides an easy-to-use interface for viewing conversation entries and copying them to the clipboard for further analysis.",
+              "text" : "TranscriptDebugMenu is a lightweight SwiftUI component designed to help developers debug and inspect language model session transcripts. It provides an easy-to-use interface for viewing conversation entries, displaying approximate token counts for both individual entries and entire transcripts, and copying content to the clipboard for further analysis.",
               "type" : "text"
             }
           ],
           "type" : "paragraph"
+        },
+        {
+          "anchor" : "Features",
+          "level" : 2,
+          "text" : "Features",
+          "type" : "heading"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "View and copy transcript entries to clipboard;",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Search and filter transcript entries by type;",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Navigate detailed views for each transcript entry;",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Display approximate token counts for entries and full transcripts;",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Generate ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "LanguageModelFeedback",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " JSON for Apple’s Feedback Assistant.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
         },
         {
           "inlineContent" : [
@@ -173,7 +257,7 @@
         {
           "code" : [
             "dependencies: [",
-            "    .package(url: \"https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\", from: \"1.4.0\")",
+            "    .package(url: \"https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\", from: \"1.5.0\")",
             "]"
           ],
           "syntax" : "swift",
@@ -500,7 +584,7 @@
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts.",
+      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.",
       "type" : "text"
     }
   ],

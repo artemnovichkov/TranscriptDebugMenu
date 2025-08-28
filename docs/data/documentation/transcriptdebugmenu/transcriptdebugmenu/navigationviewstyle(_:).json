@@ -287,7 +287,7 @@
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts.",
+      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.",
       "type" : "text"
     }
   ],
