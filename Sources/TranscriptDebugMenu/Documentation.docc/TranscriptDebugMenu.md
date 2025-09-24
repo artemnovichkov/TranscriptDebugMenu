@@ -40,7 +40,7 @@ Alternatively, add it to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/artemnovichkov/TranscriptDebugMenu", from: "1.5.0")
+    .package(url: "https://github.com/artemnovichkov/TranscriptDebugMenu", from: "1.6.0")
 ]
 ```
 
