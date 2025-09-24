@@ -3,7 +3,7 @@
         Learn how to use TranscriptDebugMenu.
     }
     
-    @XcodeRequirement(title: "Xcode 26 beta 5 or later", destination: "https://developer.apple.com/download/")
+    @XcodeRequirement(title: "Xcode 26", destination: "https://developer.apple.com/download/")
     
     @Section(title: "Configure a session") {
         @ContentAndMedia {

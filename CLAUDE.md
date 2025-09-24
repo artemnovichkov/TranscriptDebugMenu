@@ -20,7 +20,7 @@ TranscriptDebugMenu is a SwiftUI library for inspecting `LanguageModelSession` t
 ### Xcode
 - Open `Example/TranscriptDebugMenuExample.xcodeproj` to run the example app
 - The library targets iOS 26+, macOS 26+, visionOS 26+, and macCatalyst 26+
-- Requires Swift 6.2+ and Xcode 26.0 beta 5
+- Requires Swift 6.0+ and Xcode 26.0
 
 ## Architecture
 

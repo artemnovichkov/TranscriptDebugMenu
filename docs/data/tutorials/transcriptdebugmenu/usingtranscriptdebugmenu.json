@@ -66,7 +66,7 @@
       "estimatedTimeInMinutes" : 5,
       "kind" : "hero",
       "title" : "Using TranscriptDebugMenu",
-      "xcodeRequirement" : "Xcode 26 beta 5 or later"
+      "xcodeRequirement" : "Xcode 26"
     },
     {
       "kind" : "tasks",
@@ -693,9 +693,9 @@
   "syntax" : "swift",
   "type" : "file"
 },
-"Xcode 26 beta 5 or later": {
-  "identifier" : "Xcode 26 beta 5 or later",
-  "title" : "Xcode 26 beta 5 or later",
+"Xcode 26": {
+  "identifier" : "Xcode 26",
+  "title" : "Xcode 26",
   "type" : "xcodeRequirement",
   "url" : "https:\/\/developer.apple.com\/download\/"
 },
