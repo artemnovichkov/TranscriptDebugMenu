@@ -1,6 +1,6 @@
 # TranscriptDebugMenu
 
-[![Swift](https://img.shields.io/badge/Swift-6.0+-FA7343?style=flat&logo=swift&logoColor=white)](https://swift.org)
+[![Swift](https://img.shields.io/badge/Swift-6.2+-FA7343?style=flat&logo=swift&logoColor=white)](https://swift.org)
 [![Platform](https://img.shields.io/badge/Platform-iOS%2026%2B%20%7C%20macOS%2026%2B%20%7C%20visionOS%2026%2B-blue)](https://developer.apple.com)
 [![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
 
@@ -72,7 +72,7 @@ struct ContentView: View {
 ## Requirements
 
 - iOS 26.0+ / macOS 26.0+ / visionOS 26.0+
-- Swift 6.0+
+- Swift 6.2+
 - Xcode 26.0+
 
 ## Contributing

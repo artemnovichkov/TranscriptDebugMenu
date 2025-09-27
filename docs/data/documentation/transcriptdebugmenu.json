@@ -365,7 +365,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Xcode 26.0",
+                      "text" : "Xcode 26.0+",
                       "type" : "text"
                     }
                   ],
