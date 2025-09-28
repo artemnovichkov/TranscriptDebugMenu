@@ -1,8 +1,8 @@
 # TranscriptDebugMenu
 
-[![Swift](https://img.shields.io/badge/Swift-6.2+-FA7343?style=flat&logo=swift&logoColor=white)](https://swift.org)
-[![Platform](https://img.shields.io/badge/Platform-iOS%2026%2B%20%7C%20macOS%2026%2B%20%7C%20visionOS%2026%2B-blue)](https://developer.apple.com)
-[![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
+[![](https://img.shields.io/badge/docc-read_documentation-blue)](https://swiftpackageindex.com/artemnovichkov/TranscriptDebugMenu/documentation/transcriptdebugmenu)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fartemnovichkov%2FTranscriptDebugMenu%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/artemnovichkov/TranscriptDebugMenu)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fartemnovichkov%2FTranscriptDebugMenu%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/artemnovichkov/TranscriptDebugMenu)
 
 A SwiftUI library that provides a debug menu for viewing, analyzing, and copying `LanguageModelSession` transcripts with approximate token counting.
 
