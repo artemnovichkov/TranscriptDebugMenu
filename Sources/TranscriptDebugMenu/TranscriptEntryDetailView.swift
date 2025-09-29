@@ -14,7 +14,7 @@ struct TranscriptEntryDetailView: View {
             content
         }
         .navigationTitle(title)
-        #if !visionOS
+        #if !os(visionOS)
         .navigationSubtitle("~\(entry.tokensCount) token" + (entry.tokensCount == 1 ? "" : "s"))
         #endif
         .toolbar {
