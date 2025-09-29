@@ -90,7 +90,9 @@ public struct TranscriptDebugMenu: View {
                 }
             }
             .navigationTitle("Transcript")
+            #if !visionOS
             .navigationSubtitle("~\(session.transcript.tokensCount) token" + (session.transcript.tokensCount == 1 ? "" : "s"))
+            #endif
             .navigationDestination(for: Transcript.Entry.self) { entry in
                 TranscriptEntryDetailView(entry: entry)
             }

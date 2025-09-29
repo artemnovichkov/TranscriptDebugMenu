@@ -14,7 +14,9 @@ struct TranscriptEntryDetailView: View {
             content
         }
         .navigationTitle(title)
+        #if !visionOS
         .navigationSubtitle("~\(entry.tokensCount) token" + (entry.tokensCount == 1 ? "" : "s"))
+        #endif
         .toolbar {
             ToolbarItem {
                 Button("Copy") {
