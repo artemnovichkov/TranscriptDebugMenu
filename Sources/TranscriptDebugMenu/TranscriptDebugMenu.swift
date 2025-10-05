@@ -167,7 +167,9 @@ public struct TranscriptDebugMenu: View {
                       systemImage: "hand.thumbsup" + (sentiment == .positive ? ".fill" : "" ))
             }
         }
+        #if !os(visionOS)
         ToolbarSpacer()
+        #endif
         ToolbarItem {
             ShareLink(item: feedbackFileURL)
                 .disabled(!feedbackDataFileSaved)
