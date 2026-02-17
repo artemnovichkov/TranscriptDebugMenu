@@ -18,7 +18,8 @@ enum TokenCounter {
         }
         do {
             let tokenUsage = try await model.tokenUsage(for: entries)
-            return "^[\(tokenUsage.tokenCount) token](inflect: true)"
+            let formattedPercent = tokenUsage.formattedPercent(ofContextSize: try await model.contextSize)
+            return "^[\(tokenUsage.tokenCount) token](inflect: true) (\(formattedPercent) of context size)"
         } catch {
             logger.error("Failed to get token usage: \(error.localizedDescription)")
             return nil
