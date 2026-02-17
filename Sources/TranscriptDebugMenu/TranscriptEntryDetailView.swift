@@ -8,20 +8,26 @@ import FoundationModels
 /// A SwiftUI view for displaying detailed information about a transcript entry.
 struct TranscriptEntryDetailView: View {
     let entry: Transcript.Entry
-    
+    @State private var subtitle: LocalizedStringKey = ""
+
     var body: some View {
         Form {
             content
         }
         .navigationTitle(title)
         #if !os(visionOS)
-        .navigationSubtitle("~\(entry.tokensCount) token" + (entry.tokensCount == 1 ? "" : "s"))
+        .navigationSubtitle(subtitle)
         #endif
         .toolbar {
             ToolbarItem {
                 Button("Copy") {
                     copyToClipboard()
                 }
+            }
+        }
+        .task {
+            if let formatted = await TokenCounter.formattedCount(for: [entry]) {
+                subtitle = formatted
             }
         }
     }

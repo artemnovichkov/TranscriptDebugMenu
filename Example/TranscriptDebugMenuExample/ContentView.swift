@@ -33,17 +33,15 @@ struct ContentView: View {
             }
         }
         .transcriptDebugMenu(session, isPresented: $showTranscript)
-        .onAppear {
-            Task {
-                do {
-                    isLoading = true
-                    let response = try await session.respond(to: "Generate a haiku about Swift")
-                    text = response.content
-                    isLoading = false
-                } catch {
-                    isLoading = false
-                    print("Error: \(error)")
-                }
+        .task {
+            do {
+                isLoading = true
+                let response = try await session.respond(to: "Generate a haiku about Swift")
+                text = response.content
+                isLoading = false
+            } catch {
+                isLoading = false
+                print("Error: \(error)")
             }
         }
     }

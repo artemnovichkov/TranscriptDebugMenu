@@ -48,7 +48,11 @@ public struct TranscriptDebugMenu: View {
 
     @State private var sentiment: LanguageModelFeedback.Sentiment?
     @State private var feedbackDataFileSaved: Bool = false
-    private let logger = Logger(subsystem: "com.artemnovichkov.TranscriptDebugMenu", category: "TranscriptDebugMenu")
+    private let logger = Logger(
+        subsystem: "com.artemnovichkov.TranscriptDebugMenu",
+        category: "TranscriptDebugMenu"
+    )
+    @State private var subtitle: LocalizedStringKey = ""
     @State private var searchText: String = ""
     @State private var searchScope: SearchScope = .all
     @State private var path = NavigationPath()
@@ -91,7 +95,7 @@ public struct TranscriptDebugMenu: View {
             }
             .navigationTitle("Transcript")
             #if !os(visionOS)
-            .navigationSubtitle("~\(session.transcript.tokensCount) token" + (session.transcript.tokensCount == 1 ? "" : "s"))
+            .navigationSubtitle(subtitle)
             #endif
             .navigationDestination(for: Transcript.Entry.self) { entry in
                 TranscriptEntryDetailView(entry: entry)
@@ -101,6 +105,11 @@ public struct TranscriptDebugMenu: View {
             }
             .onAppear {
                 saveFeedbackAttachment(sentiment: sentiment)
+            }
+            .task {
+                if let formatted = await TokenCounter.formattedCount(for: session.transcript) {
+                    subtitle = formatted
+                }
             }
             .onChange(of: sentiment) { _, newValue in
                 saveFeedbackAttachment(sentiment: newValue)
