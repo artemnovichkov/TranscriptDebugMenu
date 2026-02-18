@@ -107,9 +107,13 @@ public struct TranscriptDebugMenu: View {
                 saveFeedbackAttachment(sentiment: sentiment)
             }
             .task {
-                if let formatted = await TokenCounter.formattedCount(for: session.transcript) {
-                    subtitle = formatted
+                #if swift(>=6.3)
+                if #available(iOS 26.4, macOS 26.4, macCatalyst 26.4, visionOS 26.4, *) {
+                    if let formatted = await TokenCounter.formattedCount(for: session.transcript) {
+                        subtitle = formatted
+                    }
                 }
+                #endif
             }
             .onChange(of: sentiment) { _, newValue in
                 saveFeedbackAttachment(sentiment: newValue)

@@ -26,9 +26,13 @@ struct TranscriptEntryDetailView: View {
             }
         }
         .task {
-            if let formatted = await TokenCounter.formattedCount(for: [entry]) {
-                subtitle = formatted
+            #if swift(>=6.3)
+            if #available(iOS 26.4, macOS 26.4, macCatalyst 26.4, visionOS 26.4, *) {
+                if let formatted = await TokenCounter.formattedCount(for: [entry]) {
+                    subtitle = formatted
+                }
             }
+            #endif
         }
     }
     

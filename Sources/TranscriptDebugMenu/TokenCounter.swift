@@ -6,6 +6,8 @@ import FoundationModels
 import OSLog
 import SwiftUI
 
+#if swift(>=6.3)
+@available(iOS 26.4, macOS 26.4, macCatalyst 26.4, visionOS 26.4, *)
 enum TokenCounter {
     private static let logger = Logger(
         subsystem: "com.artemnovichkov.TranscriptDebugMenu",
@@ -13,12 +15,11 @@ enum TokenCounter {
     )
 
     static func formattedCount(for entries: some Collection<Transcript.Entry>, model: SystemLanguageModel = .default) async -> LocalizedStringKey? {
-        guard #available(iOS 26.4, macOS 26.4, macCatalyst 26.4, visionOS 26.4, *) else {
-            return nil
-        }
         do {
             let tokenUsage = try await model.tokenUsage(for: entries)
-            let formattedPercent = tokenUsage.formattedPercent(ofContextSize: try await model.contextSize)
+            let contextSize = try await model.contextSize
+            let percent = contextSize > 0 ? Float(tokenUsage.tokenCount) / Float(contextSize) : 0
+            let formattedPercent = percent.formatted(.percent.precision(.fractionLength(1)).rounded(rule: .down))
             return "^[\(tokenUsage.tokenCount) token](inflect: true) (\(formattedPercent) of context size)"
         } catch {
             logger.error("Failed to get token usage: \(error.localizedDescription)")
@@ -26,3 +27,4 @@ enum TokenCounter {
         }
     }
 }
+#endif
