@@ -1,16 +1,25 @@
 # ``TranscriptDebugMenu``
 
-A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.
+A SwiftUI library that provides a debug menu for viewing, analyzing, and copying `LanguageModelSession` transcripts with approximate token counting.
 
 @Metadata {
     @PageImage(
-        purpose: icon, 
-        source: "screenshot", 
+        purpose: icon,
+        source: "screenshot",
         alt: "TranscriptDebugMenu")
     @PageColor(green)
 }
 
-## Overview
+@Row {
+    @Column {
+        ![Screenshot 1](screenshot1)
+    }
+    @Column {
+        ![Screenshot 2](screenshot2)
+    }
+}
+
+## Description
 
 TranscriptDebugMenu is a lightweight SwiftUI component designed to help developers debug and inspect language model session transcripts. It provides an easy-to-use interface for viewing conversation entries, displaying approximate token counts for both individual entries and entire transcripts, and copying content to the clipboard for further analysis.
 
@@ -21,8 +30,6 @@ TranscriptDebugMenu is a lightweight SwiftUI component designed to help develope
 - Navigate detailed views for each transcript entry;
 - Display approximate token counts for entries and full transcripts;
 - Generate `LanguageModelFeedback` JSON for Apple's Feedback Assistant.
-
-![TranscriptDebugMenu](screenshot)
 
 ## Installation
 
@@ -88,7 +95,7 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## Author
 
-Artem Novichkov, https://www.artemnovichkov.com/
+Artem Novichkov, https://artemnovichkov.com/
 
 ## License
 

@@ -108,6 +108,13 @@
         "introducedAt" : "14.5",
         "name" : "macOS",
         "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "26.2",
+        "name" : "visionOS",
+        "unavailable" : false
       }
     ],
     "role" : "symbol",
