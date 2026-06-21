@@ -9,6 +9,7 @@ enum SearchScope: String, CaseIterable, Identifiable {
     case response
     case toolCalls
     case toolOutput
+    case reasoning
 
     var id: String { rawValue }
 
@@ -26,6 +27,8 @@ enum SearchScope: String, CaseIterable, Identifiable {
             "⚒️ ⬅️"
         case .toolOutput:
             "⚒️ ➡️"
+        case .reasoning:
+            "🧠"
         }
     }
 }

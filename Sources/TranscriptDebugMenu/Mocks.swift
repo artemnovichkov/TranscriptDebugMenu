@@ -18,7 +18,7 @@ extension Transcript.Entry {
     static let instructionsMock: Self = .instructions(.init(segments: Mock.instructions, toolDefinitions: [.init(tool: MoodTool())]))
 
     static let promptMock: Self = .prompt(.init(segments: Mock.prompt,
-                                                options: .init(sampling: .random(probabilityThreshold: 1), temperature: 1, maximumResponseTokens: 30)))
+                                                options: .init(samplingMode: .random(probabilityThreshold: 1), temperature: 1, maximumResponseTokens: 30)))
 
     static let toolCallsMock: Self = {
         let call = Transcript.ToolCall(id: "id", toolName: MoodTool().name, arguments: MoodTool.Arguments().generatedContent)
@@ -28,6 +28,9 @@ extension Transcript.Entry {
     static let toolOutputMock: Self = .toolOutput(.init(id: "id", toolName: MoodTool().name, segments: Mock.toolOutput))
 
     static let responseMock: Self = .response(.init(assetIDs: Mock.assetIDs, segments: Mock.response))
+
+    @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+    static let reasoningMock: Self = .reasoning(.init(segments: Mock.reasoning, signature: nil))
 }
 
 enum Mock {
@@ -35,6 +38,9 @@ enum Mock {
     static let prompt: [Transcript.Segment] = [.text(.init(content: "Generate a haiku about Swift"))]
     static let toolOutput: [Transcript.Segment] = [.text(.init(content: #"{"mood": "calm"}"#))]
     static let response: [Transcript.Segment] = [.text(.init(content: "In Swift's calm embrace,\nCode flows like a gentle stream,\nInnovation blooms."))]
+
+    @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+    static let reasoning: [Transcript.Segment] = [.text(.init(content: "Let me think about how to write a haiku about Swift. A haiku has three lines: 5-7-5 syllables. Swift's key traits are speed, safety, and expressiveness. I'll craft something poetic around these."))]
 
     static let assetIDs: [String] = [
         "com.apple.fm.language.instruct_3b.fm_api_generic_12.0.0.13.101732,0",

@@ -34,7 +34,7 @@ struct TranscriptEntryDetailView: View {
     
     // MARK: - Private
 
-    @ViewBuilder
+    @ContentBuilder
     private var content: some View {
         switch entry {
         case .instructions(let instructions):
@@ -47,12 +47,33 @@ struct TranscriptEntryDetailView: View {
             toolOutputSections(toolOutput: toolOutput)
         case .response(let response):
             responseSections(response: response)
-        default:
-            EmptyView()
+        @unknown default:
+            reasoningView
         }
     }
 
-    @ViewBuilder
+    @ContentBuilder
+    private var reasoningView: some View {
+        if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
+            if case .reasoning(let reasoning) = entry {
+                reasoningSections(reasoning: reasoning)
+            }
+        }
+    }
+
+    @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+    @ContentBuilder
+    private func reasoningSections(reasoning: Transcript.Reasoning) -> some View {
+        segmentsSection(segments: reasoning.segments)
+        if reasoning.signature != nil {
+            Section("Signature") {
+                Text("Present")
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    @ContentBuilder
     private func instructionsSections(instructions: Transcript.Instructions) -> some View {
         segmentsSection(segments: instructions.segments)
         if instructions.toolDefinitions.isEmpty == false {
@@ -75,7 +96,7 @@ struct TranscriptEntryDetailView: View {
         }
     }
 
-    @ViewBuilder
+    @ContentBuilder
     private func promptSections(prompt: Transcript.Prompt) -> some View {
         segmentsSection(segments: prompt.segments)
         if prompt.options.isEmpty == false {
@@ -83,8 +104,8 @@ struct TranscriptEntryDetailView: View {
                 if let maximumResponseTokens = prompt.options.maximumResponseTokens {
                     LabeledContent("Maximum Response Tokens", value: "\(maximumResponseTokens)")
                 }
-                if let sampling = prompt.options.sampling {
-                    LabeledContent("Sampling", value: "\(sampling)")
+                if let samplingMode = prompt.options.samplingMode {
+                    LabeledContent("Sampling mode", value: "\(samplingMode)")
                 }
                 if let temperature = prompt.options.temperature {
                     LabeledContent("Temperature", value: "\(temperature)")
@@ -108,7 +129,7 @@ struct TranscriptEntryDetailView: View {
         }
     }
 
-    @ViewBuilder
+    @ContentBuilder
     private func toolOutputSections(toolOutput: Transcript.ToolOutput) -> some View {
         Section("Tool Output") {
             LabeledContent("Tool name", value: toolOutput.toolName)
@@ -116,7 +137,7 @@ struct TranscriptEntryDetailView: View {
         segmentsSection(segments: toolOutput.segments)
     }
 
-    @ViewBuilder
+    @ContentBuilder
     private func responseSections(response: Transcript.Response) -> some View {
         Section("Asset IDs") {
             LabeledContent("IDs", value: response.assetIDs.description)
@@ -124,7 +145,7 @@ struct TranscriptEntryDetailView: View {
         segmentsSection(segments: response.segments)
     }
 
-    @ViewBuilder
+    @ContentBuilder
     private func segmentsSection(segments: [Transcript.Segment]) -> some View {
         if segments.isEmpty == false {
             Section("Segments") {
@@ -156,8 +177,15 @@ struct TranscriptEntryDetailView: View {
         case .toolOutput:
             "Tool Output"
         @unknown default:
-            "Unknown"
+            unknownTitle
         }
+    }
+
+    private var unknownTitle: String {
+        if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .reasoning = entry {
+            return "Reasoning"
+        }
+        return "Unknown"
     }
     
     private func copyToClipboard() {
@@ -172,7 +200,7 @@ struct TranscriptEntryDetailView: View {
 
 private extension GenerationOptions {
     var isEmpty: Bool {
-        maximumResponseTokens == nil && temperature == nil && sampling == nil
+        maximumResponseTokens == nil && temperature == nil && samplingMode == nil
     }
 }
 
@@ -203,5 +231,13 @@ private extension GenerationOptions {
 #Preview("Response") {
     NavigationStack {
         TranscriptEntryDetailView(entry: .responseMock)
+    }
+}
+
+#Preview("Reasoning") {
+    if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
+        NavigationStack {
+            TranscriptEntryDetailView(entry: .reasoningMock)
+        }
     }
 }

@@ -151,6 +151,10 @@ public struct TranscriptDebugMenu: View {
                 case .response:
                     if case .response = entry { return true }
                     return false
+                case .reasoning:
+                    if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *),
+                       case .reasoning = entry { return true }
+                    return false
                 }
             }
             .filter { entry in
@@ -158,7 +162,7 @@ public struct TranscriptDebugMenu: View {
             }
     }
 
-    @ToolbarContentBuilder
+    @ContentBuilder
     private var toolbar: some ToolbarContent {
         ToolbarItem {
             Button {

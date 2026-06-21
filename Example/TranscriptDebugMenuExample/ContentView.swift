@@ -36,8 +36,16 @@ struct ContentView: View {
         .task {
             do {
                 isLoading = true
-                let response = try await session.respond(to: "Generate a haiku about Swift")
-                text = response.content
+                if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
+                    let response = try await session.respond(
+                        to: "Generate a haiku about Swift",
+                        contextOptions: ContextOptions(reasoningLevel: .moderate)
+                    )
+                    text = response.content
+                } else {
+                    let response = try await session.respond(to: "Generate a haiku about Swift")
+                    text = response.content
+                }
                 isLoading = false
             } catch {
                 isLoading = false
