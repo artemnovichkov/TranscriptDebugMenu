@@ -20,6 +20,14 @@ extension Transcript.Entry {
     static let promptMock: Self = .prompt(.init(segments: Mock.prompt,
                                                 options: .init(samplingMode: .random(probabilityThreshold: 1), temperature: 1, maximumResponseTokens: 30)))
 
+    @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+    static let promptMockFull: Self = .prompt(.init(
+        metadata: ["session_id": "abc123", "version": "2"],
+        segments: Mock.prompt,
+        options: .init(samplingMode: .random(probabilityThreshold: 1), temperature: 1, maximumResponseTokens: 30),
+        contextOptions: .init(includeSchemaInPrompt: true, reasoningLevel: .moderate)
+    ))
+
     static let toolCallsMock: Self = {
         let call = Transcript.ToolCall(id: "id", toolName: MoodTool().name, arguments: MoodTool.Arguments().generatedContent)
         return .toolCalls(Transcript.ToolCalls([call]))

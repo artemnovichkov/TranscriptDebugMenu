@@ -145,6 +145,20 @@ struct TranscriptEntryDetailView: View {
                 LabeledContent("Description", value: responseFormat.description)
             }
         }
+        if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
+            let ctx = prompt.contextOptions
+            if ctx.includeSchemaInPrompt != nil || ctx.reasoningLevel != nil {
+                Section("Context Options") {
+                    if let includeSchemaInPrompt = ctx.includeSchemaInPrompt {
+                        LabeledContent("Include Schema In Prompt", value: includeSchemaInPrompt ? "Yes" : "No")
+                    }
+                    if let reasoningLevel = ctx.reasoningLevel {
+                        LabeledContent("Reasoning Level", value: "\(reasoningLevel)")
+                    }
+                }
+            }
+            metadataSection(prompt.metadata)
+        }
     }
 
     private func toolCallsSections(toolCalls: Transcript.ToolCalls) -> some View {
@@ -169,7 +183,19 @@ struct TranscriptEntryDetailView: View {
         Section("Asset IDs") {
             LabeledContent("IDs", value: response.assetIDs.description)
         }
+        metadataSection(response.metadata)
         segmentsSection(segments: response.segments)
+    }
+
+    @ContentBuilder
+    private func metadataSection(_ metadata: [String: any Codable & Sendable & Equatable]) -> some View {
+        if metadata.isEmpty == false {
+            Section("Metadata") {
+                ForEach(Array(metadata.keys), id: \.self) { key in
+                    LabeledContent(key, value: "\(metadata[key]!)")
+                }
+            }
+        }
     }
 
     @ContentBuilder
@@ -240,6 +266,14 @@ private extension GenerationOptions {
 #Preview("Prompt") {
     NavigationStack {
         TranscriptEntryDetailView(entry: .promptMock)
+    }
+}
+
+#Preview("Prompt (Full)") {
+    if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
+        NavigationStack {
+            TranscriptEntryDetailView(entry: .promptMockFull)
+        }
     }
 }
 
