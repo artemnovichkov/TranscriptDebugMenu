@@ -36,6 +36,9 @@ struct TranscriptEntryDetailView: View {
 
     @ContentBuilder
     private var content: some View {
+        Section("ID") {
+            LabeledContent("ID", value: entryID)
+        }
         switch entry {
         case .instructions(let instructions):
             instructionsSections(instructions: instructions)
@@ -50,6 +53,30 @@ struct TranscriptEntryDetailView: View {
         @unknown default:
             reasoningView
         }
+    }
+
+    private var entryID: String {
+        switch entry {
+        case .instructions(let instructions):
+            instructions.id
+        case .prompt(let prompt):
+            prompt.id
+        case .toolCalls(let toolCalls):
+            toolCalls.id
+        case .toolOutput(let toolOutput):
+            toolOutput.id
+        case .response(let response):
+            response.id
+        @unknown default:
+            unknownEntryID
+        }
+    }
+
+    private var unknownEntryID: String {
+        if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .reasoning(let reasoning) = entry {
+            return reasoning.id
+        }
+        return "Unknown"
     }
 
     @ContentBuilder
