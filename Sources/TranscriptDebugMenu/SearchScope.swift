@@ -15,20 +15,13 @@ enum SearchScope: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .all:
-            "All"
-        case .instructions:
-            "📝"
-        case .prompt:
-            "🧍"
-        case .response:
-            "🤖"
-        case .toolCalls:
-            "⚒️ ⬅️"
-        case .toolOutput:
-            "⚒️ ➡️"
-        case .reasoning:
-            "🧠"
+        case .all: "All"
+        case .instructions: "📝"
+        case .prompt: "🧍"
+        case .response: "🤖"
+        case .toolCalls: "📥"
+        case .toolOutput: "📤"
+        case .reasoning: "🧠"
         }
     }
 }

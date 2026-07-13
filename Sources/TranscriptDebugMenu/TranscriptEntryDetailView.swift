@@ -11,94 +11,73 @@ struct TranscriptEntryDetailView: View {
     @State private var subtitle: LocalizedStringKey = ""
 
     var body: some View {
-        Form {
-            content
-        }
-        .navigationTitle(title)
-        #if !os(visionOS)
-        .navigationSubtitle(subtitle)
-        #endif
-        .toolbar {
-            ToolbarItem {
-                Button("Copy") {
-                    copyToClipboard()
+        content
+            .navigationTitle(title)
+            #if !os(visionOS)
+            .navigationSubtitle(subtitle)
+            #endif
+            .toolbar {
+                ToolbarItem {
+                    Button("Copy") {
+                        copyToClipboard()
+                    }
                 }
             }
-        }
-        .task {
-            if let formatted = await TokenCounter.formattedCount(for: [entry]) {
-                subtitle = formatted
+            .task {
+                subtitle = await TokenCounter.formattedCount(for: [entry]) ?? ""
             }
-        }
     }
     
     // MARK: - Private
 
     @ContentBuilder
     private var content: some View {
-        Section("ID") {
-            LabeledContent("ID", value: entryID)
-        }
-        switch entry {
-        case .instructions(let instructions):
-            instructionsSections(instructions: instructions)
-        case .prompt(let prompt):
-            promptSections(prompt: prompt)
-        case .toolCalls(let toolCalls):
-            toolCallsSections(toolCalls: toolCalls)
-        case .toolOutput(let toolOutput):
-            toolOutputSections(toolOutput: toolOutput)
-        case .response(let response):
-            responseSections(response: response)
-        @unknown default:
-            reasoningView
+        Form {
+            Section {
+                LabeledContent("ID", value: entryID)
+            }
+            switch entry {
+            case .instructions(let instructions):
+                instructionsSections(instructions: instructions)
+            case .prompt(let prompt):
+                promptSections(prompt: prompt)
+            case .toolCalls(let toolCalls):
+                toolCallsSections(toolCalls: toolCalls)
+            case .toolOutput(let toolOutput):
+                toolOutputSections(toolOutput: toolOutput)
+            case .response(let response):
+                responseSections(response: response)
+            default:
+                if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
+                    if case .reasoning(let reasoning) = entry {
+                        reasoningSections(reasoning: reasoning)
+                    }
+                }
+            }
         }
     }
 
     private var entryID: String {
         switch entry {
         case .instructions(let instructions):
-            instructions.id
+            return instructions.id
         case .prompt(let prompt):
-            prompt.id
+            return prompt.id
         case .toolCalls(let toolCalls):
-            toolCalls.id
+            return toolCalls.id
         case .toolOutput(let toolOutput):
-            toolOutput.id
+            return toolOutput.id
         case .response(let response):
-            response.id
-        @unknown default:
-            unknownEntryID
-        }
-    }
-
-    private var unknownEntryID: String {
-        if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .reasoning(let reasoning) = entry {
-            return reasoning.id
-        }
-        return "Unknown"
-    }
-
-    @ContentBuilder
-    private var reasoningView: some View {
-        if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
-            if case .reasoning(let reasoning) = entry {
-                reasoningSections(reasoning: reasoning)
+            return response.id
+        default:
+            if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .reasoning(let reasoning) = entry {
+                return reasoning.id
             }
+            return "Unknown"
         }
     }
 
-    @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
-    @ContentBuilder
-    private func reasoningSections(reasoning: Transcript.Reasoning) -> some View {
-        segmentsSection(segments: reasoning.segments)
-        if reasoning.signature != nil {
-            Section("Signature") {
-                Text("Present")
-                    .foregroundStyle(.secondary)
-            }
-        }
-    }
+    // MARK: - Sections
 
     @ContentBuilder
     private func instructionsSections(instructions: Transcript.Instructions) -> some View {
@@ -107,13 +86,7 @@ struct TranscriptEntryDetailView: View {
             Section("Tool definitions") {
                 VStack(alignment: .leading) {
                     ForEach(instructions.toolDefinitions, id: \.name) { toolDefinition in
-                        Text("Name")
-                        Text(toolDefinition.name)
-                            .foregroundStyle(.secondary)
-                            .padding(.bottom)
-                        Text("Description")
-                        Text(toolDefinition.description)
-                            .foregroundStyle(.secondary)
+                        LabeledContent(toolDefinition.name, value: toolDefinition.description)
                         if toolDefinition != instructions.toolDefinitions.last {
                             Divider()
                         }
@@ -187,6 +160,21 @@ struct TranscriptEntryDetailView: View {
         segmentsSection(segments: response.segments)
     }
 
+    @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+    @ContentBuilder
+    private func reasoningSections(reasoning: Transcript.Reasoning) -> some View {
+        segmentsSection(segments: reasoning.segments)
+        metadataSection(reasoning.metadata)
+        if reasoning.signature != nil {
+            Section("Signature") {
+                Text("Present")
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    // MARK: - Helper Views
+
     @ContentBuilder
     private func metadataSection(_ metadata: [String: any Codable & Sendable & Equatable]) -> some View {
         if metadata.isEmpty == false {
@@ -200,17 +188,37 @@ struct TranscriptEntryDetailView: View {
 
     @ContentBuilder
     private func segmentsSection(segments: [Transcript.Segment]) -> some View {
-        if segments.isEmpty == false {
-            Section("Segments") {
+        Section("Segments") {
+            VStack(alignment: .leading) {
                 ForEach(segments) { segment in
                     switch segment {
                     case .text(let textSegment):
-                        LabeledContent("Text", value: textSegment.content)
+                        LabeledContent("ID", value: textSegment.id)
+                        LabeledContent("Content", value: textSegment.content)
                     case .structure(let structuredSegment):
                         LabeledContent("Source", value: structuredSegment.source)
                         LabeledContent("Content", value: structuredSegment.content.jsonString)
-                    @unknown default:
+                    default:
+                        if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .attachment(let attachment) = segment {
+                            LabeledContent("ID", value: attachment.id)
+                            switch attachment.content {
+                            case .image:
+                                LabeledContent {
+                                    Image(systemName: "photo")
+                                } label: {
+                                    Text("Image")
+                                }
+                            @unknown default:
+                                EmptyView()
+                            }
+                            if let label = attachment.label {
+                                LabeledContent("Content", value: label)
+                            }
+                        }
                         EmptyView()
+                    }
+                    if segment != segments.last {
+                        Divider()
                     }
                 }
             }
@@ -220,25 +228,21 @@ struct TranscriptEntryDetailView: View {
     private var title: String {
         switch entry {
         case .instructions:
-            "Instructions"
+            return "Instructions"
         case .prompt:
-            "Prompt"
+            return "Prompt"
         case .response:
-            "Response"
+            return "Response"
         case .toolCalls:
-            "Tool Calls"
+            return "Tool Calls"
         case .toolOutput:
-            "Tool Output"
-        @unknown default:
-            unknownTitle
+            return "Tool Output"
+        default:
+            if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .reasoning = entry {
+                return "Reasoning"
+            }
+            return "Unknown"
         }
-    }
-
-    private var unknownTitle: String {
-        if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .reasoning = entry {
-            return "Reasoning"
-        }
-        return "Unknown"
     }
     
     private func copyToClipboard() {
@@ -273,6 +277,14 @@ private extension GenerationOptions {
     if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
         NavigationStack {
             TranscriptEntryDetailView(entry: .promptMockFull)
+        }
+    }
+}
+
+#Preview("Prompt (With Attachment)") {
+    if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
+        NavigationStack {
+            TranscriptEntryDetailView(entry: .promptMockWithAttachment)
         }
     }
 }

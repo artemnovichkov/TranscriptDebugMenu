@@ -107,9 +107,7 @@ public struct TranscriptDebugMenu: View {
                 saveFeedbackAttachment(sentiment: sentiment)
             }
             .task {
-                if let formatted = await TokenCounter.formattedCount(for: session.transcript) {
-                    subtitle = formatted
-                }
+                subtitle = await TokenCounter.formattedCount(for: session.transcript) ?? ""
             }
             .onChange(of: sentiment) { _, newValue in
                 saveFeedbackAttachment(sentiment: newValue)
@@ -211,7 +209,6 @@ public struct TranscriptDebugMenu: View {
 }
 
 extension Transcript.Entry: @retroactive Hashable {
-
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

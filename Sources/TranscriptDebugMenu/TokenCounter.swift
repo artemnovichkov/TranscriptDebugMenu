@@ -21,7 +21,7 @@ enum TokenCounter {
             let contextSize = model.contextSize
             let percent = contextSize > 0 ? Float(tokenCount) / Float(contextSize) : 0
             let formattedPercent = percent.formatted(.percent.precision(.fractionLength(1)).rounded(rule: .down))
-            return "^[\(tokenCount) token](inflect: true) (\(formattedPercent) of context size)"
+            return "\(tokenCount)/^[\(contextSize) token](inflect: true) (\(formattedPercent) of context size)"
         } catch {
             logger.error("Failed to get token usage: \(error.localizedDescription)")
             return nil
