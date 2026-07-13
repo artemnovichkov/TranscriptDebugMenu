@@ -68,17 +68,23 @@ public struct TranscriptDebugMenu: View {
     public var body: some View {
         NavigationStack(path: $path) {
             List {
-                ForEach(entries) { entry in
-                    Text(entry.description)
-                        .transition(.opacity)
-                        .onTapGesture {
-                            path.append(entry)
-                        }
-                        .contextMenu {
-                            Button("Copy") {
-                                copyToClipboard(entry: entry)
+                if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *),
+                   searchText.isEmpty, !session.transcript.isEmpty {
+                    UsageSection(usage: session.usage)
+                }
+                Section("Transcript") {
+                    ForEach(entries) { entry in
+                        Text(entry.description)
+                            .transition(.opacity)
+                            .onTapGesture {
+                                path.append(entry)
                             }
-                        }
+                            .contextMenu {
+                                Button("Copy") {
+                                    copyToClipboard(entry: entry)
+                                }
+                            }
+                    }
                 }
                 if session.isResponding {
                     ProgressView()
@@ -208,6 +214,24 @@ public struct TranscriptDebugMenu: View {
     }
 }
 
+@available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+private struct UsageSection: View {
+    let usage: LanguageModelSession.Usage
+
+    var body: some View {
+        Section {
+            LabeledContent("Input", value: usage.input.totalTokenCount, format: .number)
+            LabeledContent("Cached input", value: usage.input.cachedTokenCount, format: .number)
+            LabeledContent("Output", value: usage.output.totalTokenCount, format: .number)
+            LabeledContent("Reasoning", value: usage.output.reasoningTokenCount, format: .number)
+        } header: {
+            Text("Usage")
+        } footer: {
+            Text("Total: ^[\(usage.totalTokenCount) token](inflect: true)")
+        }
+    }
+}
+
 extension Transcript.Entry: @retroactive Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
@@ -215,7 +239,7 @@ extension Transcript.Entry: @retroactive Hashable {
 }
 
 #Preview {
-    @Previewable @State var isPresented = false
+    @Previewable @State var isPresented = true
     @Previewable @State var session = LanguageModelSession(transcript: .mock)
 
     Button("Show Transcript Menu") {
