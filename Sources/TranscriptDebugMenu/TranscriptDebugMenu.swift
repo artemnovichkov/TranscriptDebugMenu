@@ -52,7 +52,7 @@ public struct TranscriptDebugMenu: View {
         subsystem: "com.artemnovichkov.TranscriptDebugMenu",
         category: "TranscriptDebugMenu"
     )
-    @State private var subtitle: LocalizedStringKey = ""
+    @State private var contextUsage: (tokenCount: Int, contextSize: Int)?
     @State private var searchText: String = ""
     @State private var searchScope: SearchScope = .all
     @State private var path = NavigationPath()
@@ -68,6 +68,17 @@ public struct TranscriptDebugMenu: View {
     public var body: some View {
         NavigationStack(path: $path) {
             List {
+                if let contextUsage, contextUsage.contextSize > 0,
+                   searchText.isEmpty, !session.transcript.isEmpty {
+                    Section("Context") {
+                        ProgressView(value: Double(min(contextUsage.tokenCount, contextUsage.contextSize)),
+                                     total: Double(contextUsage.contextSize)) {
+                            Text(TokenCounter.formattedCount(for: contextUsage))
+                                .font(.footnote)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
                 if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *),
                    searchText.isEmpty, !session.transcript.isEmpty {
                     UsageSection(usage: session.usage)
@@ -100,9 +111,6 @@ public struct TranscriptDebugMenu: View {
                 }
             }
             .navigationTitle("Transcript")
-            #if !os(visionOS)
-            .navigationSubtitle(subtitle)
-            #endif
             .navigationDestination(for: Transcript.Entry.self) { entry in
                 TranscriptEntryDetailView(entry: entry)
             }
@@ -113,7 +121,7 @@ public struct TranscriptDebugMenu: View {
                 saveFeedbackAttachment(sentiment: sentiment)
             }
             .task {
-                subtitle = await TokenCounter.formattedCount(for: session.transcript) ?? ""
+                contextUsage = await TokenCounter.contextUsage(for: session.transcript)
             }
             .onChange(of: sentiment) { _, newValue in
                 saveFeedbackAttachment(sentiment: newValue)
