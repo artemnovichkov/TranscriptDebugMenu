@@ -16,6 +16,7 @@ struct TranscriptEntryDetailView: View {
             #if !os(visionOS)
             .navigationSubtitle(subtitle)
             #endif
+            .tint(entry.accentColor)
             .toolbar {
                 ToolbarItem {
                     Button("Copy") {

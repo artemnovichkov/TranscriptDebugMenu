@@ -68,35 +68,9 @@ public struct TranscriptDebugMenu: View {
     public var body: some View {
         NavigationStack(path: $path) {
             List {
-                if let contextUsage, contextUsage.contextSize > 0,
-                   searchText.isEmpty, !session.transcript.isEmpty {
-                    Section("Context") {
-                        ProgressView(value: Double(min(contextUsage.tokenCount, contextUsage.contextSize)),
-                                     total: Double(contextUsage.contextSize)) {
-                            Text(TokenCounter.formattedCount(for: contextUsage))
-                                .font(.footnote)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                }
-                if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *),
-                   searchText.isEmpty, !session.transcript.isEmpty {
-                    UsageSection(usage: session.usage)
-                }
-                Section("Transcript") {
-                    ForEach(entries) { entry in
-                        Text(entry.description)
-                            .transition(.opacity)
-                            .onTapGesture {
-                                path.append(entry)
-                            }
-                            .contextMenu {
-                                Button("Copy") {
-                                    copyToClipboard(entry: entry)
-                                }
-                            }
-                    }
-                }
+                contextSection
+                usageSection
+                transcriptSection
                 if session.isResponding {
                     ProgressView()
                         .frame(maxWidth: .infinity)
@@ -138,7 +112,54 @@ public struct TranscriptDebugMenu: View {
     }
 
     // MARK: - Private
-    
+
+    @ViewBuilder
+    private var contextSection: some View {
+        if let contextUsage, contextUsage.contextSize > 0,
+           searchText.isEmpty, !session.transcript.isEmpty {
+            Section("Context") {
+                ProgressView(value: Double(min(contextUsage.tokenCount, contextUsage.contextSize)),
+                             total: Double(contextUsage.contextSize)) {
+                    Text(TokenCounter.formattedCount(for: contextUsage))
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var usageSection: some View {
+        if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *),
+           searchText.isEmpty, !session.transcript.isEmpty {
+            UsageSection(usage: session.usage)
+        }
+    }
+
+    private var transcriptSection: some View {
+        Section("Transcript") {
+            ForEach(entries) { entry in
+                HStack(alignment: .top, spacing: 8) {
+                    RoundedRectangle(cornerRadius: 1.5)
+                        .fill(entry.accentColor)
+                        .frame(width: 3)
+                    Text(entry.description)
+                }
+                .contentShape(Rectangle())
+                .listItemTint(entry.accentColor)
+                .transition(.opacity)
+                .onTapGesture {
+                    path.append(entry)
+                }
+                .contextMenu {
+                    Button("Copy") {
+                        copyToClipboard(entry: entry)
+                    }
+                }
+            }
+        }
+    }
+
     private var entries: [Transcript.Entry] {
         if searchText.isEmpty {
             return Array(session.transcript)
@@ -225,17 +246,20 @@ public struct TranscriptDebugMenu: View {
 @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
 private struct UsageSection: View {
     let usage: LanguageModelSession.Usage
+    @State private var isExpanded = false
 
     var body: some View {
         Section {
-            LabeledContent("Input", value: usage.input.totalTokenCount, format: .number)
-            LabeledContent("Cached input", value: usage.input.cachedTokenCount, format: .number)
-            LabeledContent("Output", value: usage.output.totalTokenCount, format: .number)
-            LabeledContent("Reasoning", value: usage.output.reasoningTokenCount, format: .number)
+            DisclosureGroup(isExpanded: $isExpanded) {
+                LabeledContent("Input", value: usage.input.totalTokenCount, format: .number)
+                LabeledContent("Cached input", value: usage.input.cachedTokenCount, format: .number)
+                LabeledContent("Output", value: usage.output.totalTokenCount, format: .number)
+                LabeledContent("Reasoning", value: usage.output.reasoningTokenCount, format: .number)
+            } label: {
+                Text("Total: ^[\(usage.totalTokenCount) token](inflect: true)")
+            }
         } header: {
             Text("Usage")
-        } footer: {
-            Text("Total: ^[\(usage.totalTokenCount) token](inflect: true)")
         }
     }
 }
