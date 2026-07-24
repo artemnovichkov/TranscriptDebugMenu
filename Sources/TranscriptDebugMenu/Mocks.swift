@@ -78,6 +78,18 @@ enum Mock {
         "com.apple.fm.language.instruct_3b.tokenizer_12.0.0.13.202232,0",
         "com.apple.fm.language.instruct_3b.fm_api_generic.draft_12.0.81319.13.202252,0"
     ]
+
+    /// Mock context window usage for previews.
+    static let contextUsage: (tokenCount: Int, contextSize: Int) = (512, 4096)
+}
+
+@available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+extension LanguageModelSession.Usage {
+    /// Mock usage for previews and independent section testing.
+    static let mock = LanguageModelSession.Usage(
+        input: .init(totalTokenCount: 150, cachedTokenCount: 50),
+        output: .init(totalTokenCount: 80, reasoningTokenCount: 20)
+    )
 }
 
 @Generable
