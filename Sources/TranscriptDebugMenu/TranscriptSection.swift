@@ -37,7 +37,15 @@ struct TranscriptEntryRow: View {
             RoundedRectangle(cornerRadius: 1.5)
                 .fill(entry.accentColor)
                 .frame(width: 3)
-            Text(entry.description)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(entry.title)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(entry.accentColor)
+                Text(entry.preview)
+                    .font(.callout)
+                    .foregroundStyle(.primary)
+                    .lineLimit(3)
+            }
         }
     }
 }

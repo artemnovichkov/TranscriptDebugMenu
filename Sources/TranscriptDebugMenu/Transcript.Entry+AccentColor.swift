@@ -11,6 +11,50 @@ import AppKit
 #endif
 
 extension Transcript.Entry {
+    var title: String {
+        switch self {
+        case .instructions: return "Instructions"
+        case .prompt: return "Prompt"
+        case .response: return "Response"
+        case .toolCalls: return "Tool Calls"
+        case .toolOutput: return "Tool Output"
+        default:
+            if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .reasoning = self {
+                return "Reasoning"
+            }
+            return "Unknown"
+        }
+    }
+
+    var preview: String {
+        switch self {
+        case .instructions(let v): return Self.text(from: v.segments)
+        case .prompt(let v): return Self.text(from: v.segments)
+        case .response(let v): return Self.text(from: v.segments)
+        case .toolOutput(let v): return Self.text(from: v.segments)
+        case .toolCalls(let v): return v.map(\.toolName).joined(separator: ", ")
+        default:
+            if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .reasoning(let v) = self {
+                return Self.text(from: v.segments)
+            }
+            return ""
+        }
+    }
+
+    private static func text(from segments: [Transcript.Segment]) -> String {
+        segments.compactMap { segment -> String? in
+            switch segment {
+            case .text(let t): return t.content
+            case .structure(let s): return s.source
+            default:
+                if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .attachment(let a) = segment {
+                    return a.label
+                }
+                return nil
+            }
+        }.joined(separator: " ")
+    }
+
     /// System accent color matching the entry type. Adapts to light/dark appearance.
     var accentColor: Color {
         switch self {

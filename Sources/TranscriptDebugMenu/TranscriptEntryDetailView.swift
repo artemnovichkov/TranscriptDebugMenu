@@ -12,7 +12,7 @@ struct TranscriptEntryDetailView: View {
 
     var body: some View {
         content
-            .navigationTitle(title)
+            .navigationTitle(entry.title)
             #if !os(visionOS)
             .navigationSubtitle(subtitle)
             #endif
@@ -226,26 +226,6 @@ struct TranscriptEntryDetailView: View {
         }
     }
 
-    private var title: String {
-        switch entry {
-        case .instructions:
-            return "Instructions"
-        case .prompt:
-            return "Prompt"
-        case .response:
-            return "Response"
-        case .toolCalls:
-            return "Tool Calls"
-        case .toolOutput:
-            return "Tool Output"
-        default:
-            if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .reasoning = entry {
-                return "Reasoning"
-            }
-            return "Unknown"
-        }
-    }
-    
     private func copyToClipboard() {
         #if canImport(UIKit)
         UIPasteboard.general.string = entry.description
