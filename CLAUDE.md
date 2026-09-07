@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-TranscriptDebugMenu is a SwiftUI library for inspecting `LanguageModelSession` transcripts in Apple Intelligence applications. It provides a debug interface to view, search, and copy transcript entries, display approximate token counts, as well as generate feedback for Apple's Feedback Assistant.
+TranscriptDebugMenu is a SwiftUI library for inspecting `LanguageModelSession` transcripts in Apple Intelligence applications. It provides searchable entry details, model-specific context metrics, usage and metadata inspection, formatted JSON export, and detailed feedback for Apple's Feedback Assistant.
 
 ## Build and Development Commands
 
@@ -14,13 +14,13 @@ TranscriptDebugMenu is a SwiftUI library for inspecting `LanguageModelSession` t
 
 ### Swift Package Manager
 - **Build**: `swift build`
-- **Test**: `swift test` (if tests are added)
+- **Test**: `swift test`
 - **Clean**: `swift package clean`
 
 ### Xcode
 - Open `Example/TranscriptDebugMenuExample.xcodeproj` to run the example app
 - The library targets iOS 26+, macOS 26+, visionOS 26+, and macCatalyst 26+
-- Requires Swift 6.0+ and Xcode 26.0
+- Requires Swift 6.4+ and Xcode 27.0
 
 ## Architecture
 
@@ -30,8 +30,8 @@ TranscriptDebugMenu is a SwiftUI library for inspecting `LanguageModelSession` t
 - Main SwiftUI view that displays `LanguageModelSession` transcripts
 - Features search functionality with scoped filtering by entry type
 - Provides context menu for copying entries
-- Displays approximate token counts in navigation subtitle (~X tokens)
-- Includes sentiment feedback (positive/negative) and generates `LanguageModelFeedback` JSON for Apple
+- Displays explicitly configured, model-specific context-window metrics
+- Exports formatted transcript JSON and generates complete `LanguageModelFeedback` JSON for Apple
 
 **TranscriptEntryDetailView.swift** (`Sources/TranscriptDebugMenu/TranscriptEntryDetailView.swift:9`)
 - Detail view for individual transcript entries
@@ -39,10 +39,17 @@ TranscriptDebugMenu is a SwiftUI library for inspecting `LanguageModelSession` t
 - Displays individual entry token counts in navigation subtitle
 - Provides copy functionality for detailed entry inspection
 
+**TranscriptDebugMenu+Configuration.swift** (`Sources/TranscriptDebugMenu/TranscriptDebugMenu+Configuration.swift`)
+- Defines the public `Configuration`, `ContextMetrics`, and `ContextMetricsProvider` API
+- Uses `SystemLanguageModel.tokenCount(for:)` on iOS 26.4+ when a matching model is supplied
+- Supports custom providers and intentionally hides context metrics when no reliable counter exists
+
+**FeedbackView.swift** (`Sources/TranscriptDebugMenu/FeedbackView.swift`)
+- Composes sentiment, issue categories, explanations, and a desired response
+- Shares a regenerated `LanguageModelFeedback` attachment
+
 **TokenCounter.swift** (`Sources/TranscriptDebugMenu/TokenCounter.swift`)
-- Uses `SystemLanguageModel.tokenUsage(for:)` API (iOS 26.4+) for accurate token counts
-- Provides `formattedCount(for:)` async helper used by both main and detail views
-- Handles errors via OSLog logger
+- Formats token counts and context-window percentages for display
 
 **View+TranscriptDebugMenu.swift** (`Sources/TranscriptDebugMenu/View+TranscriptDebugMenu.swift:37`)
 - SwiftUI view modifier that presents the debug menu as a sheet
@@ -59,19 +66,20 @@ TranscriptDebugMenu is a SwiftUI library for inspecting `LanguageModelSession` t
 - **UIKit/AppKit**: Platform-specific clipboard operations
 
 ### Entry Points
-- `.transcriptDebugMenu(session, isPresented:)` - Primary API for presenting the debug menu
-- `TranscriptDebugMenu(session:)` - Direct view initialization
+- `.transcriptDebugMenu(session, isPresented:configuration:)` - Primary API for presenting the debug menu
+- `TranscriptDebugMenu(session:configuration:)` - Direct view initialization
+- Both entry points default to an empty configuration; omitting it hides context metrics without assuming `SystemLanguageModel.default`
 
 ## Development Patterns
 
 ### Search Implementation
-The search functionality filters entries by type (using `SearchScope`) and then by text content. All filtering happens in the computed `entries` property.
+The search functionality filters entries by type using `TranscriptFilter`, then searches IDs, text and structured segments, metadata, tool schemas and calls, attachment labels and URLs, options, responses, and reasoning.
 
 ### Token Counting
-The library uses `SystemLanguageModel.tokenUsage(for:)` (iOS 26.4+) for accurate token counts. Token fetching is async and shared via `TokenCounter.formattedCount(for:)`.
+The host explicitly supplies the same model used by the session through `.systemModel(model)`, or supplies a custom `ContextMetricsProvider`. No default-model fallback is allowed. Provider errors, cancellation, and invalid values hide the metric rather than presenting misleading data.
 
 ### Cross-Platform Support
-Uses conditional compilation (`#if canImport(UIKit)` / `#elseif canImport(AppKit)`) for clipboard operations across iOS/macOS platforms.
+`DebugClipboard` uses conditional compilation (`#if canImport(UIKit)` / `#elseif canImport(AppKit)`) for clipboard operations across iOS/macOS platforms.
 
 ### Documentation
 The project uses DocC for documentation with tutorials and code examples in `Sources/TranscriptDebugMenu/Documentation.docc/`.

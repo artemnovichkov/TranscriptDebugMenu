@@ -17,7 +17,7 @@
     {
       "inlineContent" : [
         {
-          "text" : "Use overload where mask accepts a @ViewBuilder instead.",
+          "text" : "Use overload where mask accepts a @ContentBuilder instead.",
           "type" : "text"
         }
       ],
@@ -101,7 +101,7 @@
         "deprecated" : false,
         "deprecatedAt" : "100000.0",
         "introducedAt" : "13.0",
-        "message" : "Use overload where mask accepts a @ViewBuilder instead.",
+        "message" : "Use overload where mask accepts a @ContentBuilder instead.",
         "name" : "iOS",
         "unavailable" : false
       },
@@ -109,8 +109,26 @@
         "beta" : false,
         "deprecated" : false,
         "deprecatedAt" : "100000.0",
+        "introducedAt" : "13.0",
+        "message" : "Use overload where mask accepts a @ContentBuilder instead.",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "deprecatedAt" : "100000.0",
+        "introducedAt" : "13.0",
+        "message" : "Use overload where mask accepts a @ContentBuilder instead.",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "deprecatedAt" : "100000.0",
         "introducedAt" : "10.15",
-        "message" : "Use overload where mask accepts a @ViewBuilder instead.",
+        "message" : "Use overload where mask accepts a @ContentBuilder instead.",
         "name" : "macOS",
         "unavailable" : false
       },
@@ -119,7 +137,7 @@
         "deprecated" : false,
         "deprecatedAt" : "100000.0",
         "introducedAt" : "13.0",
-        "message" : "Use overload where mask accepts a @ViewBuilder instead.",
+        "message" : "Use overload where mask accepts a @ContentBuilder instead.",
         "name" : "tvOS",
         "unavailable" : false
       },
@@ -127,7 +145,7 @@
         "beta" : false,
         "deprecated" : false,
         "deprecatedAt" : "100000.0",
-        "message" : "Use overload where mask accepts a @ViewBuilder instead.",
+        "message" : "Use overload where mask accepts a @ContentBuilder instead.",
         "name" : "visionOS",
         "unavailable" : false
       },
@@ -136,7 +154,7 @@
         "deprecated" : false,
         "deprecatedAt" : "100000.0",
         "introducedAt" : "6.0",
-        "message" : "Use overload where mask accepts a @ViewBuilder instead.",
+        "message" : "Use overload where mask accepts a @ContentBuilder instead.",
         "name" : "watchOS",
         "unavailable" : false
       }
@@ -154,7 +172,9 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "iOS",
+            "iPadOS",
+            "Mac Catalyst"
           ],
           "tokens" : [
             {
@@ -281,19 +301,27 @@
       ]
     }
   ]
-, 
+,
 "references": {
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.",
+      "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
+      "type" : "text"
+    },
+    {
+      "code" : "LanguageModelSession",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " transcripts.",
       "type" : "text"
     }
   ],
   "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
   "images" : [
     {
-      "identifier" : "screenshot.png",
+      "identifier" : "screenshot1.png",
       "type" : "icon"
     }
   ],
@@ -404,24 +432,24 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/mask(_:)"
 },
-"screenshot.png": {
+"screenshot1.png": {
   "alt" : "TranscriptDebugMenu",
-  "identifier" : "screenshot.png",
+  "identifier" : "screenshot1.png",
   "type" : "image",
   "variants" : [
     {
       "traits" : [
-        "2x",
+        "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
-        "2x",
+        "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 }

@@ -1,7 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.",
+      "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
+      "type" : "text"
+    },
+    {
+      "code" : "LanguageModelSession",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " transcripts.",
       "type" : "text"
     }
   ],
@@ -24,7 +32,7 @@
     "externalID" : "TranscriptDebugMenu",
     "images" : [
       {
-        "identifier" : "screenshot.png",
+        "identifier" : "screenshot1.png",
         "type" : "icon"
       }
     ],
@@ -42,15 +50,55 @@
     {
       "content" : [
         {
-          "anchor" : "Overview",
+          "anchor" : "overview",
           "level" : 2,
           "text" : "Overview",
           "type" : "heading"
         },
         {
+          "columns" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "screenshot1",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "size" : 1
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "identifier" : "screenshot2",
+                      "type" : "image"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "size" : 1
+            }
+          ],
+          "numberOfColumns" : 2,
+          "type" : "row"
+        },
+        {
+          "anchor" : "Description",
+          "level" : 2,
+          "text" : "Description",
+          "type" : "heading"
+        },
+        {
           "inlineContent" : [
             {
-              "text" : "TranscriptDebugMenu is a lightweight SwiftUI component designed to help developers debug and inspect language model session transcripts. It provides an easy-to-use interface for viewing conversation entries, displaying approximate token counts for both individual entries and entire transcripts, and copying content to the clipboard for further analysis.",
+              "text" : "TranscriptDebugMenu is a lightweight SwiftUI component designed to help developers inspect language model sessions. It displays every transcript entry and its metadata, model-specific context-window metrics, token usage, attachments, generation options, tool calls, reasoning, and structured output.",
               "type" : "text"
             }
           ],
@@ -69,7 +117,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "View and copy transcript entries to clipboard;",
+                      "text" : "View, search, and filter every transcript entry type;",
                       "type" : "text"
                     }
                   ],
@@ -82,7 +130,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Search and filter transcript entries by type;",
+                      "text" : "Inspect formatted structured content, metadata, tool schemas, attachments, reasoning, and token usage;",
                       "type" : "text"
                     }
                   ],
@@ -95,7 +143,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Navigate detailed views for each transcript entry;",
+                      "text" : "Calculate context-window usage with an explicitly configured model-specific provider;",
                       "type" : "text"
                     }
                   ],
@@ -108,7 +156,15 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Display approximate token counts for entries and full transcripts;",
+                      "text" : "Copy individual values or export the complete ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "Transcript",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " as formatted JSON;",
                       "type" : "text"
                     }
                   ],
@@ -121,7 +177,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Generate ",
+                      "text" : "Create detailed ",
                       "type" : "text"
                     },
                     {
@@ -129,7 +185,7 @@
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : " JSON for Apple’s Feedback Assistant.",
+                      "text" : " with sentiment, issue categories, explanations, and a desired response.",
                       "type" : "text"
                     }
                   ],
@@ -141,19 +197,44 @@
           "type" : "unorderedList"
         },
         {
-          "inlineContent" : [
-            {
-              "identifier" : "screenshot",
-              "type" : "image"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
           "anchor" : "Installation",
           "level" : 2,
           "text" : "Installation",
           "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Version 2.0 is in beta. Select an exact published beta tag from ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\/releases",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to try it. The ",
+              "type" : "text"
+            },
+            {
+              "code" : "from: \"2.0.0\"",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " example below is for the stable release; use ",
+              "type" : "text"
+            },
+            {
+              "code" : "exact:",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " with a published beta tag during the beta period.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
         },
         {
           "inlineContent" : [
@@ -257,7 +338,7 @@
         {
           "code" : [
             "dependencies: [",
-            "    .package(url: \"https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\", from: \"1.6.0\")",
+            "    .package(url: \"https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\", from: \"2.0.0\")",
             "]"
           ],
           "syntax" : "swift",
@@ -311,7 +392,8 @@
             "",
             "struct ContentView: View {",
             "    @State private var showTranscript = false",
-            "    @State private var session = LanguageModelSession()",
+            "    private static let model = SystemLanguageModel.default",
+            "    @State private var session = LanguageModelSession(model: ContentView.model)",
             "    ",
             "    var body: some View {",
             "        VStack {",
@@ -319,7 +401,11 @@
             "                showTranscript = true",
             "            }",
             "        }",
-            "        .transcriptDebugMenu(session, isPresented: $showTranscript)",
+            "        .transcriptDebugMenu(",
+            "            session,",
+            "            isPresented: $showTranscript,",
+            "            configuration: .systemModel(Self.model)",
+            "        )",
             "    }",
             "}"
           ],
@@ -339,7 +425,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "iOS 26.0+ \/ macOS 26.0+ \/ visionOS 26.0+",
+                      "text" : "iOS 26.0+ \/ macOS 26.0+ \/ Mac Catalyst 26.0+ \/ visionOS 26.0+",
                       "type" : "text"
                     }
                   ],
@@ -352,7 +438,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Swift 6.2+",
+                      "text" : "Swift 6.4+",
                       "type" : "text"
                     }
                   ],
@@ -365,7 +451,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Xcode 26.0+",
+                      "text" : "Xcode 27.0+",
                       "type" : "text"
                     }
                   ],
@@ -377,148 +463,94 @@
           "type" : "unorderedList"
         },
         {
-          "anchor" : "Contributing",
+          "anchor" : "Configure-context-metrics",
           "level" : 2,
-          "text" : "Contributing",
+          "text" : "Configure context metrics",
           "type" : "heading"
         },
         {
           "inlineContent" : [
             {
-              "text" : "Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.",
+              "code" : "LanguageModelSession",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " doesn’t expose its model. Pass the same ",
+              "type" : "text"
+            },
+            {
+              "code" : "SystemLanguageModel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instance used to create the session so the menu uses the correct tokenizer and context size:",
               "type" : "text"
             }
           ],
           "type" : "paragraph"
         },
         {
-          "items" : [
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Fork the repository",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            },
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Create your feature branch (",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "git checkout -b feature\/amazing-feature",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ")",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            },
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Commit your changes (",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "git commit -m 'Add some amazing feature'",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ")",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            },
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Push to the branch (",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "git push origin feature\/amazing-feature",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ")",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            },
-            {
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "Open a Pull Request",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ]
-            }
+          "code" : [
+            "let model = SystemLanguageModel(useCase: .contentTagging)",
+            "let session = LanguageModelSession(model: model)",
+            "let configuration = TranscriptDebugMenu.Configuration.systemModel(model)"
           ],
-          "type" : "orderedList"
-        },
-        {
-          "anchor" : "Author",
-          "level" : 2,
-          "text" : "Author",
-          "type" : "heading"
+          "syntax" : "swift",
+          "type" : "codeListing"
         },
         {
           "inlineContent" : [
             {
-              "text" : "Artem Novichkov, https:\/\/www.artemnovichkov.com\/",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "anchor" : "License",
-          "level" : 2,
-          "text" : "License",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "The project is available under the MIT license. See the ",
+              "text" : "For dynamic, cloud, or custom models, pass a custom ",
               "type" : "text"
             },
             {
-              "identifier" : ".\/LICENSE",
+              "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetricsProvider",
               "isActive" : true,
               "type" : "reference"
             },
             {
-              "text" : " file for more info.",
+              "text" : ". Omit ",
+              "type" : "text"
+            },
+            {
+              "code" : "configuration",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " when a reliable token counter isn’t available; no model is assumed; the menu will hide context progress while continuing to display the session’s reported usage.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "System-model context metrics require iOS 26.4, macOS 26.4, Mac Catalyst 26.4, or visionOS 26.4. Counting failures and invalid metrics hide the Context section. Usage is available on OS 27 and reports session usage separately from context-window consumption. Attachments, reasoning, and other OS 27 diagnostics appear only when supported and present in the transcript.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Export-and-feedback",
+          "level" : 2,
+          "text" : "Export and feedback",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Open the Export menu in the toolbar to copy or share the complete transcript as formatted JSON, including entries hidden by search. In the same menu, choose Report Feedback… to select sentiment and issues, add explanations, and describe the desired response. Share the resulting ",
+              "type" : "text"
+            },
+            {
+              "code" : "LanguageModelFeedback",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " JSON from the feedback form with Feedback Assistant; this does not submit a report automatically.",
               "type" : "text"
             }
           ],
@@ -538,21 +570,28 @@
   ],
   "topicSections" : [
     {
-      "anchor" : "Structures",
-      "generated" : true,
+      "anchor" : "Essentials",
       "identifiers" : [
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu"
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View\/transcriptDebugMenu(_:isPresented:configuration:)",
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/MigratingTo2.0"
       ],
-      "title" : "Structures"
+      "title" : "Essentials"
     },
     {
-      "anchor" : "Extended-Modules",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/FoundationModels",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore"
+      "abstract" : [
+        {
+          "text" : "Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.",
+          "type" : "text"
+        }
       ],
-      "title" : "Extended Modules"
+      "anchor" : "Context-Metrics",
+      "identifiers" : [
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics",
+        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetricsProvider"
+      ],
+      "title" : "Context Metrics"
     }
   ],
   "variants" : [
@@ -567,31 +606,27 @@
       ]
     }
   ]
-, 
+,
 "references": {
-"./LICENSE": {
-  "identifier" : ".\/LICENSE",
-  "title" : "LICENSE",
-  "titleInlineContent" : [
-    {
-      "text" : "LICENSE",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : ".\/LICENSE"
-},
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.",
+      "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
+      "type" : "text"
+    },
+    {
+      "code" : "LanguageModelSession",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " transcripts.",
       "type" : "text"
     }
   ],
   "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
   "images" : [
     {
-      "identifier" : "screenshot.png",
+      "identifier" : "screenshot1.png",
       "type" : "icon"
     }
   ],
@@ -601,27 +636,157 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/FoundationModels": {
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/MigratingTo2.0": {
   "abstract" : [
-
+    {
+      "text" : "Adopt explicit model diagnostics and the Swift 6.4 toolchain.",
+      "type" : "text"
+    }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/FoundationModels",
-  "kind" : "symbol",
-  "role" : "collection",
-  "title" : "FoundationModels",
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/MigratingTo2.0",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Migrating to TranscriptDebugMenu 2.0",
   "type" : "topic",
-  "url" : "\/documentation\/transcriptdebugmenu\/foundationmodels"
+  "url" : "\/documentation\/transcriptdebugmenu\/migratingto2.0"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore": {
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore/View/transcriptDebugMenu(_:isPresented:configuration:)": {
   "abstract" : [
-
+    {
+      "text" : "Presents a transcript debug menu as a sheet overlay.",
+      "type" : "text"
+    }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore",
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Self",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " is ",
+        "type" : "text"
+      },
+      {
+        "code" : "View",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "transcriptDebugMenu"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:16FoundationModels20LanguageModelSessionC",
+      "text" : "LanguageModelSession"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isPresented"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7SwiftUI7BindingV",
+      "text" : "Binding"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "configuration"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:19TranscriptDebugMenuAAV",
+      "text" : "TranscriptDebugMenu"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:19TranscriptDebugMenuAAV13ConfigurationV",
+      "text" : "Configuration"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "some"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7SwiftUI4ViewP",
+      "text" : "View"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View\/transcriptDebugMenu(_:isPresented:configuration:)",
   "kind" : "symbol",
-  "role" : "collection",
-  "title" : "SwiftUICore",
+  "role" : "symbol",
+  "title" : "transcriptDebugMenu(_:isPresented:configuration:)",
   "type" : "topic",
-  "url" : "\/documentation\/transcriptdebugmenu\/swiftuicore"
+  "url" : "\/documentation\/transcriptdebugmenu\/swiftuicore\/view\/transcriptdebugmenu(_:ispresented:configuration:)"
 },
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
   "abstract" : [
@@ -665,10 +830,112 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
 },
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/Configuration": {
+  "abstract" : [
+    {
+      "text" : "Configuration for the transcript debug menu.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Configuration"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Configuration"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TranscriptDebugMenu.Configuration",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/configuration"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/ContextMetrics": {
+  "abstract" : [
+    {
+      "text" : "Token consumption relative to a model’s context window.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ContextMetrics"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ContextMetrics"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TranscriptDebugMenu.ContextMetrics",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics"
+},
+"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/ContextMetricsProvider": {
+  "abstract" : [
+    {
+      "text" : "Calculates context-window metrics for a transcript.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ContextMetricsProvider"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetricsProvider",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ContextMetricsProvider"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TranscriptDebugMenu.ContextMetricsProvider",
+  "type" : "topic",
+  "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetricsprovider"
+},
 "doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "Learn how to use TranscriptDebugMenu",
+      "text" : "Inspect language model sessions with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
@@ -679,45 +946,78 @@
   "type" : "topic",
   "url" : "\/tutorials\/transcriptdebugmenu"
 },
-"screenshot": {
-  "alt" : "TranscriptDebugMenu",
-  "identifier" : "screenshot",
+"https://github.com/artemnovichkov/TranscriptDebugMenu/releases": {
+  "identifier" : "https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\/releases",
+  "title" : "Releases",
+  "titleInlineContent" : [
+    {
+      "text" : "Releases",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\/releases"
+},
+"screenshot1": {
+  "alt" : "Screenshot 1",
+  "identifier" : "screenshot1",
   "type" : "image",
   "variants" : [
     {
       "traits" : [
-        "2x",
+        "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
-        "2x",
+        "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 },
-"screenshot.png": {
+"screenshot1.png": {
   "alt" : "TranscriptDebugMenu",
-  "identifier" : "screenshot.png",
+  "identifier" : "screenshot1.png",
   "type" : "image",
   "variants" : [
     {
       "traits" : [
-        "2x",
+        "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
-        "2x",
+        "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
+    }
+  ]
+},
+"screenshot2": {
+  "alt" : "Screenshot 2",
+  "identifier" : "screenshot2",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "1x",
+        "light"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot2.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot2~dark.png"
     }
   ]
 }

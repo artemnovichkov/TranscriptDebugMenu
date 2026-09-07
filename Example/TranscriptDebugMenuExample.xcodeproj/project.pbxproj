@@ -111,6 +111,7 @@
 			mainGroup = 0676BC432E5213D20017838A;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				0676BC922E5217020017838A /* XCLocalSwiftPackageReference ".." */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0676BC4D2E5213D20017838A /* Products */;
@@ -349,9 +350,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		0676BC922E5217020017838A /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		0676BC902E5217020017838A /* TranscriptDebugMenu */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 0676BC922E5217020017838A /* XCLocalSwiftPackageReference ".." */;
 			productName = TranscriptDebugMenu;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -45,10 +45,10 @@ extension Transcript.Entry {
         segments.compactMap { segment -> String? in
             switch segment {
             case .text(let t): return t.content
-            case .structure(let s): return s.source
+            case .structure(let s): return s.schemaName
             default:
-                if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *), case .attachment(let a) = segment {
-                    return a.label
+                if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
+                    if case .attachment(let a) = segment { return a.label }
                 }
                 return nil
             }

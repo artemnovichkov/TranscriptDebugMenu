@@ -4,7 +4,8 @@ import TranscriptDebugMenu
 
 struct ContentView: View {
     @State private var text = "Loading..."
-    @State private var session = LanguageModelSession()
+    private static let model = SystemLanguageModel.default
+    @State private var session = LanguageModelSession(model: ContentView.model)
     @State private var showTranscript = false
 
     var body: some View {
@@ -14,7 +15,11 @@ struct ContentView: View {
             }
             .padding(.horizontal)
             .navigationTitle("Haiku")
-            .transcriptDebugMenu(session, isPresented: $showTranscript)
+            .transcriptDebugMenu(
+                session,
+                isPresented: $showTranscript,
+                configuration: .systemModel(Self.model)
+            )
             .toolbar {
                 ToolbarItem {
                     Button {
@@ -29,7 +34,7 @@ struct ContentView: View {
                     let response = try await session.respond(to: "Generate a haiku about Swift")
                     text = response.content
                 } catch {
-                    print("Error: \(error)")
+                    text = "Couldn't generate a haiku: \(error.localizedDescription)"
                 }
             }
         }

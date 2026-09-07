@@ -14,6 +14,7 @@ enum ExampleScenario: String, CaseIterable, Identifiable {
     case permissiveGuardrails
     case dynamicProfile
     case profileWithModelSwitch
+    case imageAttachment
 
     var id: String { rawValue }
 
@@ -27,6 +28,7 @@ enum ExampleScenario: String, CaseIterable, Identifiable {
         case .permissiveGuardrails: "Permissive Guardrails"
         case .dynamicProfile: "Dynamic Profile"
         case .profileWithModelSwitch: "Profile + Tagging Model"
+        case .imageAttachment: "Image Attachment"
         }
     }
 
@@ -48,6 +50,8 @@ enum ExampleScenario: String, CaseIterable, Identifiable {
             "LanguageModelSession(profile:) freeform / tools"
         case .profileWithModelSwitch:
             "Profile bound to content tagging model"
+        case .imageAttachment:
+            "Multimodal prompt with CGImage"
         }
     }
 
@@ -61,12 +65,13 @@ enum ExampleScenario: String, CaseIterable, Identifiable {
         case .permissiveGuardrails: "shield.lefthalf.filled"
         case .dynamicProfile: "person.crop.rectangle.stack"
         case .profileWithModelSwitch: "arrow.triangle.branch"
+        case .imageAttachment: "photo.badge.plus"
         }
     }
 
     var requiresOS27: Bool {
         switch self {
-        case .dynamicProfile, .profileWithModelSwitch:
+        case .dynamicProfile, .profileWithModelSwitch, .imageAttachment:
             true
         default:
             false
@@ -99,6 +104,8 @@ enum ExampleScenario: String, CaseIterable, Identifiable {
             tool calls, and responses. Dynamic profiles switch models and tools \
             based on app state without losing history.
             """
+        case .imageAttachment:
+            "Describe the colors and shapes you see in this image."
         }
     }
 }

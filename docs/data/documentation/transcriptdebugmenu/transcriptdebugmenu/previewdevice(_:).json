@@ -13,6 +13,17 @@
       "type" : "text"
     }
   ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Use the device picker in Xcode's canvas.",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -81,28 +92,62 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "deprecatedAt" : "27.0",
         "introducedAt" : "13.0",
+        "message" : "Use the device picker in Xcode's canvas.",
         "name" : "iOS",
         "unavailable" : false
       },
       {
         "beta" : false,
         "deprecated" : false,
+        "deprecatedAt" : "27.0",
+        "introducedAt" : "13.0",
+        "message" : "Use the device picker in Xcode's canvas.",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "deprecatedAt" : "27.0",
+        "introducedAt" : "13.0",
+        "message" : "Use the device picker in Xcode's canvas.",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "deprecatedAt" : "27.0",
         "introducedAt" : "10.15",
+        "message" : "Use the device picker in Xcode's canvas.",
         "name" : "macOS",
         "unavailable" : false
       },
       {
         "beta" : false,
         "deprecated" : false,
+        "deprecatedAt" : "27.0",
         "introducedAt" : "13.0",
+        "message" : "Use the device picker in Xcode's canvas.",
         "name" : "tvOS",
         "unavailable" : false
       },
       {
         "beta" : false,
         "deprecated" : false,
+        "deprecatedAt" : "27.0",
+        "message" : "Use the device picker in Xcode's canvas.",
+        "name" : "visionOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "deprecatedAt" : "27.0",
         "introducedAt" : "6.0",
+        "message" : "Use the device picker in Xcode's canvas.",
         "name" : "watchOS",
         "unavailable" : false
       }
@@ -120,7 +165,9 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "iOS",
+            "iPadOS",
+            "Mac Catalyst"
           ],
           "tokens" : [
             {
@@ -215,19 +262,27 @@
       ]
     }
   ]
-, 
+,
 "references": {
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.",
+      "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
+      "type" : "text"
+    },
+    {
+      "code" : "LanguageModelSession",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " transcripts.",
       "type" : "text"
     }
   ],
   "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
   "images" : [
     {
-      "identifier" : "screenshot.png",
+      "identifier" : "screenshot1.png",
       "type" : "icon"
     }
   ],
@@ -283,6 +338,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -330,24 +386,24 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/previewdevice(_:)"
 },
-"screenshot.png": {
+"screenshot1.png": {
   "alt" : "TranscriptDebugMenu",
-  "identifier" : "screenshot.png",
+  "identifier" : "screenshot1.png",
   "type" : "image",
   "variants" : [
     {
       "traits" : [
-        "2x",
+        "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
-        "2x",
+        "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 }

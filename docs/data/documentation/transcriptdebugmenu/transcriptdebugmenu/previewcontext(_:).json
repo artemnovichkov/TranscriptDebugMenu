@@ -13,6 +13,17 @@
       "type" : "text"
     }
   ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Use #Preview with a Widget timeline provider or entries instead.",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -88,28 +99,62 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "deprecatedAt" : "27.0",
         "introducedAt" : "14.0",
+        "message" : "Use #Preview with a Widget timeline provider or entries instead.",
         "name" : "iOS",
         "unavailable" : false
       },
       {
         "beta" : false,
         "deprecated" : false,
+        "deprecatedAt" : "27.0",
+        "introducedAt" : "14.0",
+        "message" : "Use #Preview with a Widget timeline provider or entries instead.",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "deprecatedAt" : "27.0",
+        "introducedAt" : "14.0",
+        "message" : "Use #Preview with a Widget timeline provider or entries instead.",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "deprecatedAt" : "27.0",
         "introducedAt" : "11.0",
+        "message" : "Use #Preview with a Widget timeline provider or entries instead.",
         "name" : "macOS",
         "unavailable" : false
       },
       {
         "beta" : false,
         "deprecated" : false,
+        "deprecatedAt" : "27.0",
         "introducedAt" : "14.0",
+        "message" : "Use #Preview with a Widget timeline provider or entries instead.",
         "name" : "tvOS",
         "unavailable" : false
       },
       {
         "beta" : false,
         "deprecated" : false,
+        "deprecatedAt" : "27.0",
+        "message" : "Use #Preview with a Widget timeline provider or entries instead.",
+        "name" : "visionOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "deprecatedAt" : "27.0",
         "introducedAt" : "7.0",
+        "message" : "Use #Preview with a Widget timeline provider or entries instead.",
         "name" : "watchOS",
         "unavailable" : false
       }
@@ -127,7 +172,9 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "iOS",
+            "iPadOS",
+            "Mac Catalyst"
           ],
           "tokens" : [
             {
@@ -254,19 +301,27 @@
       ]
     }
   ]
-, 
+,
 "references": {
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.",
+      "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
+      "type" : "text"
+    },
+    {
+      "code" : "LanguageModelSession",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " transcripts.",
       "type" : "text"
     }
   ],
   "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
   "images" : [
     {
-      "identifier" : "screenshot.png",
+      "identifier" : "screenshot1.png",
       "type" : "icon"
     }
   ],
@@ -322,6 +377,7 @@
   "abstract" : [
 
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -376,24 +432,24 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/previewcontext(_:)"
 },
-"screenshot.png": {
+"screenshot1.png": {
   "alt" : "TranscriptDebugMenu",
-  "identifier" : "screenshot.png",
+  "identifier" : "screenshot1.png",
   "type" : "image",
   "variants" : [
     {
       "traits" : [
-        "2x",
+        "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
-        "2x",
+        "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 }

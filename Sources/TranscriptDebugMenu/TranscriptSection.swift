@@ -15,6 +15,7 @@ struct TranscriptSection: View {
         Section("Transcript") {
             ForEach(transcript) { entry in
                 TranscriptEntryRow(entry: entry)
+                    .contentShape(Rectangle())
                     .onTapGesture {
                         onSelect(entry)
                     }

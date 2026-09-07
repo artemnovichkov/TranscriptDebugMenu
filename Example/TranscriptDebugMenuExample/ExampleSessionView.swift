@@ -23,6 +23,12 @@ struct ExampleSessionView: View {
             } else {
                 unavailable
             }
+        case .imageAttachment:
+            if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *) {
+                ImageAttachmentSessionView(scenario: scenario)
+            } else {
+                unavailable
+            }
         default:
             ClassicSessionView(scenario: scenario)
         }
@@ -42,6 +48,7 @@ struct ExampleSessionView: View {
 
 private struct ClassicSessionView: View {
     let scenario: ExampleScenario
+    @State private var model: SystemLanguageModel
 
     @State private var session: LanguageModelSession
     @State private var text = ""
@@ -51,7 +58,9 @@ private struct ClassicSessionView: View {
 
     init(scenario: ExampleScenario) {
         self.scenario = scenario
-        _session = State(initialValue: Self.makeSession(for: scenario))
+        let model = Self.makeModel(for: scenario)
+        _model = State(initialValue: model)
+        _session = State(initialValue: Self.makeSession(for: scenario, model: model))
     }
 
     var body: some View {
@@ -66,49 +75,63 @@ private struct ClassicSessionView: View {
             onReset: {
                 text = ""
                 errorText = nil
-                session = Self.makeSession(for: scenario)
+                session = Self.makeSession(for: scenario, model: model)
             }
         )
-        .transcriptDebugMenu(session, isPresented: $showTranscript)
+        .transcriptDebugMenu(
+            session,
+            isPresented: $showTranscript,
+            configuration: .systemModel(model)
+        )
     }
 
-    private static func makeSession(for scenario: ExampleScenario) -> LanguageModelSession {
+    private static func makeModel(for scenario: ExampleScenario) -> SystemLanguageModel {
+        switch scenario {
+        case .contentTagging:
+            SystemLanguageModel(useCase: .contentTagging)
+        case .permissiveGuardrails:
+            SystemLanguageModel(guardrails: .permissiveContentTransformations)
+        default:
+            .default
+        }
+    }
+
+    private static func makeSession(
+        for scenario: ExampleScenario,
+        model: SystemLanguageModel
+    ) -> LanguageModelSession {
         switch scenario {
         case .noTools:
-            LanguageModelSession {
+            LanguageModelSession(model: model) {
                 "You're a helpful assistant that writes short poems."
             }
         case .withTools:
-            LanguageModelSession(tools: [MoodTool()]) {
+            LanguageModelSession(model: model, tools: [MoodTool()]) {
                 """
                 You're a helpful assistant that generates haiku.
                 Always call generateMood first, then write a haiku in that mood.
                 """
             }
         case .multiTools:
-            LanguageModelSession(tools: [MoodTool(), PoemStyleTool()]) {
+            LanguageModelSession(model: model, tools: [MoodTool(), PoemStyleTool()]) {
                 """
                 You're a poetry assistant.
                 Call pickPoemStyle and generateMood before writing.
                 """
             }
         case .structured:
-            LanguageModelSession {
+            LanguageModelSession(model: model) {
                 "You're a helpful assistant that generates haiku."
             }
         case .contentTagging:
-            LanguageModelSession(
-                model: SystemLanguageModel(useCase: .contentTagging)
-            ) {
+            LanguageModelSession(model: model) {
                 "Extract the main topics from the text."
             }
         case .permissiveGuardrails:
-            LanguageModelSession(
-                model: SystemLanguageModel(guardrails: .permissiveContentTransformations)
-            ) {
+            LanguageModelSession(model: model) {
                 "You rewrite text clearly and concisely."
             }
-        case .dynamicProfile, .profileWithModelSwitch:
+        case .dynamicProfile, .profileWithModelSwitch, .imageAttachment:
             LanguageModelSession()
         }
     }
@@ -137,6 +160,83 @@ private struct ClassicSessionView: View {
                 let response = try await session.respond(to: scenario.prompt)
                 text = response.content
             }
+        } catch {
+            errorText = String(describing: error)
+        }
+    }
+}
+
+// MARK: - Image attachment session (iOS 27+)
+
+@available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+private struct ImageAttachmentSessionView: View {
+    let scenario: ExampleScenario
+
+    @State private var session = LanguageModelSession()
+    @State private var text = ""
+    @State private var errorText: String?
+    @State private var isLoading = false
+    @State private var showTranscript = false
+
+    private let sampleImage: CGImage = {
+        let size = 200
+        let ctx = CGContext(
+            data: nil,
+            width: size,
+            height: size,
+            bitsPerComponent: 8,
+            bytesPerRow: 0,
+            space: CGColorSpaceCreateDeviceRGB(),
+            bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+        )!
+        ctx.setFillColor(CGColor(red: 1, green: 0.3, blue: 0.2, alpha: 1))
+        ctx.fill(CGRect(x: 0, y: 0, width: size / 2, height: size))
+        ctx.setFillColor(CGColor(red: 0.2, green: 0.5, blue: 1, alpha: 1))
+        ctx.fill(CGRect(x: size / 2, y: 0, width: size / 2, height: size))
+        return ctx.makeImage()!
+    }()
+
+    var body: some View {
+        SessionResultView(
+            title: scenario.title,
+            subtitle: scenario.subtitle,
+            text: text,
+            errorText: errorText,
+            isLoading: isLoading,
+            showTranscript: $showTranscript,
+            header: {
+                Image(decorative: sampleImage, scale: 1)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: 120)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            },
+            onRun: { await run() },
+            onReset: {
+                text = ""
+                errorText = nil
+                session = LanguageModelSession()
+            }
+        )
+        .transcriptDebugMenu(
+            session,
+            isPresented: $showTranscript,
+            configuration: .systemModel(.default)
+        )
+    }
+
+    @MainActor
+    private func run() async {
+        isLoading = true
+        errorText = nil
+        defer { isLoading = false }
+
+        do {
+            let response = try await session.respond {
+                scenario.prompt
+                Attachment(sampleImage)
+            }
+            text = response.content
         } catch {
             errorText = String(describing: error)
         }

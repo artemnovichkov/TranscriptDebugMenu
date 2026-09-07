@@ -88,6 +88,20 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "introducedAt" : "14.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "14.0",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
         "introducedAt" : "11.0",
         "name" : "macOS",
         "unavailable" : false
@@ -120,7 +134,9 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "iOS",
+            "iPadOS",
+            "Mac Catalyst"
           ],
           "tokens" : [
             {
@@ -215,19 +231,27 @@
       ]
     }
   ]
-, 
+,
 "references": {
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.",
+      "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
+      "type" : "text"
+    },
+    {
+      "code" : "LanguageModelSession",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " transcripts.",
       "type" : "text"
     }
   ],
   "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
   "images" : [
     {
-      "identifier" : "screenshot.png",
+      "identifier" : "screenshot1.png",
       "type" : "icon"
     }
   ],
@@ -330,24 +354,24 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/listitemtint(_:)-404ac"
 },
-"screenshot.png": {
+"screenshot1.png": {
   "alt" : "TranscriptDebugMenu",
-  "identifier" : "screenshot.png",
+  "identifier" : "screenshot1.png",
   "type" : "image",
   "variants" : [
     {
       "traits" : [
-        "2x",
+        "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
-        "2x",
+        "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 }

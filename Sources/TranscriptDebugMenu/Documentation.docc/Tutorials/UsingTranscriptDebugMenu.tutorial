@@ -1,28 +1,24 @@
-@Tutorial(time: 5) {
+@Tutorial(time: 10) {
     @Intro(title: "Using TranscriptDebugMenu") {
-        Learn how to use TranscriptDebugMenu.
+        Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.
     }
     
-    @XcodeRequirement(title: "Xcode 26", destination: "https://developer.apple.com/download/")
+    @XcodeRequirement(title: "Xcode 27", destination: "https://developer.apple.com/download/")
     
     @Section(title: "Configure a session") {
         @ContentAndMedia {
-            Let's start by creating a new SwiftUI project in Xcode and adding `LanguageModelSession`.
+            Start with a SwiftUI project targeting iOS 26 or later in Xcode 27 with Swift 6.4. To generate the haiku, run on a device that supports Apple Intelligence with the system model available. If generation fails, the example displays the error.
         }
         @Steps {
             @Step {
                 Create a new SwiftUI project in Xcode. Open `ContentView.swift` and update the content.
                 
-                @Code(name: "ContentView.swift", file: ContentView01.swift) {
-                    @Image(source: start, alt: "Loading")
-                }
+                @Code(name: "ContentView.swift", file: ContentView01.swift)
             }
             @Step {
-                Create `LanguageModelSession` and write a simple prompt to generate a haiku about Swift.
+                Keep a reference to `SystemLanguageModel.default` and use it to create `LanguageModelSession`. Write a prompt to generate a haiku about Swift. Keep the same model for the debug menu's token counter later.
                 
-                @Code(name: "ContentView.swift", file: ContentView02.swift) {
-                    @Image(source: session, alt: "Showing haiku")
-                }
+                @Code(name: "ContentView.swift", file: ContentView02.swift)
             }
         }
     }
@@ -35,7 +31,7 @@
             ```
             https://github.com/artemnovichkov/TranscriptDebugMenu
             ```
-            3. Choose the version you want to use.
+            3. Choose an exact published 2.0 beta tag, or version 2.0.0 or later once stable is released.
             4. Add the package to your target.
         }
         
@@ -43,24 +39,20 @@
             @Step {
                 Open `ContentView.swift` again.
                 
-                @Code(name: "ContentView.swift", file: ContentView02.swift) {
-                    @Image(source: session, alt: "Showing haiku")
-                }
+                @Code(name: "ContentView.swift", file: ContentView02.swift)
             }
             @Step {
                 Create a button with action to present `TranscriptDebugMenu`.
                 
-                @Code(name: "ContentView.swift", file: ContentView03.swift) {
-                    @Image(source: toolbar, alt: "Toolbar button")
-                }
+                @Code(name: "ContentView.swift", file: ContentView03.swift)
             }
             @Step {
-                Add `transcriptDebugMenu` to your view. Tap on the button to present `TranscriptDebugMenu` and see the transcript of the session.
+                Add `transcriptDebugMenu` with `configuration: .systemModel(Self.model)`. This passes the same model used by the session. Tap the toolbar button to inspect the transcript.
                 
-                > Note: If you want to use `TranscriptDebugMenu` only for debug builds, wrap this modifier to `#if DEBUG` check.
+                > Note: To include `TranscriptDebugMenu` only in debug builds, wrap the modifier in an `#if DEBUG` check.
                 
                 @Code(name: "ContentView.swift", file: ContentView04.swift) {
-                    @Image(source: menu, alt: "Menu")
+                    @Image(source: menu, alt: "TranscriptDebugMenu 2.0 showing sample transcript entries and context metrics")
                 }
             }
         }
@@ -68,24 +60,46 @@
         
     @Section(title: "Interact with the transcript") {
         @ContentAndMedia {
-            Now that you have the transcript displayed, you can interact with it.
+            The menu updates as the session transcript changes. The fields you see depend on the OS version and the content of the session. Screenshots use sample data; generated responses and token counts will vary.
         }
         
         @Steps {
             @Step {
-                If you long-press the entry, you can see a context menu with an option to copy the entry.
-                
-                @Image(source: copy, alt: "")
+                Inspect Context to see token consumption relative to the configured model's context window. System-model counting requires OS 26.4 or later. If counting fails, Context is hidden. For a custom or dynamic model without a reliable counter, omit `configuration`; a custom `TranscriptDebugMenu.ContextMetricsProvider` can supply metrics when available.
             }
             @Step {
-                You can also tap on like/dislike buttons to give feedback on the entry.
-                
-                @Image(source: like, alt: "")
+                On OS 27, expand Usage to inspect input, cached input, output, and reasoning tokens reported by the session. These usage values are separate from Context and remain available without a context provider. Reasoning, attachments, and additional metadata appear only when the transcript contains them and the OS supports them.
             }
             @Step {
-                If you tap on share button, `TranscriptDebugMenu` generates a `LanguageModelFeedback` JSON file that can be submitted to Apple using [Feedback Assistant](https://feedbackassistant.apple.com/).
+                Activate Search, enter a word or entry ID, and select an entry-type scope. Search also matches structured values, tool arguments, and metadata. Clearing the search text restores the complete transcript.
+            }
+            @Step {
+                Tap an entry to read its text or structured output first, followed by generation options and the response format when present. Expand Schema to inspect the response JSON schema. Entry, segment, and tool call IDs are available in the collapsed Technical Details block at the bottom. Long-press a value there to copy it. On OS 27, image attachments can be opened in a preview.
+
+                @Image(source: screenshot2, alt: "Prompt content followed by generation options and a collapsible response schema")
+            }
+            @Step {
+                Long-press an entry or an individual value to copy it. Structured content, tool arguments, and metadata are formatted as readable JSON.
+            }
+        }
+    }
+
+    @Section(title: "Export and prepare feedback") {
+        @ContentAndMedia {
+            Transcript export and model feedback produce different JSON attachments. Export captures the full transcript, including entries hidden by search. Feedback adds your assessment and expected response.
+        }
+
+        @Steps {
+            @Step {
+                Tap the Export button (the square with an upward arrow) in the toolbar and choose Copy Transcript JSON or Share Transcript JSON. The exported JSON is formatted for readability and includes the current complete transcript.
+            }
+            @Step {
+                In the same Export menu, choose Report Feedback… to open the feedback form. Record session-level sentiment, select issue categories, explain each issue, and provide the response you expected.
                 
-                @Image(source: share, alt: "")
+                @Image(source: feedback, alt: "Feedback form with sentiment, issue explanations, and a desired response")
+            }
+            @Step {
+                In Feedback, choose Share to save or share the generated `LanguageModelFeedback` JSON. Attach the file to a report in Feedback Assistant. Sharing the attachment does not submit a report automatically. If saving fails, use Retry before sharing.
             }
         }
     }

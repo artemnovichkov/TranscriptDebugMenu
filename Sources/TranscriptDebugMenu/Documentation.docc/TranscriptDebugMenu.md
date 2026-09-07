@@ -1,11 +1,11 @@
 # ``TranscriptDebugMenu``
 
-A SwiftUI library that provides a debug menu for viewing, analyzing, and copying `LanguageModelSession` transcripts with approximate token counting.
+A SwiftUI library for inspecting, searching, exporting, and reporting feedback about `LanguageModelSession` transcripts.
 
 @Metadata {
     @PageImage(
         purpose: icon,
-        source: "screenshot",
+        source: "screenshot1",
         alt: "TranscriptDebugMenu")
     @PageColor(green)
 }
@@ -21,17 +21,19 @@ A SwiftUI library that provides a debug menu for viewing, analyzing, and copying
 
 ## Description
 
-TranscriptDebugMenu is a lightweight SwiftUI component designed to help developers debug and inspect language model session transcripts. It provides an easy-to-use interface for viewing conversation entries, displaying approximate token counts for both individual entries and entire transcripts, and copying content to the clipboard for further analysis.
+TranscriptDebugMenu is a lightweight SwiftUI component designed to help developers inspect language model sessions. It displays every transcript entry and its metadata, model-specific context-window metrics, token usage, attachments, generation options, tool calls, reasoning, and structured output.
 
 ## Features
 
-- View and copy transcript entries to clipboard;
-- Search and filter transcript entries by type;
-- Navigate detailed views for each transcript entry;
-- Display approximate token counts for entries and full transcripts;
-- Generate `LanguageModelFeedback` JSON for Apple's Feedback Assistant.
+- View, search, and filter every transcript entry type;
+- Inspect formatted structured content, metadata, tool schemas, attachments, reasoning, and token usage;
+- Calculate context-window usage with an explicitly configured model-specific provider;
+- Copy individual values or export the complete `Transcript` as formatted JSON;
+- Create detailed `LanguageModelFeedback` with sentiment, issue categories, explanations, and a desired response.
 
 ## Installation
+
+Version 2.0 is in beta. Select an exact published beta tag from [Releases](https://github.com/artemnovichkov/TranscriptDebugMenu/releases) to try it. The `from: "2.0.0"` example below is for the stable release; use `exact:` with a published beta tag during the beta period.
 
 Add TranscriptDebugMenu to your project using Swift Package Manager:
 
@@ -47,7 +49,7 @@ Alternatively, add it to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/artemnovichkov/TranscriptDebugMenu", from: "1.6.0")
+    .package(url: "https://github.com/artemnovichkov/TranscriptDebugMenu", from: "2.0.0")
 ]
 ```
 
@@ -64,7 +66,8 @@ import TranscriptDebugMenu
 
 struct ContentView: View {
     @State private var showTranscript = false
-    @State private var session = LanguageModelSession()
+    private static let model = SystemLanguageModel.default
+    @State private var session = LanguageModelSession(model: ContentView.model)
     
     var body: some View {
         VStack {
@@ -72,16 +75,52 @@ struct ContentView: View {
                 showTranscript = true
             }
         }
-        .transcriptDebugMenu(session, isPresented: $showTranscript)
+        .transcriptDebugMenu(
+            session,
+            isPresented: $showTranscript,
+            configuration: .systemModel(Self.model)
+        )
     }
 }
 ```
 
 ## Requirements
 
-- iOS 26.0+ / macOS 26.0+ / visionOS 26.0+
-- Swift 6.2+
-- Xcode 26.0+
+- iOS 26.0+ / macOS 26.0+ / Mac Catalyst 26.0+ / visionOS 26.0+
+- Swift 6.4+
+- Xcode 27.0+
+
+## Configure context metrics
+
+`LanguageModelSession` doesn't expose its model. Pass the same `SystemLanguageModel` instance used to create the session so the menu uses the correct tokenizer and context size:
+
+```swift
+let model = SystemLanguageModel(useCase: .contentTagging)
+let session = LanguageModelSession(model: model)
+let configuration = TranscriptDebugMenu.Configuration.systemModel(model)
+```
+
+For dynamic, cloud, or custom models, pass a custom ``TranscriptDebugMenu/ContextMetricsProvider``. Omit `configuration` when a reliable token counter isn't available; no model is assumed; the menu will hide context progress while continuing to display the session's reported usage.
+
+System-model context metrics require iOS 26.4, macOS 26.4, Mac Catalyst 26.4, or visionOS 26.4. Counting failures and invalid metrics hide the Context section. Usage is available on OS 27 and reports session usage separately from context-window consumption. Attachments, reasoning, and other OS 27 diagnostics appear only when supported and present in the transcript.
+
+## Export and feedback
+
+Open the Export menu in the toolbar to copy or share the complete transcript as formatted JSON, including entries hidden by search. In the same menu, choose Report Feedback… to select sentiment and issues, add explanations, and describe the desired response. Share the resulting `LanguageModelFeedback` JSON from the feedback form with Feedback Assistant; this does not submit a report automatically.
+
+## Topics
+
+### Essentials
+
+- ``TranscriptDebugMenu``
+- ``SwiftUICore/View/transcriptDebugMenu(_:isPresented:configuration:)``
+- ``TranscriptDebugMenu/Configuration``
+- <doc:MigratingTo2.0>
+
+### Context Metrics
+
+- ``TranscriptDebugMenu/ContextMetrics``
+- ``TranscriptDebugMenu/ContextMetricsProvider``
 
 ## Contributing
 

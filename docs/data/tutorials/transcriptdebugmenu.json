@@ -13,7 +13,7 @@
   "metadata" : {
     "category" : "TranscriptDebugMenu",
     "categoryPathComponent" : "TranscriptDebugMenu",
-    "estimatedTime" : "5min",
+    "estimatedTime" : "10min",
     "role" : "overview",
     "title" : "Meet TranscriptDebugMenu"
   },
@@ -40,7 +40,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "Learn how to use TranscriptDebugMenu",
+              "text" : "Inspect language model sessions with TranscriptDebugMenu 2.0.",
               "type" : "text"
             }
           ],
@@ -56,7 +56,7 @@
           "content" : [
 
           ],
-          "image" : "tutorial.png",
+          "image" : "menu.png",
           "name" : "TranscriptDebugMenu",
           "tutorials" : [
             "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu"
@@ -83,12 +83,12 @@
       ]
     }
   ]
-, 
+,
 "references": {
 "doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "Learn how to use TranscriptDebugMenu",
+      "text" : "Inspect language model sessions with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
@@ -102,11 +102,11 @@
 "doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "Learn how to use TranscriptDebugMenu.",
+      "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
-  "estimatedTime" : "5min",
+  "estimatedTime" : "10min",
   "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
   "kind" : "project",
   "role" : "project",
@@ -114,9 +114,9 @@
   "type" : "topic",
   "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu"
 },
-"tutorial.png": {
-  "alt" : "Tutorial",
-  "identifier" : "tutorial.png",
+"menu.png": {
+  "alt" : "TranscriptDebugMenu 2.0 with sample diagnostics",
+  "identifier" : "menu.png",
   "type" : "image",
   "variants" : [
     {
@@ -124,7 +124,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/tutorial.png"
+      "url" : "\/images\/TranscriptDebugMenu\/menu.png"
+    },
+    {
+      "traits" : [
+        "1x",
+        "dark"
+      ],
+      "url" : "\/images\/TranscriptDebugMenu\/menu~dark.png"
     }
   ]
 }

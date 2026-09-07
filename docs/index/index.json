@@ -23,18 +23,131 @@
       {
         "children" : [
           {
-            "title" : "Structures",
+            "title" : "Essentials",
             "type" : "groupMarker"
           },
           {
             "children" : [
               {
+                "title" : "Structures",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/configuration\/init(contextmetricsprovider:)",
+                    "title" : "init(contextMetricsProvider: TranscriptDebugMenu.ContextMetricsProvider?)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/configuration\/contextmetricsprovider",
+                    "title" : "var contextMetricsProvider: TranscriptDebugMenu.ContextMetricsProvider?",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Type Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/configuration\/systemmodel(_:)",
+                    "title" : "static func systemModel(SystemLanguageModel) -> TranscriptDebugMenu.Configuration",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/configuration",
+                "title" : "TranscriptDebugMenu.Configuration",
+                "type" : "struct"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics\/init(tokencount:contextsize:)",
+                    "title" : "init(tokenCount: Int, contextSize: Int)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics\/contextsize",
+                    "title" : "let contextSize: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics\/tokencount",
+                    "title" : "let tokenCount: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics\/!=(_:_:)",
+                        "title" : "static func != (borrowing Self, borrowing Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "collection"
+                  }
+                ],
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics",
+                "title" : "TranscriptDebugMenu.ContextMetrics",
+                "type" : "struct"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetricsprovider\/init(calculate:)",
+                    "title" : "init(calculate: (Transcript) async throws -> TranscriptDebugMenu.ContextMetrics)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Type Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetricsprovider\/systemmodel(_:)",
+                    "title" : "static func systemModel(SystemLanguageModel) -> TranscriptDebugMenu.ContextMetricsProvider",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetricsprovider",
+                "title" : "TranscriptDebugMenu.ContextMetricsProvider",
+                "type" : "struct"
+              },
+              {
                 "title" : "Initializers",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/init(session:)",
-                "title" : "init(session: LanguageModelSession)",
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/init(session:configuration:)",
+                "title" : "init(session: LanguageModelSession, configuration: TranscriptDebugMenu.Configuration)",
                 "type" : "init"
               },
               {
@@ -57,14 +170,14 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/transcriptdebugmenu(_:ispresented:)",
-                    "title" : "func transcriptDebugMenu(LanguageModelSession, isPresented: Binding<Bool>) -> some View",
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/transcriptdebugmenu(_:ispresented:configuration:)",
+                    "title" : "func transcriptDebugMenu(LanguageModelSession, isPresented: Binding<Bool>, configuration: TranscriptDebugMenu.Configuration) -> some View",
                     "type" : "method"
                   }
                 ],
                 "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/view-implementations",
                 "title" : "View Implementations",
-                "type" : "symbol"
+                "type" : "collection"
               },
               {
                 "children" : [
@@ -73,14 +186,14 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/transcriptdebugmenu(_:ispresented:)",
-                    "title" : "func transcriptDebugMenu(LanguageModelSession, isPresented: Binding<Bool>) -> some View",
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/transcriptdebugmenu(_:ispresented:configuration:)",
+                    "title" : "func transcriptDebugMenu(LanguageModelSession, isPresented: Binding<Bool>, configuration: TranscriptDebugMenu.Configuration) -> some View",
                     "type" : "method"
                   }
                 ],
                 "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/view-implementations",
                 "title" : "View Implementations",
-                "type" : "symbol"
+                "type" : "collection"
               }
             ],
             "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu",
@@ -88,87 +201,130 @@
             "type" : "struct"
           },
           {
-            "title" : "Extended Modules",
+            "path" : "\/documentation\/transcriptdebugmenu\/swiftuicore\/view\/transcriptdebugmenu(_:ispresented:configuration:)",
+            "title" : "func transcriptDebugMenu(LanguageModelSession, isPresented: Binding<Bool>, configuration: TranscriptDebugMenu.Configuration) -> some View",
+            "type" : "method"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/configuration\/init(contextmetricsprovider:)",
+                "title" : "init(contextMetricsProvider: TranscriptDebugMenu.ContextMetricsProvider?)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/configuration\/contextmetricsprovider",
+                "title" : "var contextMetricsProvider: TranscriptDebugMenu.ContextMetricsProvider?",
+                "type" : "property"
+              },
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/configuration\/systemmodel(_:)",
+                "title" : "static func systemModel(SystemLanguageModel) -> TranscriptDebugMenu.Configuration",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/configuration",
+            "title" : "TranscriptDebugMenu.Configuration",
+            "type" : "struct"
+          },
+          {
+            "path" : "\/documentation\/transcriptdebugmenu\/migratingto2.0",
+            "title" : "Migrating to TranscriptDebugMenu 2.0",
+            "type" : "article"
+          },
+          {
+            "title" : "Context Metrics",
             "type" : "groupMarker"
           },
           {
             "children" : [
               {
-                "title" : "Extended Types",
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics\/init(tokencount:contextsize:)",
+                "title" : "init(tokenCount: Int, contextSize: Int)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics\/contextsize",
+                "title" : "let contextSize: Int",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics\/tokencount",
+                "title" : "let tokenCount: Int",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
                 "type" : "groupMarker"
               },
               {
                 "children" : [
                   {
-                    "title" : "Extended Enumerations",
+                    "title" : "Operators",
                     "type" : "groupMarker"
                   },
                   {
-                    "children" : [
-                      {
-                        "title" : "Default Implementations",
-                        "type" : "groupMarker"
-                      },
-                      {
-                        "children" : [
-                          {
-                            "title" : "Instance Methods",
-                            "type" : "groupMarker"
-                          },
-                          {
-                            "path" : "\/documentation\/transcriptdebugmenu\/foundationmodels\/transcript\/entry\/hash(into:)",
-                            "title" : "func hash(into: inout Hasher)",
-                            "type" : "method"
-                          }
-                        ],
-                        "path" : "\/documentation\/transcriptdebugmenu\/foundationmodels\/transcript\/entry\/hashable-implementations",
-                        "title" : "Hashable Implementations",
-                        "type" : "symbol"
-                      }
-                    ],
-                    "path" : "\/documentation\/transcriptdebugmenu\/foundationmodels\/transcript\/entry",
-                    "title" : "Transcript.Entry",
-                    "type" : "extension"
+                    "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics\/!=(_:_:)",
+                    "title" : "static func != (borrowing Self, borrowing Self) -> Bool",
+                    "type" : "op"
                   }
                 ],
-                "path" : "\/documentation\/transcriptdebugmenu\/foundationmodels\/transcript",
-                "title" : "Transcript",
-                "type" : "extension"
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "collection"
               }
             ],
-            "path" : "\/documentation\/transcriptdebugmenu\/foundationmodels",
-            "title" : "FoundationModels",
-            "type" : "extension"
+            "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics",
+            "title" : "TranscriptDebugMenu.ContextMetrics",
+            "type" : "struct"
           },
           {
             "children" : [
               {
-                "title" : "Extended Protocols",
+                "title" : "Initializers",
                 "type" : "groupMarker"
               },
               {
-                "children" : [
-                  {
-                    "title" : "Instance Methods",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/transcriptdebugmenu\/swiftuicore\/view\/transcriptdebugmenu(_:ispresented:)",
-                    "title" : "func transcriptDebugMenu(LanguageModelSession, isPresented: Binding<Bool>) -> some View",
-                    "type" : "method"
-                  }
-                ],
-                "path" : "\/documentation\/transcriptdebugmenu\/swiftuicore\/view",
-                "title" : "View",
-                "type" : "extension"
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetricsprovider\/init(calculate:)",
+                "title" : "init(calculate: (Transcript) async throws -> TranscriptDebugMenu.ContextMetrics)",
+                "type" : "init"
+              },
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetricsprovider\/systemmodel(_:)",
+                "title" : "static func systemModel(SystemLanguageModel) -> TranscriptDebugMenu.ContextMetricsProvider",
+                "type" : "method"
               }
             ],
-            "path" : "\/documentation\/transcriptdebugmenu\/swiftuicore",
-            "title" : "SwiftUICore",
-            "type" : "extension"
+            "path" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetricsprovider",
+            "title" : "TranscriptDebugMenu.ContextMetricsProvider",
+            "type" : "struct"
           }
         ],
-        "icon" : "screenshot.png",
+        "icon" : "screenshot1.png",
         "path" : "\/documentation\/transcriptdebugmenu",
         "title" : "TranscriptDebugMenu",
         "type" : "module"
@@ -176,24 +332,24 @@
     ]
   },
   "references" : {
-    "screenshot.png" : {
+    "screenshot1.png" : {
       "alt" : "TranscriptDebugMenu",
-      "identifier" : "screenshot.png",
+      "identifier" : "screenshot1.png",
       "type" : "image",
       "variants" : [
         {
           "traits" : [
-            "2x",
+            "1x",
             "light"
           ],
-          "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+          "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
         },
         {
           "traits" : [
-            "2x",
+            "1x",
             "dark"
           ],
-          "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+          "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
         }
       ]
     }

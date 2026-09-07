@@ -1,10 +1,10 @@
 @Tutorials(name: "TranscriptDebugMenu") {
     @Intro(title: "Meet TranscriptDebugMenu") {
-        Learn how to use TranscriptDebugMenu
+        Inspect language model sessions with TranscriptDebugMenu 2.0.
     }
     
     @Chapter(name: "TranscriptDebugMenu") {
-        @Image(source: tutorial, alt: "Tutorial")
+        @Image(source: menu, alt: "TranscriptDebugMenu 2.0 with sample diagnostics")
         @TutorialReference(tutorial: "doc:UsingTranscriptDebugMenu")  
     }
 }

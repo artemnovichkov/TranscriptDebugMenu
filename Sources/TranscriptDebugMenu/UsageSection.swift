@@ -18,6 +18,11 @@ struct UsageSection: View {
                 LabeledContent("Cached input", value: usage.input.cachedTokenCount, format: .number)
                 LabeledContent("Output", value: usage.output.totalTokenCount, format: .number)
                 LabeledContent("Reasoning", value: usage.output.reasoningTokenCount, format: .number)
+                ForEach(usage.metadata.keys.sorted(), id: \.self) { key in
+                    if let value = usage.metadata[key] {
+                        DebugValueRow(LocalizedStringKey(key), value: DebugJSON.prettyPrinted(value))
+                    }
+                }
             } label: {
                 Text("Total: ^[\(usage.totalTokenCount) token](inflect: true)")
             }

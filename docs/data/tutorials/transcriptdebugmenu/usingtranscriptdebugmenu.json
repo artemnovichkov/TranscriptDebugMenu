@@ -17,6 +17,10 @@
               {
                 "kind" : "task",
                 "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Interact-with-the-transcript"
+              },
+              {
+                "kind" : "task",
+                "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Export-and-prepare-feedback"
               }
             ]
           }
@@ -56,17 +60,17 @@
         {
           "inlineContent" : [
             {
-              "text" : "Learn how to use TranscriptDebugMenu.",
+              "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
               "type" : "text"
             }
           ],
           "type" : "paragraph"
         }
       ],
-      "estimatedTimeInMinutes" : 5,
+      "estimatedTimeInMinutes" : 10,
       "kind" : "hero",
       "title" : "Using TranscriptDebugMenu",
-      "xcodeRequirement" : "Xcode 26"
+      "xcodeRequirement" : "Xcode 27"
     },
     {
       "kind" : "tasks",
@@ -79,15 +83,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Let’s start by creating a new SwiftUI project in Xcode and adding ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "LanguageModelSession",
-                      "type" : "codeVoice"
-                    },
-                    {
-                      "text" : ".",
+                      "text" : "Start with a SwiftUI project targeting iOS 26 or later in Xcode 27 with Swift 6.4. To generate the haiku, run on a device that supports Apple Intelligence with the system model available. If generation fails, the example displays the error.",
                       "type" : "text"
                     }
                   ],
@@ -124,7 +120,7 @@
                 }
               ],
               "media" : null,
-              "runtimePreview" : "start.png",
+              "runtimePreview" : null,
               "type" : "step"
             },
             {
@@ -136,7 +132,15 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Create ",
+                      "text" : "Keep a reference to ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "SystemLanguageModel.default",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " and use it to create ",
                       "type" : "text"
                     },
                     {
@@ -144,7 +148,7 @@
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : " and write a simple prompt to generate a haiku about Swift.",
+                      "text" : ". Write a prompt to generate a haiku about Swift. Keep the same model for the debug menu’s token counter later.",
                       "type" : "text"
                     }
                   ],
@@ -152,7 +156,7 @@
                 }
               ],
               "media" : null,
-              "runtimePreview" : "session.png",
+              "runtimePreview" : null,
               "type" : "step"
             }
           ],
@@ -217,7 +221,7 @@
                         {
                           "inlineContent" : [
                             {
-                              "text" : "Choose the version you want to use.",
+                              "text" : "Choose an exact published 2.0 beta tag, or version 2.0.0 or later once stable is released.",
                               "type" : "text"
                             }
                           ],
@@ -273,7 +277,7 @@
                 }
               ],
               "media" : null,
-              "runtimePreview" : "session.png",
+              "runtimePreview" : null,
               "type" : "step"
             },
             {
@@ -301,7 +305,7 @@
                 }
               ],
               "media" : null,
-              "runtimePreview" : "toolbar.png",
+              "runtimePreview" : null,
               "type" : "step"
             },
             {
@@ -311,7 +315,7 @@
                     {
                       "inlineContent" : [
                         {
-                          "text" : "If you want to use ",
+                          "text" : "To include ",
                           "type" : "text"
                         },
                         {
@@ -319,7 +323,7 @@
                           "type" : "codeVoice"
                         },
                         {
-                          "text" : " only for debug builds, wrap this modifier to ",
+                          "text" : " only in debug builds, wrap the modifier in an ",
                           "type" : "text"
                         },
                         {
@@ -352,15 +356,15 @@
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : " to your view. Tap on the button to present ",
+                      "text" : " with ",
                       "type" : "text"
                     },
                     {
-                      "code" : "TranscriptDebugMenu",
+                      "code" : "configuration: .systemModel(Self.model)",
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : " and see the transcript of the session.",
+                      "text" : ". This passes the same model used by the session. Tap the toolbar button to inspect the transcript.",
                       "type" : "text"
                     }
                   ],
@@ -382,7 +386,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "Now that you have the transcript displayed, you can interact with it.",
+                      "text" : "The menu updates as the session transcript changes. The fields you see depend on the OS version and the content of the session. Screenshots use sample data; generated responses and token counts will vary.",
                       "type" : "text"
                     }
                   ],
@@ -403,55 +407,186 @@
                 {
                   "inlineContent" : [
                     {
-                      "text" : "If you long-press the entry, you can see a context menu with an option to copy the entry.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : "copy.png",
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-
-              ],
-              "code" : null,
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "You can also tap on like\/dislike buttons to give feedback on the entry.",
-                      "type" : "text"
-                    }
-                  ],
-                  "type" : "paragraph"
-                }
-              ],
-              "media" : "like.png",
-              "runtimePreview" : null,
-              "type" : "step"
-            },
-            {
-              "caption" : [
-
-              ],
-              "code" : null,
-              "content" : [
-                {
-                  "inlineContent" : [
-                    {
-                      "text" : "If you tap on share button, ",
+                      "text" : "Inspect Context to see token consumption relative to the configured model’s context window. System-model counting requires OS 26.4 or later. If counting fails, Context is hidden. For a custom or dynamic model without a reliable counter, omit ",
                       "type" : "text"
                     },
                     {
-                      "code" : "TranscriptDebugMenu",
+                      "code" : "configuration",
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : " generates a ",
+                      "text" : "; a custom ",
+                      "type" : "text"
+                    },
+                    {
+                      "code" : "TranscriptDebugMenu.ContextMetricsProvider",
+                      "type" : "codeVoice"
+                    },
+                    {
+                      "text" : " can supply metrics when available.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "On OS 27, expand Usage to inspect input, cached input, output, and reasoning tokens reported by the session. These usage values are separate from Context and remain available without a context provider. Reasoning, attachments, and additional metadata appear only when the transcript contains them and the OS supports them.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Activate Search, enter a word or entry ID, and select an entry-type scope. Search also matches structured values, tool arguments, and metadata. Clearing the search text restores the complete transcript.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Tap an entry to read its text or structured output first, followed by generation options and the response format when present. Expand Schema to inspect the response JSON schema. Entry, segment, and tool call IDs are available in the collapsed Technical Details block at the bottom. Long-press a value there to copy it. On OS 27, image attachments can be opened in a preview.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : "screenshot2.png",
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Long-press an entry or an individual value to copy it. Structured content, tool arguments, and metadata are formatted as readable JSON.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            }
+          ],
+          "title" : "Interact with the transcript"
+        },
+        {
+          "anchor" : "Export-and-prepare-feedback",
+          "contentSection" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Transcript export and model feedback produce different JSON attachments. Export captures the full transcript, including entries hidden by search. Feedback adds your assessment and expected response.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "kind" : "contentAndMedia",
+              "mediaPosition" : "trailing"
+            }
+          ],
+          "stepsSection" : [
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Tap the Export button (the square with an upward arrow) in the toolbar and choose Copy Transcript JSON or Share Transcript JSON. The exported JSON is formatted for readability and includes the current complete transcript.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : null,
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In the same Export menu, choose Report Feedback… to open the feedback form. Record session-level sentiment, select issue categories, explain each issue, and provide the response you expected.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ],
+              "media" : "feedback.png",
+              "runtimePreview" : null,
+              "type" : "step"
+            },
+            {
+              "caption" : [
+
+              ],
+              "code" : null,
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "In Feedback, choose Share to save or share the generated ",
                       "type" : "text"
                     },
                     {
@@ -459,28 +594,19 @@
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : " JSON file that can be submitted to Apple using ",
-                      "type" : "text"
-                    },
-                    {
-                      "identifier" : "https:\/\/feedbackassistant.apple.com\/",
-                      "isActive" : true,
-                      "type" : "reference"
-                    },
-                    {
-                      "text" : ".",
+                      "text" : " JSON. Attach the file to a report in Feedback Assistant. Sharing the attachment does not submit a report automatically. If saving fails, use Retry before sharing.",
                       "type" : "text"
                     }
                   ],
                   "type" : "paragraph"
                 }
               ],
-              "media" : "share.png",
+              "media" : null,
               "runtimePreview" : null,
               "type" : "step"
             }
           ],
-          "title" : "Interact with the transcript"
+          "title" : "Export and prepare feedback"
         }
       ]
     }
@@ -497,7 +623,7 @@
       ]
     }
   ]
-, 
+,
 "references": {
 "ContentView01.swift": {
   "content" : [
@@ -533,7 +659,8 @@
     "",
     "struct ContentView: View {",
     "    @State private var text = \"Loading...\"",
-    "    @State private var session = LanguageModelSession()",
+    "    private static let model = SystemLanguageModel.default",
+    "    @State private var session = LanguageModelSession(model: ContentView.model)",
     "",
     "    var body: some View {",
     "        NavigationStack {",
@@ -547,7 +674,7 @@
     "                    let response = try await session.respond(to: \"Generate a haiku about Swift\")",
     "                    text = response.content",
     "                } catch {",
-    "                    print(\"Error: \\(error)\")",
+    "                    text = \"Couldn't generate a haiku: \\(error.localizedDescription)\"",
     "                }",
     "            }",
     "        }",
@@ -570,7 +697,8 @@
     "",
     "struct ContentView: View {",
     "    @State private var text = \"Loading...\"",
-    "    @State private var session = LanguageModelSession()",
+    "    private static let model = SystemLanguageModel.default",
+    "    @State private var session = LanguageModelSession(model: ContentView.model)",
     "    @State private var showTranscript = false",
     "",
     "    var body: some View {",
@@ -594,7 +722,7 @@
     "                    let response = try await session.respond(to: \"Generate a haiku about Swift\")",
     "                    text = response.content",
     "                } catch {",
-    "                    print(\"Error: \\(error)\")",
+    "                    text = \"Couldn't generate a haiku: \\(error.localizedDescription)\"",
     "                }",
     "            }",
     "        }",
@@ -605,10 +733,7 @@
   "fileType" : "swift",
   "highlights" : [
     {
-      "line" : 7
-    },
-    {
-      "line" : 16
+      "line" : 8
     },
     {
       "line" : 17
@@ -633,6 +758,9 @@
     },
     {
       "line" : 24
+    },
+    {
+      "line" : 25
     }
   ],
   "identifier" : "ContentView03.swift",
@@ -647,7 +775,8 @@
     "",
     "struct ContentView: View {",
     "    @State private var text = \"Loading...\"",
-    "    @State private var session = LanguageModelSession()",
+    "    private static let model = SystemLanguageModel.default",
+    "    @State private var session = LanguageModelSession(model: ContentView.model)",
     "    @State private var showTranscript = false",
     "",
     "    var body: some View {",
@@ -657,7 +786,11 @@
     "            }",
     "            .padding(.horizontal)",
     "            .navigationTitle(\"Haiku\")",
-    "            .transcriptDebugMenu(session, isPresented: $showTranscript)",
+    "            .transcriptDebugMenu(",
+    "                session,",
+    "                isPresented: $showTranscript,",
+    "                configuration: .systemModel(Self.model)",
+    "            )",
     "            .toolbar {",
     "                ToolbarItem {",
     "                    Button {",
@@ -672,7 +805,7 @@
     "                    let response = try await session.respond(to: \"Generate a haiku about Swift\")",
     "                    text = response.content",
     "                } catch {",
-    "                    print(\"Error: \\(error)\")",
+    "                    text = \"Couldn't generate a haiku: \\(error.localizedDescription)\"",
     "                }",
     "            }",
     "        }",
@@ -686,44 +819,35 @@
       "line" : 3
     },
     {
-      "line" : 17
+      "line" : 18
+    },
+    {
+      "line" : 19
+    },
+    {
+      "line" : 20
+    },
+    {
+      "line" : 21
+    },
+    {
+      "line" : 22
     }
   ],
   "identifier" : "ContentView04.swift",
   "syntax" : "swift",
   "type" : "file"
 },
-"Xcode 26": {
-  "identifier" : "Xcode 26",
-  "title" : "Xcode 26",
+"Xcode 27": {
+  "identifier" : "Xcode 27",
+  "title" : "Xcode 27",
   "type" : "xcodeRequirement",
   "url" : "https:\/\/developer.apple.com\/download\/"
-},
-"copy.png": {
-  "alt" : "",
-  "identifier" : "copy.png",
-  "type" : "image",
-  "variants" : [
-    {
-      "traits" : [
-        "1x",
-        "light"
-      ],
-      "url" : "\/images\/TranscriptDebugMenu\/copy.png"
-    },
-    {
-      "traits" : [
-        "1x",
-        "dark"
-      ],
-      "url" : "\/images\/TranscriptDebugMenu\/copy~dark.png"
-    }
-  ]
 },
 "doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "Learn how to use TranscriptDebugMenu",
+      "text" : "Inspect language model sessions with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
@@ -748,11 +872,11 @@
 "doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "Learn how to use TranscriptDebugMenu.",
+      "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
-  "estimatedTime" : "5min",
+  "estimatedTime" : "10min",
   "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
   "kind" : "project",
   "role" : "project",
@@ -763,7 +887,7 @@
 "doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Add-TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "Learn how to use TranscriptDebugMenu.",
+      "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
@@ -777,7 +901,7 @@
 "doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Configure-a-session": {
   "abstract" : [
     {
-      "text" : "Learn how to use TranscriptDebugMenu.",
+      "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
@@ -788,10 +912,24 @@
   "type" : "section",
   "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu#Configure-a-session"
 },
+"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Export-and-prepare-feedback": {
+  "abstract" : [
+    {
+      "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Export-and-prepare-feedback",
+  "kind" : "section",
+  "role" : "pseudoSymbol",
+  "title" : "Export and prepare feedback",
+  "type" : "section",
+  "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu#Export-and-prepare-feedback"
+},
 "doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Interact-with-the-transcript": {
   "abstract" : [
     {
-      "text" : "Learn how to use TranscriptDebugMenu.",
+      "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
@@ -802,21 +940,9 @@
   "type" : "section",
   "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu#Interact-with-the-transcript"
 },
-"https://feedbackassistant.apple.com/": {
-  "identifier" : "https:\/\/feedbackassistant.apple.com\/",
-  "title" : "Feedback Assistant",
-  "titleInlineContent" : [
-    {
-      "text" : "Feedback Assistant",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/feedbackassistant.apple.com\/"
-},
-"like.png": {
-  "alt" : "",
-  "identifier" : "like.png",
+"feedback.png": {
+  "alt" : "Feedback form with sentiment, issue explanations, and a desired response",
+  "identifier" : "feedback.png",
   "type" : "image",
   "variants" : [
     {
@@ -824,19 +950,19 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/like.png"
+      "url" : "\/images\/TranscriptDebugMenu\/feedback.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/like~dark.png"
+      "url" : "\/images\/TranscriptDebugMenu\/feedback~dark.png"
     }
   ]
 },
 "menu.png": {
-  "alt" : "Menu",
+  "alt" : "TranscriptDebugMenu 2.0 showing sample transcript entries and context metrics",
   "identifier" : "menu.png",
   "type" : "image",
   "variants" : [
@@ -856,9 +982,9 @@
     }
   ]
 },
-"session.png": {
-  "alt" : "Showing haiku",
-  "identifier" : "session.png",
+"screenshot2.png": {
+  "alt" : "Prompt content followed by generation options and a collapsible response schema",
+  "identifier" : "screenshot2.png",
   "type" : "image",
   "variants" : [
     {
@@ -866,77 +992,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/session.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot2.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/session~dark.png"
-    }
-  ]
-},
-"share.png": {
-  "alt" : "",
-  "identifier" : "share.png",
-  "type" : "image",
-  "variants" : [
-    {
-      "traits" : [
-        "1x",
-        "light"
-      ],
-      "url" : "\/images\/TranscriptDebugMenu\/share.png"
-    },
-    {
-      "traits" : [
-        "1x",
-        "dark"
-      ],
-      "url" : "\/images\/TranscriptDebugMenu\/share~dark.png"
-    }
-  ]
-},
-"start.png": {
-  "alt" : "Loading",
-  "identifier" : "start.png",
-  "type" : "image",
-  "variants" : [
-    {
-      "traits" : [
-        "1x",
-        "light"
-      ],
-      "url" : "\/images\/TranscriptDebugMenu\/start.png"
-    },
-    {
-      "traits" : [
-        "1x",
-        "dark"
-      ],
-      "url" : "\/images\/TranscriptDebugMenu\/start~dark.png"
-    }
-  ]
-},
-"toolbar.png": {
-  "alt" : "Toolbar button",
-  "identifier" : "toolbar.png",
-  "type" : "image",
-  "variants" : [
-    {
-      "traits" : [
-        "1x",
-        "light"
-      ],
-      "url" : "\/images\/TranscriptDebugMenu\/toolbar.png"
-    },
-    {
-      "traits" : [
-        "1x",
-        "dark"
-      ],
-      "url" : "\/images\/TranscriptDebugMenu\/toolbar~dark.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot2~dark.png"
     }
   ]
 }

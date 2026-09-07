@@ -28,7 +28,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "SwiftUICore",
-    "externalID" : "s:7SwiftUI4ViewPAAE7gestureyQrqd__AA32NSGestureRecognizerRepresentableRd__lF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
+    "externalID" : "s:7SwiftUI4ViewPAAE7gestureyQrqd__AA32UIGestureRecognizerRepresentableRd__lF::SYNTHESIZED::s:19TranscriptDebugMenuAAV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -56,8 +56,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:7SwiftUI32NSGestureRecognizerRepresentableP",
-        "text" : "NSGestureRecognizerRepresentable"
+        "preciseIdentifier" : "s:7SwiftUI32UIGestureRecognizerRepresentableP",
+        "text" : "UIGestureRecognizerRepresentable"
       },
       {
         "kind" : "text",
@@ -89,8 +89,22 @@
       {
         "beta" : false,
         "deprecated" : false,
-        "introducedAt" : "26.0",
-        "name" : "macOS",
+        "introducedAt" : "18.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "18.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "18.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       }
     ],
@@ -107,7 +121,9 @@
             "swift"
           ],
           "platforms" : [
-            "macOS"
+            "iOS",
+            "iPadOS",
+            "Mac Catalyst"
           ],
           "tokens" : [
             {
@@ -160,8 +176,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:7SwiftUI32NSGestureRecognizerRepresentableP",
-              "text" : "NSGestureRecognizerRepresentable"
+              "preciseIdentifier" : "s:7SwiftUI32UIGestureRecognizerRepresentableP",
+              "text" : "UIGestureRecognizerRepresentable"
             },
             {
               "kind" : "text",
@@ -210,19 +226,27 @@
       ]
     }
   ]
-, 
+,
 "references": {
 "doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
-      "text" : "A SwiftUI library that provides a debug menu for LanguageModelSession transcripts with token counting.",
+      "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
+      "type" : "text"
+    },
+    {
+      "code" : "LanguageModelSession",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " transcripts.",
       "type" : "text"
     }
   ],
   "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
   "images" : [
     {
-      "identifier" : "screenshot.png",
+      "identifier" : "screenshot1.png",
       "type" : "icon"
     }
   ],
@@ -305,8 +329,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7SwiftUI32NSGestureRecognizerRepresentableP",
-      "text" : "NSGestureRecognizerRepresentable"
+      "preciseIdentifier" : "s:7SwiftUI32UIGestureRecognizerRepresentableP",
+      "text" : "UIGestureRecognizerRepresentable"
     },
     {
       "kind" : "text",
@@ -333,24 +357,24 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/gesture(_:)"
 },
-"screenshot.png": {
+"screenshot1.png": {
   "alt" : "TranscriptDebugMenu",
-  "identifier" : "screenshot.png",
+  "identifier" : "screenshot1.png",
   "type" : "image",
   "variants" : [
     {
       "traits" : [
-        "2x",
+        "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
-        "2x",
+        "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot~dark@2x.png"
+      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 }

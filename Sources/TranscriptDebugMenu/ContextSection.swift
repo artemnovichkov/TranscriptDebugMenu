@@ -11,7 +11,7 @@ struct ContextSection: View {
 
     var body: some View {
         Section("Context") {
-            ProgressView(value: Double(tokenCount),
+            ProgressView(value: Double(min(max(tokenCount, 0), contextSize)),
                          total: Double(contextSize)) {
                 Text(TokenCounter.formattedCount(for: (tokenCount, contextSize)))
                     .font(.footnote)

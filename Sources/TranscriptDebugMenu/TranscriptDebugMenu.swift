@@ -2,20 +2,16 @@
 //  Created by Artem Novichkov on 04.08.2025.
 //
 
-#if canImport(UIKit)
-import UIKit
-#elseif canImport(AppKit)
-import AppKit
-#endif
+import Foundation
 import SwiftUI
 import FoundationModels
 import OSLog
 
 /// A SwiftUI view for inspecting, copying, and capturing feedback for `LanguageModelSession` transcripts.
 ///
-/// `TranscriptDebugMenu` shows transcript entries in a list with a context menu to copy any entry.
-/// It also lets you mark the conversation sentiment and automatically
-/// generates a `LanguageModelFeedback` JSON file that can be submitted to Apple using [Feedback Assistant](https://feedbackassistant.apple.com/).
+/// `TranscriptDebugMenu` shows searchable transcript entries, detailed Foundation Models metadata,
+/// context-window metrics, full transcript export, and a feedback composer that produces a
+/// `LanguageModelFeedback` JSON file for [Feedback Assistant](https://feedbackassistant.apple.com/).
 ///
 /// ## Usage
 ///
@@ -26,7 +22,8 @@ import OSLog
 ///
 /// struct ContentView: View {
 ///    @State private var showTranscript = false
-///    @State private var session = LanguageModelSession()
+///    private static let model = SystemLanguageModel.default
+///    @State private var session = LanguageModelSession(model: ContentView.model)
 ///
 ///    var body: some View {
 ///        VStack {
@@ -34,35 +31,51 @@ import OSLog
 ///                showTranscript = true
 ///            }
 ///        }
-///        .transcriptDebugMenu(session, isPresented: $showTranscript)
+///        .transcriptDebugMenu(
+///            session,
+///            isPresented: $showTranscript,
+///            configuration: .systemModel(Self.model)
+///        )
 ///    }
 ///}
 /// ```
 public struct TranscriptDebugMenu: View {
     private let session: LanguageModelSession
+    private let configuration: Configuration
 
-    private let feedbackFileURL: URL = FileManager.default
+    @State private var feedbackFileURL: URL = FileManager.default
         .temporaryDirectory
         .appendingPathComponent(UUID().uuidString)
+        .appendingPathExtension("feedback")
+        .appendingPathExtension("json")
+    @State private var transcriptFileURL: URL = FileManager.default
+        .temporaryDirectory
+        .appendingPathComponent(UUID().uuidString)
+        .appendingPathExtension("transcript")
         .appendingPathExtension("json")
 
-    @State private var sentiment: LanguageModelFeedback.Sentiment?
-    @State private var feedbackDataFileSaved: Bool = false
+    @State private var feedbackDraft = FeedbackDraft()
+    @State private var isFeedbackPresented = false
+    @State private var feedbackDataFileSaved = false
+    @State private var transcriptDataFileSaved = false
     private let logger = Logger(
         subsystem: "com.artemnovichkov.TranscriptDebugMenu",
         category: "TranscriptDebugMenu"
     )
-    @State private var contextUsage: (tokenCount: Int, contextSize: Int)?
+    @State private var contextUsage: ContextMetrics?
     @State private var searchText: String = ""
     @State private var searchScope: SearchScope = .all
-    @State private var path = NavigationPath()
+    @State private var path: [EntryRoute] = []
 
     /// Creates a new transcript debug menu for the specified session.
     ///
-    /// - Parameter session: The `LanguageModelSession` whose transcript will be displayed.
-    ///   The session's transcript property is used to populate the list of entries.
-    public init(session: LanguageModelSession) {
+    /// - Parameters:
+    ///   - session: The `LanguageModelSession` whose transcript will be displayed.
+    ///   - configuration: Model-specific context metrics and future menu customization.
+    ///     Defaults to an empty configuration, which omits context metrics without assuming a model.
+    public init(session: LanguageModelSession, configuration: Configuration = .init()) {
         self.session = session
+        self.configuration = configuration
     }
 
     public var body: some View {
@@ -70,39 +83,62 @@ public struct TranscriptDebugMenu: View {
             List {
                 contextSection
                 usageSection
-                TranscriptSection(
-                    transcript: filteredTranscript,
-                    onSelect: { path.append($0) },
-                    onCopy: copyToClipboard
-                )
+                errorPolicySection
+                if !filteredTranscript.isEmpty {
+                    TranscriptSection(
+                        transcript: filteredTranscript,
+                        onSelect: { path.append(EntryRoute(id: $0.id)) },
+                        onCopy: copyToClipboard
+                    )
+                }
                 if session.isResponding {
                     ProgressView()
                         .frame(maxWidth: .infinity)
                 }
             }
             .overlay {
-                if session.transcript.isEmpty {
+                if session.transcript.isEmpty && !session.isResponding {
                     ContentUnavailableView("No entries",
                                            systemImage: "apple.intelligence",
                                            description: Text("The transcript is empty"))
-
+                } else if !searchText.isEmpty && filteredTranscript.isEmpty {
+                    ContentUnavailableView.search(text: searchText)
                 }
             }
             .navigationTitle("Transcript")
-            .navigationDestination(for: Transcript.Entry.self) { entry in
-                TranscriptEntryDetailView(entry: entry)
+            .navigationDestination(for: EntryRoute.self) { route in
+                if let entry = session.transcript.first(where: { $0.id == route.id }) {
+                    TranscriptEntryDetailView(
+                        entry: entry,
+                        contextMetricsProvider: configuration.contextMetricsProvider
+                    )
+                } else {
+                    ContentUnavailableView(
+                        "Entry Unavailable",
+                        systemImage: "doc.questionmark",
+                        description: Text("The entry was removed from the session transcript.")
+                    )
+                }
             }
             .toolbar {
                 toolbar
             }
             .onAppear {
-                saveFeedbackAttachment(sentiment: sentiment)
+                saveTranscriptExport()
+                saveFeedbackAttachment()
             }
-            .task {
-                contextUsage = await TokenCounter.contextUsage(for: session.transcript)
+            .onChange(of: session.transcript) {
+                saveTranscriptExport()
+                saveFeedbackAttachment()
             }
-            .onChange(of: sentiment) { _, newValue in
-                saveFeedbackAttachment(sentiment: newValue)
+            .task(id: ContextMetricsRequest(
+                transcript: session.transcript,
+                providerID: configuration.contextMetricsProvider?.id
+            )) {
+                await refreshContextUsage()
+            }
+            .onChange(of: feedbackDraft) {
+                saveFeedbackAttachment()
             }
             .searchable(text: $searchText)
             .searchScopes($searchScope, activation: .onSearchPresentation) {
@@ -112,6 +148,16 @@ public struct TranscriptDebugMenu: View {
                 }
             }
             .animation(.easeInOut, value: session.transcript)
+            .sheet(isPresented: $isFeedbackPresented) {
+                FeedbackView(
+                    draft: $feedbackDraft,
+                    attachmentURL: feedbackDataFileSaved ? feedbackFileURL : nil,
+                    onRetry: saveFeedbackAttachment
+                )
+            }
+        }
+        .onDisappear {
+            removeTemporaryExports()
         }
     }
 
@@ -126,6 +172,17 @@ public struct TranscriptDebugMenu: View {
     }
 
     @ViewBuilder
+    private var errorPolicySection: some View {
+        if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *),
+           searchText.isEmpty, !session.transcript.isEmpty,
+           let policy = session.transcriptErrorHandlingPolicy {
+            Section("Session") {
+                DebugValueRow("Error Policy", value: String(describing: policy))
+            }
+        }
+    }
+
+    @ViewBuilder
     private var usageSection: some View {
         if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *),
            searchText.isEmpty, !session.transcript.isEmpty {
@@ -134,72 +191,63 @@ public struct TranscriptDebugMenu: View {
     }
 
     private var filteredTranscript: Transcript {
-        if searchText.isEmpty {
-            return session.transcript
-        }
-        let entries = session.transcript
-            .filter { entry in
-                switch searchScope {
-                case .all:
-                    return true
-                case .instructions:
-                    if case .instructions = entry { return true }
-                    return false
-                case .prompt:
-                    if case .prompt = entry { return true }
-                    return false
-                case .toolCalls:
-                    if case .toolCalls = entry { return true }
-                    return false
-                case .toolOutput:
-                    if case .toolOutput = entry { return true }
-                    return false
-                case .response:
-                    if case .response = entry { return true }
-                    return false
-                case .reasoning:
-                    if #available(iOS 27.0, macOS 27.0, visionOS 27.0, *),
-                       case .reasoning = entry { return true }
-                    return false
-                }
-            }
-            .filter { entry in
-                entry.description.localizedCaseInsensitiveContains(searchText)
-            }
-        return Transcript(entries: entries)
+        TranscriptFilter.filter(session.transcript, searchText: searchText, scope: searchScope)
     }
 
     @ContentBuilder
     private var toolbar: some ToolbarContent {
         ToolbarItem {
-            Button {
-                sentiment = sentiment == .negative ? nil : .negative
-            } label: {
-                Label("Negative",
-                      systemImage: "hand.thumbsdown" + (sentiment == .negative ? ".fill" : ""))
+            Menu("Export", systemImage: "square.and.arrow.up") {
+                Button("Copy Transcript JSON", systemImage: "document.on.document") {
+                    DebugClipboard.copy(DebugJSON.prettyPrinted(session.transcript))
+                }
+                if transcriptDataFileSaved {
+                    ShareLink(item: transcriptFileURL) {
+                        Label("Share Transcript JSON", systemImage: "square.and.arrow.up")
+                    }
+                }
+                Divider()
+                Button("Report Feedback…", systemImage: "bubble.and.pencil") {
+                    saveFeedbackAttachment()
+                    isFeedbackPresented = true
+                }
             }
-        }
-        ToolbarItem {
-            Button {
-                sentiment = sentiment == .positive ? nil : .positive
-            } label: {
-                Label("Positive",
-                      systemImage: "hand.thumbsup" + (sentiment == .positive ? ".fill" : "" ))
-            }
-        }
-        #if !os(visionOS)
-        ToolbarSpacer()
-        #endif
-        ToolbarItem {
-            ShareLink(item: feedbackFileURL)
-                .disabled(!feedbackDataFileSaved)
         }
     }
 
-    private func saveFeedbackAttachment(sentiment: LanguageModelFeedback.Sentiment?) {
-        let feedbackData = session.logFeedbackAttachment(sentiment: sentiment)
+    @MainActor
+    private func refreshContextUsage() async {
+        contextUsage = nil
+        guard let provider = configuration.contextMetricsProvider else {
+            contextUsage = nil
+            return
+        }
         do {
-            try feedbackData.write(to: feedbackFileURL)
+            let metrics = try await provider.metrics(for: session.transcript)
+            try Task.checkCancellation()
+            guard metrics.isValid else {
+                contextUsage = nil
+                logger.error("Context metrics must use a nonnegative token count and a positive context size.")
+                return
+            }
+            contextUsage = metrics
+        } catch is CancellationError {
+            return
+        } catch {
+            guard !Task.isCancelled else { return }
+            contextUsage = nil
+            logger.error("Failed to get context metrics: \(error.localizedDescription)")
+        }
+    }
+
+    private func saveFeedbackAttachment() {
+        let feedbackData = session.logFeedbackAttachment(
+            sentiment: feedbackDraft.sentiment.value,
+            issues: feedbackDraft.issues,
+            desiredResponseText: feedbackDraft.desiredResponse
+        )
+        do {
+            try feedbackData.write(to: feedbackFileURL, options: .atomic)
             feedbackDataFileSaved = true
         } catch {
             feedbackDataFileSaved = false
@@ -207,20 +255,34 @@ public struct TranscriptDebugMenu: View {
         }
     }
 
+    private func saveTranscriptExport() {
+        guard let data = DebugJSON.prettyPrinted(session.transcript).data(using: .utf8) else {
+            transcriptDataFileSaved = false
+            return
+        }
+        do {
+            try data.write(to: transcriptFileURL, options: .atomic)
+            transcriptDataFileSaved = true
+        } catch {
+            transcriptDataFileSaved = false
+            logger.error("Failed to save transcript: \(error.localizedDescription)")
+        }
+    }
+
+    private func removeTemporaryExports() {
+        try? FileManager.default.removeItem(at: feedbackFileURL)
+        try? FileManager.default.removeItem(at: transcriptFileURL)
+        feedbackDataFileSaved = false
+        transcriptDataFileSaved = false
+    }
+
     private func copyToClipboard(entry: Transcript.Entry) {
-        #if canImport(UIKit)
-        UIPasteboard.general.string = entry.description
-        #elseif canImport(AppKit)
-        NSPasteboard.general.clearContents()
-        NSPasteboard.general.setString(entry.description, forType: .string)
-        #endif
+        DebugClipboard.copy(entry.description)
     }
 }
 
-extension Transcript.Entry: @retroactive Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
+private struct EntryRoute: Hashable {
+    let id: String
 }
 
 #Preview {
@@ -230,5 +292,22 @@ extension Transcript.Entry: @retroactive Hashable {
     Button("Show Transcript Menu") {
         isPresented.toggle()
     }
-    .transcriptDebugMenu(session, isPresented: $isPresented)
+    .transcriptDebugMenu(
+        session,
+        isPresented: $isPresented,
+        configuration: .systemModel(.default)
+    )
+}
+
+#Preview("Transcript") {
+    TranscriptDebugMenu(
+        session: LanguageModelSession(transcript: .mock),
+        configuration: .init(contextMetricsProvider: .init { _ in
+            .init(tokenCount: Mock.contextUsage.tokenCount, contextSize: Mock.contextUsage.contextSize)
+        })
+    )
+}
+
+#Preview("Empty Transcript") {
+    TranscriptDebugMenu(session: LanguageModelSession(transcript: Transcript()))
 }

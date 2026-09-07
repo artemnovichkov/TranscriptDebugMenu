@@ -3,7 +3,8 @@ import FoundationModels
 
 struct ContentView: View {
     @State private var text = "Loading..."
-    @State private var session = LanguageModelSession()
+    private static let model = SystemLanguageModel.default
+    @State private var session = LanguageModelSession(model: ContentView.model)
 
     var body: some View {
         NavigationStack {
@@ -17,7 +18,7 @@ struct ContentView: View {
                     let response = try await session.respond(to: "Generate a haiku about Swift")
                     text = response.content
                 } catch {
-                    print("Error: \(error)")
+                    text = "Couldn't generate a haiku: \(error.localizedDescription)"
                 }
             }
         }

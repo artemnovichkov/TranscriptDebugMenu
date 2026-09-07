@@ -18,6 +18,14 @@ extension Transcript {
 
 extension GenerationOptions {
     static let mock: Self = .init(samplingMode: .random(probabilityThreshold: 1), temperature: 1, maximumResponseTokens: 30)
+
+    @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+    static let mockFull: Self = .init(
+        samplingMode: .random(probabilityThreshold: 1),
+        temperature: 1,
+        maximumResponseTokens: 30,
+        toolCallingMode: .required
+    )
 }
 
 extension Transcript.Entry {
@@ -30,7 +38,8 @@ extension Transcript.Entry {
     static let promptMockFull: Self = .prompt(.init(
         metadata: ["session_id": "abc123", "version": "2"],
         segments: Mock.prompt,
-        options: .mock,
+        options: .mockFull,
+        responseFormat: .init(type: Haiku.self),
         contextOptions: .init(includeSchemaInPrompt: true, reasoningLevel: .moderate)
     ))
 
@@ -42,12 +51,27 @@ extension Transcript.Entry {
         return .toolCalls(Transcript.ToolCalls([call]))
     }()
 
+    @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+    static let toolCallsMockFull: Self = {
+        let call = Transcript.ToolCall(
+            id: "call-1",
+            metadata: ["request_id": "req-42"],
+            toolName: MoodTool().name,
+            arguments: MoodTool.Arguments().generatedContent
+        )
+        return .toolCalls(Transcript.ToolCalls([call]))
+    }()
+
     static let toolOutputMock: Self = .toolOutput(.init(id: "id", toolName: MoodTool().name, segments: Mock.toolOutput))
 
     static let responseMock: Self = .response(.init(assetIDs: Mock.assetIDs, segments: Mock.response))
 
     @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
-    static let reasoningMock: Self = .reasoning(.init(metadata: ["thinking_tokens": 512], segments: Mock.reasoning, signature: nil))
+    static let reasoningMock: Self = .reasoning(.init(
+        metadata: ["thinking_tokens": 512],
+        segments: Mock.reasoning,
+        signature: Data([0x54, 0x44, 0x4D])
+    ))
 }
 
 enum Mock {
@@ -88,7 +112,8 @@ extension LanguageModelSession.Usage {
     /// Mock usage for previews and independent section testing.
     static let mock = LanguageModelSession.Usage(
         input: .init(totalTokenCount: 150, cachedTokenCount: 50),
-        output: .init(totalTokenCount: 80, reasoningTokenCount: 20)
+        output: .init(totalTokenCount: 80, reasoningTokenCount: 20),
+        metadata: ["provider": "on-device"]
     )
 }
 
