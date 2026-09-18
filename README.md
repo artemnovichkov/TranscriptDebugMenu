@@ -25,8 +25,6 @@ TranscriptDebugMenu is a lightweight SwiftUI component designed to help develope
 
 ## Installation
 
-Version 2.0 is in beta. Select the `2.0.0-beta.1` tag from [Releases](https://github.com/artemnovichkov/TranscriptDebugMenu/releases/tag/2.0.0-beta.1) in Xcode, or use the exact version below in `Package.swift`.
-
 Add TranscriptDebugMenu to your project using Swift Package Manager:
 
 1. In Xcode, go to **File → Add Package Dependencies...**
@@ -41,7 +39,7 @@ Alternatively, add it to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/artemnovichkov/TranscriptDebugMenu", exact: "2.0.0-beta.1")
+    .package(url: "https://github.com/artemnovichkov/TranscriptDebugMenu", from: "2.0.0")
 ]
 ```
 

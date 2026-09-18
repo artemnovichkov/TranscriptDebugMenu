@@ -2,15 +2,15 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics"
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics\/init(tokenCount:contextSize:)"
+    "url" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics\/init(tokenCount:contextSize:)"
   },
   "kind" : "symbol",
   "metadata" : {
@@ -150,9 +150,9 @@
       ]
     }
   ]
-,
+, 
 "references": {
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
@@ -167,7 +167,7 @@
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
   "images" : [
     {
       "identifier" : "screenshot1.png",
@@ -180,7 +180,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "A SwiftUI view for inspecting, copying, and capturing feedback for ",
@@ -209,7 +209,7 @@
       "text" : "TranscriptDebugMenu"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -222,7 +222,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/ContextMetrics": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/ContextMetrics": {
   "abstract" : [
     {
       "text" : "Token consumption relative to a model’s context window.",
@@ -243,7 +243,7 @@
       "text" : "ContextMetrics"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -256,7 +256,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/ContextMetrics/init(tokenCount:contextSize:)": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/ContextMetrics/init(tokenCount:contextSize:)": {
   "abstract" : [
 
   ],
@@ -304,7 +304,7 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics\/init(tokenCount:contextSize:)",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics\/init(tokenCount:contextSize:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "init(tokenCount:contextSize:)",
@@ -321,14 +321,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 }

@@ -8,15 +8,15 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View"
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View\/transcriptDebugMenu(_:isPresented:configuration:)"
+    "url" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View\/transcriptDebugMenu(_:isPresented:configuration:)"
   },
   "kind" : "symbol",
   "metadata" : {
@@ -261,7 +261,7 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+              "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:19TranscriptDebugMenuAAV",
               "text" : "TranscriptDebugMenu"
@@ -271,7 +271,7 @@
               "text" : "."
             },
             {
-              "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
+              "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:19TranscriptDebugMenuAAV13ConfigurationV",
               "text" : "Configuration"
@@ -483,9 +483,9 @@
       "anchor" : "Essentials",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/MigratingTo2.0"
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/MigratingTo2.0"
       ],
       "title" : "Essentials"
     }
@@ -502,9 +502,9 @@
       ]
     }
   ]
-,
+, 
 "references": {
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
@@ -519,7 +519,7 @@
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
   "images" : [
     {
       "identifier" : "screenshot1.png",
@@ -532,32 +532,32 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/MigratingTo2.0": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/MigratingTo2.0": {
   "abstract" : [
     {
       "text" : "Adopt explicit model diagnostics and the Swift 6.4 toolchain.",
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/MigratingTo2.0",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/MigratingTo2.0",
   "kind" : "article",
   "role" : "article",
   "title" : "Migrating to TranscriptDebugMenu 2.0",
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/migratingto2.0"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore",
   "kind" : "symbol",
   "role" : "collection",
   "title" : "SwiftUICore",
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/swiftuicore"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore/View": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore/View": {
   "abstract" : [
 
   ],
@@ -576,7 +576,7 @@
       "text" : "View"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -589,7 +589,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/swiftuicore\/view"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore/View/transcriptDebugMenu(_:isPresented:configuration:)": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore/View/transcriptDebugMenu(_:isPresented:configuration:)": {
   "abstract" : [
     {
       "text" : "Presents a transcript debug menu as a sheet overlay.",
@@ -720,14 +720,14 @@
       "text" : "View"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View\/transcriptDebugMenu(_:isPresented:configuration:)",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View\/transcriptDebugMenu(_:isPresented:configuration:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "transcriptDebugMenu(_:isPresented:configuration:)",
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/swiftuicore\/view\/transcriptdebugmenu(_:ispresented:configuration:)"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "A SwiftUI view for inspecting, copying, and capturing feedback for ",
@@ -756,7 +756,7 @@
       "text" : "TranscriptDebugMenu"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -769,7 +769,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/Configuration": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/Configuration": {
   "abstract" : [
     {
       "text" : "Configuration for the transcript debug menu.",
@@ -790,7 +790,7 @@
       "text" : "Configuration"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -813,14 +813,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 }

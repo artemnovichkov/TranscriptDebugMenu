@@ -1,6 +1,6 @@
 {
   "bundleDisplayName" : "TranscriptDebugMenu",
-  "bundleID" : "TranscriptDebugMenu",
+  "bundleID" : "transcriptdebugmenu.TranscriptDebugMenu",
   "schemaVersion" : {
     "major" : 0,
     "minor" : 1,

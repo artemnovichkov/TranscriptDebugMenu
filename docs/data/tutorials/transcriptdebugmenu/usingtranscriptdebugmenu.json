@@ -4,42 +4,42 @@
       {
         "projects" : [
           {
-            "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
+            "reference" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
             "sections" : [
               {
                 "kind" : "task",
-                "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Configure-a-session"
+                "reference" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Configure-a-session"
               },
               {
                 "kind" : "task",
-                "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Add-TranscriptDebugMenu"
+                "reference" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Add-TranscriptDebugMenu"
               },
               {
                 "kind" : "task",
-                "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Interact-with-the-transcript"
+                "reference" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Interact-with-the-transcript"
               },
               {
                 "kind" : "task",
-                "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Export-and-prepare-feedback"
+                "reference" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Export-and-prepare-feedback"
               }
             ]
           }
         ],
-        "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/TranscriptDebugMenu"
+        "reference" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/TranscriptDebugMenu"
       }
     ],
     "paths" : [
       [
-        "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
-        "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/$volume",
-        "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/TranscriptDebugMenu"
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/$volume",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/TranscriptDebugMenu"
       ]
     ],
-    "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu"
+    "reference" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu"
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu"
+    "url" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu"
   },
   "kind" : "project",
   "metadata" : {
@@ -623,7 +623,7 @@
       ]
     }
   ]
-,
+, 
 "references": {
 "ContentView01.swift": {
   "content" : [
@@ -844,32 +844,32 @@
   "type" : "xcodeRequirement",
   "url" : "https:\/\/developer.apple.com\/download\/"
 },
-"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "Inspect language model sessions with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
   "kind" : "overview",
   "role" : "overview",
   "title" : "Meet TranscriptDebugMenu",
   "type" : "topic",
   "url" : "\/tutorials\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/tutorials/TranscriptDebugMenu/TranscriptDebugMenu": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/TranscriptDebugMenu",
   "kind" : "article",
   "role" : "article",
   "title" : "TranscriptDebugMenu",
   "type" : "topic",
   "url" : "\/tutorials\/transcriptdebugmenu\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
@@ -877,63 +877,63 @@
     }
   ],
   "estimatedTime" : "10min",
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
   "kind" : "project",
   "role" : "project",
   "title" : "Using TranscriptDebugMenu",
   "type" : "topic",
   "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Add-TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Add-TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Add-TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Add-TranscriptDebugMenu",
   "kind" : "section",
   "role" : "pseudoSymbol",
   "title" : "Add TranscriptDebugMenu",
   "type" : "section",
   "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu#Add-TranscriptDebugMenu"
 },
-"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Configure-a-session": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Configure-a-session": {
   "abstract" : [
     {
       "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Configure-a-session",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Configure-a-session",
   "kind" : "section",
   "role" : "pseudoSymbol",
   "title" : "Configure a session",
   "type" : "section",
   "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu#Configure-a-session"
 },
-"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Export-and-prepare-feedback": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Export-and-prepare-feedback": {
   "abstract" : [
     {
       "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Export-and-prepare-feedback",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Export-and-prepare-feedback",
   "kind" : "section",
   "role" : "pseudoSymbol",
   "title" : "Export and prepare feedback",
   "type" : "section",
   "url" : "\/tutorials\/transcriptdebugmenu\/usingtranscriptdebugmenu#Export-and-prepare-feedback"
 },
-"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Interact-with-the-transcript": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu#Interact-with-the-transcript": {
   "abstract" : [
     {
       "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Interact-with-the-transcript",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu#Interact-with-the-transcript",
   "kind" : "section",
   "role" : "pseudoSymbol",
   "title" : "Interact with the transcript",
@@ -950,14 +950,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/feedback.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/feedback.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/feedback~dark.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/feedback~dark.png"
     }
   ]
 },
@@ -971,14 +971,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/menu.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/menu.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/menu~dark.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/menu~dark.png"
     }
   ]
 },
@@ -992,14 +992,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot2.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot2.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot2~dark.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot2~dark.png"
     }
   ]
 }

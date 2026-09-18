@@ -16,14 +16,14 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu"
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/accessibilityCustomContent(_:_:importance:)-ha9c"
+    "url" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/accessibilityCustomContent(_:_:importance:)-ha9c"
   },
   "kind" : "symbol",
   "metadata" : {
@@ -339,9 +339,9 @@
       ]
     }
   ]
-,
+, 
 "references": {
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
@@ -356,7 +356,7 @@
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
   "images" : [
     {
       "identifier" : "screenshot1.png",
@@ -369,7 +369,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "A SwiftUI view for inspecting, copying, and capturing feedback for ",
@@ -398,7 +398,7 @@
       "text" : "TranscriptDebugMenu"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -411,7 +411,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/accessibilityCustomContent(_:_:importance:)-ha9c": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/accessibilityCustomContent(_:_:importance:)-ha9c": {
   "abstract" : [
 
   ],
@@ -503,7 +503,7 @@
       "text" : ">"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/accessibilityCustomContent(_:_:importance:)-ha9c",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/accessibilityCustomContent(_:_:importance:)-ha9c",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "accessibilityCustomContent(_:_:importance:)",
@@ -520,14 +520,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 }

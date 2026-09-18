@@ -3,11 +3,11 @@
     "paths" : [
 
     ],
-    "reference" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu"
+    "reference" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu"
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu"
+    "url" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu"
   },
   "kind" : "overview",
   "metadata" : {
@@ -25,7 +25,7 @@
   "sections" : [
     {
       "action" : {
-        "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
+        "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
         "isActive" : true,
         "overridingTitle" : "Get started",
         "overridingTitleInlineContent" : [
@@ -59,7 +59,7 @@
           "image" : "menu.png",
           "name" : "TranscriptDebugMenu",
           "tutorials" : [
-            "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu"
+            "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu"
           ]
         }
       ],
@@ -83,23 +83,23 @@
       ]
     }
   ]
-,
+, 
 "references": {
-"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "Inspect language model sessions with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
   "kind" : "overview",
   "role" : "overview",
   "title" : "Meet TranscriptDebugMenu",
   "type" : "topic",
   "url" : "\/tutorials\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/tutorials/TranscriptDebugMenu/UsingTranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "Configure model-specific diagnostics, inspect a transcript, export JSON, and prepare feedback with TranscriptDebugMenu 2.0.",
@@ -107,7 +107,7 @@
     }
   ],
   "estimatedTime" : "10min",
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu\/UsingTranscriptDebugMenu",
   "kind" : "project",
   "role" : "project",
   "title" : "Using TranscriptDebugMenu",
@@ -124,14 +124,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/menu.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/menu.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/menu~dark.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/menu~dark.png"
     }
   ]
 }

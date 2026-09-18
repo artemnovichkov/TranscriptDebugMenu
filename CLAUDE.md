@@ -9,7 +9,7 @@ TranscriptDebugMenu is a SwiftUI library for inspecting `LanguageModelSession` t
 ## Build and Development Commands
 
 ### Documentation
-- **Build documentation**: `./build-docc.sh` - Generates static documentation site in `docs/` directory using Swift Package Manager's DocC plugin
+- **Build documentation**: `./build-docc.sh` - Generates static documentation site in `docs/` via `xcodebuild docbuild` for iOS (SwiftPM plugin builds macOS-only and drops iOS/iPadOS/Catalyst availability)
 - **Preview documentation**: `./preview-docc.sh` - Opens live preview of DocC documentation in Xcode
 
 ### Swift Package Manager

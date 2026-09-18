@@ -22,7 +22,7 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu"
+    "url" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu"
   },
   "kind" : "symbol",
   "metadata" : {
@@ -205,40 +205,6 @@
         {
           "inlineContent" : [
             {
-              "text" : "Version 2.0 is in beta. Select an exact published beta tag from ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\/releases",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " to try it. The ",
-              "type" : "text"
-            },
-            {
-              "code" : "from: \"2.0.0\"",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " example below is for the stable release; use ",
-              "type" : "text"
-            },
-            {
-              "code" : "exact:",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " with a published beta tag during the beta period.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
               "text" : "Add TranscriptDebugMenu to your project using Swift Package Manager:",
               "type" : "text"
             }
@@ -359,7 +325,7 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+                  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
                   "isActive" : true,
                   "type" : "reference"
                 },
@@ -505,7 +471,7 @@
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetricsProvider",
+              "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetricsProvider",
               "isActive" : true,
               "type" : "reference"
             },
@@ -572,10 +538,10 @@
     {
       "anchor" : "Essentials",
       "identifiers" : [
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View\/transcriptDebugMenu(_:isPresented:configuration:)",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/MigratingTo2.0"
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View\/transcriptDebugMenu(_:isPresented:configuration:)",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/MigratingTo2.0"
       ],
       "title" : "Essentials"
     },
@@ -588,8 +554,8 @@
       ],
       "anchor" : "Context-Metrics",
       "identifiers" : [
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics",
-        "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetricsProvider"
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics",
+        "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetricsProvider"
       ],
       "title" : "Context Metrics"
     }
@@ -606,9 +572,9 @@
       ]
     }
   ]
-,
+, 
 "references": {
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "A SwiftUI library for inspecting, searching, exporting, and reporting feedback about ",
@@ -623,7 +589,7 @@
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu",
   "images" : [
     {
       "identifier" : "screenshot1.png",
@@ -636,21 +602,21 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/MigratingTo2.0": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/MigratingTo2.0": {
   "abstract" : [
     {
       "text" : "Adopt explicit model diagnostics and the Swift 6.4 toolchain.",
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/MigratingTo2.0",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/MigratingTo2.0",
   "kind" : "article",
   "role" : "article",
   "title" : "Migrating to TranscriptDebugMenu 2.0",
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/migratingto2.0"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore/View/transcriptDebugMenu(_:isPresented:configuration:)": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/SwiftUICore/View/transcriptDebugMenu(_:isPresented:configuration:)": {
   "abstract" : [
     {
       "text" : "Presents a transcript debug menu as a sheet overlay.",
@@ -781,14 +747,14 @@
       "text" : "View"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View\/transcriptDebugMenu(_:isPresented:configuration:)",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/SwiftUICore\/View\/transcriptDebugMenu(_:isPresented:configuration:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "transcriptDebugMenu(_:isPresented:configuration:)",
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/swiftuicore\/view\/transcriptdebugmenu(_:ispresented:configuration:)"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "A SwiftUI view for inspecting, copying, and capturing feedback for ",
@@ -817,7 +783,7 @@
       "text" : "TranscriptDebugMenu"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -830,7 +796,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/Configuration": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/Configuration": {
   "abstract" : [
     {
       "text" : "Configuration for the transcript debug menu.",
@@ -851,7 +817,7 @@
       "text" : "Configuration"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/Configuration",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -864,7 +830,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/configuration"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/ContextMetrics": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/ContextMetrics": {
   "abstract" : [
     {
       "text" : "Token consumption relative to a model’s context window.",
@@ -885,7 +851,7 @@
       "text" : "ContextMetrics"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetrics",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -898,7 +864,7 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetrics"
 },
-"doc://TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/ContextMetricsProvider": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/documentation/TranscriptDebugMenu/TranscriptDebugMenu/ContextMetricsProvider": {
   "abstract" : [
     {
       "text" : "Calculates context-window metrics for a transcript.",
@@ -919,7 +885,7 @@
       "text" : "ContextMetricsProvider"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetricsProvider",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/documentation\/TranscriptDebugMenu\/TranscriptDebugMenu\/ContextMetricsProvider",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
@@ -932,31 +898,19 @@
   "type" : "topic",
   "url" : "\/documentation\/transcriptdebugmenu\/transcriptdebugmenu\/contextmetricsprovider"
 },
-"doc://TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
+"doc://transcriptdebugmenu.TranscriptDebugMenu/tutorials/TranscriptDebugMenu": {
   "abstract" : [
     {
       "text" : "Inspect language model sessions with TranscriptDebugMenu 2.0.",
       "type" : "text"
     }
   ],
-  "identifier" : "doc:\/\/TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
+  "identifier" : "doc:\/\/transcriptdebugmenu.TranscriptDebugMenu\/tutorials\/TranscriptDebugMenu",
   "kind" : "overview",
   "role" : "overview",
   "title" : "Meet TranscriptDebugMenu",
   "type" : "topic",
   "url" : "\/tutorials\/transcriptdebugmenu"
-},
-"https://github.com/artemnovichkov/TranscriptDebugMenu/releases": {
-  "identifier" : "https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\/releases",
-  "title" : "Releases",
-  "titleInlineContent" : [
-    {
-      "text" : "Releases",
-      "type" : "text"
-    }
-  ],
-  "type" : "link",
-  "url" : "https:\/\/github.com\/artemnovichkov\/TranscriptDebugMenu\/releases"
 },
 "screenshot1": {
   "alt" : "Screenshot 1",
@@ -968,14 +922,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 },
@@ -989,14 +943,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot1.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot1.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot1~dark.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot1~dark.png"
     }
   ]
 },
@@ -1010,14 +964,14 @@
         "1x",
         "light"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot2.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot2.png"
     },
     {
       "traits" : [
         "1x",
         "dark"
       ],
-      "url" : "\/images\/TranscriptDebugMenu\/screenshot2~dark.png"
+      "url" : "\/images\/transcriptdebugmenu.TranscriptDebugMenu\/screenshot2~dark.png"
     }
   ]
 }
